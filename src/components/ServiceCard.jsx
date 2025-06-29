@@ -1,43 +1,30 @@
-// src/components/ServiceCard.jsx
-
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
-const ServiceCard = ({ title, description, image, imageCaption }) => {
+const ServiceCard = ({ title, description }) => {
   return (
-    <div className="relative bg-gradient-to-br from-[#043E41]/60 to-[#01171A]/60 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out group h-full w-full overflow-hidden border border-white/5 backdrop-blur-md">
-      {/* Background Effects */}
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#0F3F3E]/30 to-[#00080A] z-0 blur-sm opacity-30 scale-105" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 bg-cyan-500 opacity-10 rounded-full blur-3xl z-0 animate-pulse"></div>
+    <div className="w-[418px] h-[300px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border">
 
-      {/* Card Content */}
-      <div className="relative z-10 flex flex-col h-full">
-        {/* Top Content */}
-        <div className="mb-4">
-          {/* Image */}
-          {image && (
-            <img
-              src={image}
-              alt={title}
-              className="w-12 h-12 object-contain mb-2 rounded-md border border-white/10"
-            />
-          )}
-          {/* Caption */}
-          {imageCaption && (
-            <p className="text-xs text-cyan-300 font-medium mb-2">{imageCaption}</p>
-          )}
-          {/* Headings */}
-          <h4 className="text-xs text-cyan-400 uppercase tracking-widest mb-1">
-            Service
-          </h4>
-          <h2 className="text-white font-bold text-lg sm:text-xl mb-2">{title}</h2>
-          <p className="text-sm text-gray-300 leading-relaxed">{description}</p>
+      {/* Glow ellipse */}
+      <div className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"
+      style={{
+          background: "#00829B"
+        }} />
+
+      {/* Content */}
+      <div className="relative z-10 flex flex-col justify-between h-full">
+        
+        {/* Title & Description */}
+        <div className="px-4 py-4">
+          <h3 className="text-2xl font-semibold italic mb-3">{title}</h3>
+          <p className="text-gray-400 text-lg leading-relaxed">{description}</p>
         </div>
 
-        {/* Bottom Arrow CTA */}
-        <div className="mt-auto">
-          <div className="bg-white text-black w-10 h-10 flex items-center justify-center rounded-full transition-transform group-hover:scale-110 group-hover:rotate-45 duration-300">
-            <FaArrowRight size={18} className="translate-x-[1px]" />
+        {/* Arrow Button with 30° Rotation */}
+        <div className="px-2">
+          <div className="w-10 h-10 bg-white text-black flex items-center justify-center rounded-full transform rotate-[30deg] hover:scale-110 transition duration-300">
+            {/* Reverse rotation inside to keep arrow upright */}
+            <FaArrowRight size={16} className="-rotate-45" />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaChevronRight, FaChevronLeft, FaPlus } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft, FaPlus } from "react-icons/fa6";
 
 const testimonials = [
   {
@@ -43,7 +43,38 @@ const faqs = [
     answer:
       "We use modern stacks like MERN (MongoDB, Express, React, Node.js), Next.js, Tailwind CSS, and more.",
   },
+  {
+    question: "Can you work with existing code or platforms?",
+    answer:
+      "Yes, we can work with existing codebases or integrate with platforms you're already using, provided they are well-documented and maintainable.",
+  },
+  {
+    question: "Do you offer post-launch support?",
+    answer:
+      "Absolutely! We provide maintenance, updates, and technical support even after your project goes live.",
+  },
+  {
+    question: "How long does it typically take to complete a project?",
+    answer:
+      "Project timelines vary based on scope and complexity. However, most standard projects are completed within 3–6 weeks.",
+  },
+  {
+    question: "Can I request changes after development starts?",
+    answer:
+      "Yes, we follow an agile approach. You're welcome to suggest changes anytime, and we’ll adjust accordingly with proper planning.",
+  },
+  {
+    question: "What if I’m not satisfied with the final product?",
+    answer:
+      "Client satisfaction is our priority. We work closely with you at every stage and offer revisions to ensure the result matches your expectations.",
+  },
+  {
+    question: "Do you help with domain & hosting setup?",
+    answer:
+      "Yes, we assist with everything from choosing a domain to setting up hosting, ensuring a smooth and professional launch.",
+  },
 ];
+
 
 export default function TestimonialsAndFAQs() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -54,47 +85,42 @@ export default function TestimonialsAndFAQs() {
   };
 
   const handlePrev = () => {
-    setTestimonialIndex((prevIndex) =>
-      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    setTestimonialIndex((prev) =>
+      prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
 
   const handleNext = () => {
-    setTestimonialIndex((prevIndex) =>
-      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    setTestimonialIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1
     );
   };
 
   const currentTestimonial = testimonials[testimonialIndex];
 
   return (
-    <div className="bg-[#00080A] text-white px-6 py-16 md:px-20 font-sans">
-      {/* Testimonials Section */}
-      <div className="border-b  pb-16">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-4xl font-bold italic text-red-500 ">
-            Testimonials
-          </h2>
-          <span className="text-lg text-red-500">
+    <div className="bg-[#00080C] text-white px-6 py-20 md:px-20 font-sans">
+      {/* =================== TESTIMONIALS =================== */}
+      <div className="border-b border-white/10 pb-16">
+        <div className="flex items-center gap-3 mb-6">
+          <h2 className="text-2xl font-bold italic">Testimonials</h2>
+          <span className="h-px w-[330px] bg-white"></span>
+          <span className="text-md text-white">
             {String(testimonialIndex + 1).padStart(2, "0")}/
             {String(testimonials.length).padStart(2, "0")}
           </span>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          <div className="mb-10 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+          {/* Left Side */}
+          <div>
             <p className="text-5xl font-bold mb-2">50+</p>
             <p className="text-white text-lg">Happy Clients</p>
           </div>
 
-          <div className="md:w-3/5 transition-all duration-500 ease-in-out">
-            {/* Animate on testimonial change */}
-            <p
-              key={testimonialIndex}
-              className="text-lg text-gray-100 mb-6 transition-opacity duration-300 animate-fade-in"
-            >
-              {currentTestimonial.text}
-            </p>
+          {/* Right Side */}
+          <div className="md:w-3/5">
+            <p className="text-lg text-gray-100 mb-6">{currentTestimonial.text}</p>
             <div className="flex items-center space-x-4">
               <img
                 src={currentTestimonial.image}
@@ -102,23 +128,19 @@ export default function TestimonialsAndFAQs() {
                 className="w-10 h-10 rounded-full object-cover"
               />
               <div>
-                <p className="font-semibold italic">
-                  {currentTestimonial.name}
-                </p>
-                <p className="text-sm text-gray-400">
-                  {currentTestimonial.title}
-                </p>
+                <p className="font-semibold italic">{currentTestimonial.name}</p>
+                <p className="text-sm text-gray-400">{currentTestimonial.title}</p>
               </div>
               <div className="flex space-x-4 ml-auto">
                 <button
                   onClick={handlePrev}
-                  className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition"
+                  className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"
                 >
                   <FaChevronLeft size={14} />
                 </button>
                 <button
                   onClick={handleNext}
-                  className="p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition"
+                  className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"
                 >
                   <FaChevronRight size={14} />
                 </button>
@@ -128,48 +150,50 @@ export default function TestimonialsAndFAQs() {
         </div>
       </div>
 
-      {/* FAQs Section */}
-      <div className="flex flex-col md:flex-row pt-16 gap-10 md:items-center">
-        {/* Left Side */}
-        <div className="md:w-1/4 text-center md:text-left">
-          <h2 className="text-4xl font-bold mb-2">FAQs</h2>
-          <button className="flex items-center text-sm text-white hover:text-blue-400 mt-2 mx-auto md:mx-0">
+      {/* FAQs */}
+      <div className="pt-16">
+        {/* Header */}
+        <div className="flex items-center justify-between mb-10">
+          <h2 className="text-4xl font-black italic">FAQs</h2>
+          <button className="flex items-center text-sm text-white hover:text-cyan-400">
             All FAQs <FaChevronRight className="ml-2" size={14} />
           </button>
         </div>
 
-        {/* Right Side */}
-        <div className="md:w-3/4 space-y-6">
+        {/* 2 Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border-l-2 border-blue-500 pl-4 transition-all duration-500"
+              className="border-l-2 border-cyan-500 pl-4 transition-all duration-500"
             >
               <div
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFAQ(index)}
               >
-                <h3 className="text-white text-lg">{faq.question}</h3>
+                <h3 className="text-white text-base font-medium max-w-[90%] leading-snug">
+                  {faq.question}
+                </h3>
                 <FaPlus
-                  className={`transition-transform duration-300 ${
-                    openIndex === index ? "rotate-45 text-blue-400" : ""
+                  className={`transition-transform duration-300 mt-1 text- ${
+                    openIndex === index ? "rotate-45 text-cyan-400" : "text-white"
                   }`}
                 />
               </div>
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                  openIndex === index
-                    ? "max-h-40 opacity-100 mt-2"
-                    : "max-h-0 opacity-0"
+                className={`overflow-hidden transition-all duration-300 ease-in-out text-sm mt-2 text-white/70 leading-relaxed ${
+                  openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-gray-400">{faq.answer}</p>
+                {faq.answer}
               </div>
             </div>
           ))}
         </div>
+
+        {/* Bottom Divider */}
+        <div className="h-px bg-white/20 mt-16" />
       </div>
-      <div className="bg-gray-400 h-px w-full mt-10"></div>
     </div>
   );
 }

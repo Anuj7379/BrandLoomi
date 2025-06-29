@@ -1,62 +1,92 @@
 import React from "react";
-import Hero from "../components/Hero";
+import { GoNorthStar } from "react-icons/go";
+import Header from "../components/Header"; 
 import Empowering from "../components/Empowering";
 import Services from "../components/Services";
+import Process from "../components/Process";
+import TestimonialsAndFAQs from "../components/TestimonialsAndFAQs";
+import LaunchBanner from "../components/LaunchBanner";
 import Footer from "../components/Footer";
 
 const LandingPage = () => {
   return (
     <>
-      <div
-        style={{
-          background: "linear-gradient(180deg, #0A0F1A 0%, #003E41 100%)",
-          color: "#ffffff",
-        }}
-        className="text-white min-h-screen flex flex-col justify-between px-6 lg:px-20 pt-2  pb-40 font-instink"
-      >
-        {/* Navbar */}
-        <nav className="flex justify-between items-center pt-8 text-sm mb-0">
-          <div className="text-xl font-bold font-instink">Brand Kraft</div>
-          <ul className="hidden md:flex space-x-6">
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition">
-                Launchpad
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-cyan-400 transition">
-                Services
-              </a>
-            </li>
-            <li>
-              <a
-                href="#"
-                className="flex items-center hover:text-cyan-400 text-white space-x-1"
-              >
-                <span>•</span>
-                <span>Let's Connect</span>
-                <span className="bg-cyan-400 text-black rounded-full w-6 h-6 flex items-center justify-center">
-                  →
-                </span>
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden">
+        {/* Background */}
+        <div className="absolute inset-0 z-0" style={{ background: "#00080A" }} />
 
-      
-        <div className="mt-16">
-          <Hero />
+        {/* Glows */}
+        <div className="absolute w-[183px] h-[244px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[419px] right-[100px] z-0" />
+        <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-400 blur-[200px] opacity-100 bottom-[100px] left-[-28px] z-0" />
+
+        {/* Use Header component */}
+        <Header />
+
+        {/* Hero Section stays here */}
+        <div className="relative z-10 px-6 md:px-20 pt-24 pb-32 max-w-7xl mx-auto">
+          <h1 className="text-5xl sm:text-4xl lg:text-6xl font-black italic uppercase space-y-2">
+            <div>Launch Your</div>
+            <div>Vision</div>
+            <div>Grow Your Impact</div>
+          </h1>
+
+          {/* Buttons & Stats */}
+          <div className="flex justify-between items-center mt-8 pt-10">
+            <button className="w-[180px] px-6 py-3 border rounded-full flex items-center space-x-3 bg-transparent hover:bg-slate-900">
+              <span className="text-white font-semibold">Get Started</span>
+              <span className="bg-white text-black rounded-full w-6 h-6 flex items-center justify-center">→</span>
+            </button>
+
+            <div className="flex flex-row items-center space-x-3">
+              <div className="flex flex-row space-x-3 items-center">
+                <div className="text-2xl">
+                  <GoNorthStar />
+                </div>
+                <div className="bg-white h-[2px] w-[176px]"></div>
+              </div>
+              <div>
+                <span className="text-lg font-bold">95%</span>
+                <br />
+                Client Satisfaction
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-10 mt-6 font-sans">
+            <div className="flex items-center w-[645px] mt-8">
+              <span className="text-2xl mr-3">+</span>
+              <div className="text-sm text-gray-400">
+                Affordable, high-quality web and app development, branding, and digital marketing for startups and small businesses in Ireland and beyond.
+              </div>
+            </div>
+
+            <div className="grid grid-cols-3 md:grid-cols-3 gap-8 text-sm mt-10">
+              <div>
+                <span className="text-sm font-bold">10+</span>
+                <br />
+                Startups Launched
+              </div>
+              <div>
+                <span className="text-sm font-bold">€1,000</span>
+                <br />
+                Average Project Cost
+              </div>
+              <div>
+                <span className="text-sm font-bold">3 Weeks</span>
+                <br />
+                Average Delivery Time
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Other Sections */}
       <Empowering />
       <Services />
+      <Process />
+      <TestimonialsAndFAQs />
+      <LaunchBanner />
       <Footer />
     </>
   );

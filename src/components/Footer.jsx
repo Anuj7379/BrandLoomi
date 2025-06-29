@@ -179,12 +179,12 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="mt-8 border-t pt-4 text-center text-xs sm:text-sm text-gray-500">
+      <div className="flex justify-between mt-8 border-t pt-4 text-center text-xs sm:text-sm text-gray-500">
         <p className="mb-2 sm:mb-0">
           © 2025 Brandloomi. All rights reserved.
         </p>
         <a
-          href="/terms-of-services"
+          href=""
           className="hover:text-black transition-colors duration-200"
         >
           Terms of Services
