@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/BrandLoomi/static/css/main.c88967ce.css",
-    "main.js": "/BrandLoomi/static/js/main.4979b745.js",
+    "main.js": "/BrandLoomi/static/js/main.22810771.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "index.html": "/BrandLoomi/index.html",
     "main.c88967ce.css.map": "/BrandLoomi/static/css/main.c88967ce.css.map",
-    "main.4979b745.js.map": "/BrandLoomi/static/js/main.4979b745.js.map",
+    "main.22810771.js.map": "/BrandLoomi/static/js/main.22810771.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c88967ce.css",
-    "static/js/main.4979b745.js"
+    "static/js/main.22810771.js"
   ]
 }
