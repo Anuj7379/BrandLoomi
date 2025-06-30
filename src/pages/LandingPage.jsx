@@ -1,6 +1,5 @@
 import React from "react";
-import { GoNorthStar } from "react-icons/go";
-import Header from "../components/Header"; 
+import Header from "../components/Header";
 import Empowering from "../components/Empowering";
 import Services from "../components/Services";
 import Process from "../components/Process";
@@ -13,7 +12,10 @@ const LandingPage = () => {
     <>
       <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 z-0" style={{ background: "#00080A" }} />
+        <div
+          className="absolute inset-0 z-0"
+          style={{ background: "#00080A" }}
+        />
 
         {/* Glows */}
         <div className="absolute w-[183px] h-[244px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[419px] right-[100px] z-0" />
@@ -32,15 +34,22 @@ const LandingPage = () => {
 
           {/* Buttons & Stats */}
           <div className="flex justify-between items-center mt-8 pt-10">
-            <button className="w-[180px] px-6 py-3 border rounded-full flex items-center space-x-3 bg-transparent hover:bg-slate-900">
-              <span className="text-white font-semibold">Get Started</span>
-              <span className="bg-white text-black rounded-full w-6 h-6 flex items-center justify-center">→</span>
+            <button className="relative flex  items-center justify-between w-[200px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group">
+              {/* Button Text */}
+              <span className="text-base font-medium z-10">Get Started</span>
+
+              {/* Glowing Circle with arrow_outward icon */}
+              <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center  shadow-[0_0_10px_#00FFFF]">
+                <span className="material-symbols-outlined leading-none text-[28px]">
+                  arrow_outward
+                </span>
+              </span>
             </button>
 
             <div className="flex flex-row items-center space-x-3">
               <div className="flex flex-row space-x-3 items-center">
                 <div className="text-2xl">
-                  <GoNorthStar />
+                  <span class="material-symbols-outlined ">asterisk</span>
                 </div>
                 <div className="bg-white h-[2px] w-[176px]"></div>
               </div>
@@ -56,7 +65,9 @@ const LandingPage = () => {
             <div className="flex items-center w-[645px] mt-8">
               <span className="text-2xl mr-3">+</span>
               <div className="text-sm text-gray-400">
-                Affordable, high-quality web and app development, branding, and digital marketing for startups and small businesses in Ireland and beyond.
+                Affordable, high-quality web and app development, branding, and
+                digital marketing for startups and small businesses in Ireland
+                and beyond.
               </div>
             </div>
 

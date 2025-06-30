@@ -4,10 +4,12 @@ import { FaArrowRight } from "react-icons/fa6";
 const ProcessStep = ({ number, title, description, className }) => (
   <div className={`relative max-w-xs ${className}`}>
     {/* Glow behind each step */}
-    <div className="absolute w-[300px] h-[200px] opacity-40 blur-[100px] rounded-full -z-10 left-[-60px] top-[-50px]"
-    style={{
-          background: "#00829B"
-        }}></div>
+    <div
+      className="absolute w-[300px] h-[200px] opacity-40 blur-[100px] rounded-full -z-10 left-[-60px] top-[-50px]"
+      style={{
+        background: "#00829B",
+      }}
+    ></div>
 
     <h3 className="text-white italic font-semibold text-base mb-1">
       <span className="text-cyan-400">{number}.</span> {title}
@@ -19,7 +21,6 @@ const ProcessStep = ({ number, title, description, className }) => (
 function Process() {
   return (
     <div className="relative bg-[#00080A] text-white min-h-screen px-6 lg:px-20 py-20 font-sans overflow-hidden">
-
       <div className="relative z-10">
         {/* Header */}
         <div className="flex gap-8 font-bold text-3xl items-center mb-6">
@@ -29,7 +30,9 @@ function Process() {
             <span className="text-cyan-400 text-xl">✶</span>
           </div>
         </div>
-        <h2 className="text-5xl mb-10 font-black italic tracking-wide">STREAMLINED</h2>
+        <h2 className="text-5xl mb-10 font-black italic tracking-wide">
+          STREAMLINED
+        </h2>
 
         {/* GRID - Desktop Only */}
         <div className="grid grid-cols-12 gap-y-20 relative z-10">
@@ -82,10 +85,15 @@ function Process() {
           <div className="flex items-center space-x-6 mt-8">
             <span className=" text-xl">✶</span>
             <div className="flex-1 h-px w-[300px] bg-white "></div>
-            <button className="flex items-center space-x-3 px-6 py-3 border border-white rounded-full bg-gradient-to-r from-[#00181A] to-[#003E41] hover:from-cyan-500/20 transition-all duration-300">
-              <span className="text-white font-semibold">Get Started</span>
-              <span className="w-6 h-6 bg-white text-black rounded-full flex items-center justify-center text-sm transform rotate-[30deg]">
-                <FaArrowRight className="-rotate-[30deg]" />
+            <button className="relative flex items-center justify-between w-[200px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-transparent text-white overflow-hidden group">
+              {/* Button Text */}
+              <span className="text-base font-medium z-10">Get Started</span>
+
+              {/* Glowing Circle with arrow_outward icon */}
+              <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center  shadow-[0_0_10px_#00FFFF]">
+                <span className="material-symbols-outlined leading-none text-[28px]">
+                  arrow_outward
+                </span>
               </span>
             </button>
           </div>
