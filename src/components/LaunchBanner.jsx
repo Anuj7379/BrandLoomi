@@ -1,12 +1,12 @@
 import { FaArrowRight } from "react-icons/fa";
 import AnimateOnView from "./AnimateOnView";
+import logo from "../assets/brandloomiLogo.png";
 
 export default function LaunchBanner() {
   return (
     <section className="bg-[#00080A] flex justify-center  h-[600px] px-4 py-12">
       {/* Card Container */}
       <div className="relative rounded-3xl p-8 sm:p-12 text-center bg-transparent h-[427px] w-full max-w-[1300px] overflow-hidden">
-        
         {/* Glowing Ellipses INSIDE the card */}
         <div className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
         <div className="absolute -top-[100px] -right-[80px] w-[300px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
@@ -14,9 +14,9 @@ export default function LaunchBanner() {
         {/* Content Layer */}
         <div className="relative z-10">
           {/* Subheading */}
-          <p className="text-white font-extrabold font-cursive text-sm mb-4 italic tracking-wider">
-            Brand Loomi
-          </p>
+          <div className="flex justify-center mb-6">
+            <img className="h-[48px]" src={logo} alt="logo" />
+          </div>
 
           {/* Main Heading */}
           <AnimateOnView animation="zoomIn" delay={0.8}>
@@ -40,7 +40,7 @@ export default function LaunchBanner() {
                 className="flex-grow text-sm sm:text-base px-2 py-2 outline-none bg-transparent text-black placeholder-gray-500"
               />
               <button className="bg-blue-400 hover:bg-blue-500 text-white p-2 rounded-full transition-all duration-200">
-                <FaArrowRight  className="text-2xl"/>
+                <FaArrowRight className="text-2xl" />
               </button>
             </div>
           </div>

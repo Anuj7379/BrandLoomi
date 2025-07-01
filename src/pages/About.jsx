@@ -1,9 +1,12 @@
 import React from "react";
-import Header from "../components/Header"; // ✅ make sure the path is correct
-import { GoNorthStar } from "react-icons/go"; // ✅ import star icon
-import "material-symbols"; // ✅ import material-symbols if you installed it via npm
+import Header from "../components/Header";
+import { GoNorthStar } from "react-icons/go";
+import "material-symbols";
 import ExpertsImage from "../assets/experts.png";
 import Image2 from "../assets/img2.png";
+import TimelineSnap from "../components/TimelineSnap";
+import Footer from "../components/Footer";
+import { FaArrowRight } from "react-icons/fa";
 
 function About() {
   return (
@@ -87,10 +90,8 @@ function About() {
               {/* Asterisk + Line */}
               <div className="flex flex-row items-center space-x-4 mb-10">
                 <div className="bg-white h-[2px] w-[176px]"></div>
-
-<span class="material-symbols-outlined">
-asterisk
-</span>              </div>
+                <span class="material-symbols-outlined">asterisk</span>{" "}
+              </div>
 
               {/* 50+ Happy Clients (centered) */}
               <div className="flex flex-col items-center justify-center gap-2 mt-8">
@@ -190,7 +191,7 @@ asterisk
               <div className="w-[319px] m-4 text-left">
                 <h3 className="font-bold text-[33px] italic">ANUJ AGGARWAL</h3>
                 <p className="text-[30px] font-bold flex items-start gap-1">
-                  CEO <span className="text-blue-400 text-xs p-2">•</span>{" "}
+                  CEO <span className="text-blue-400 text-[25px] p-2">•</span>{" "}
                   <span className="font-normal text-[25px]">
                     Visionary leader <br /> and startup mentor.
                   </span>
@@ -202,7 +203,7 @@ asterisk
               <div className="w-[319px] m-4 text-left">
                 <h3 className="font-bold text-[33px] italic">ANUJ AGGARWAL</h3>
                 <p className="text-[30px] font-bold flex items-start gap-1">
-                  CEO <span className="text-blue-400 text-xs p-2">•</span>{" "}
+                  CEO <span className="text-blue-400 text-2xl p-2">•</span>{" "}
                   <span className="font-normal text-[25px]">
                     Visionary leader <br /> and startup mentor.
                   </span>
@@ -224,7 +225,7 @@ asterisk
               <div className="w-[319px] m-4 text-left">
                 <h3 className="font-bold text-[33px] italic">ANUJ AGGARWAL</h3>
                 <p className="text-[30px] font-bold flex items-start gap-1">
-                  CEO <span className="text-blue-400 text-xs p-2">•</span>{" "}
+                  CEO <span className="text-blue-400 text-2xl p-2">•</span>{" "}
                   <span className="font-normal text-[25px]">
                     Visionary leader <br /> and startup mentor.
                   </span>
@@ -234,13 +235,89 @@ asterisk
           </div>
         </section>
 
+        {/** timeline  */}
+        <div className="bg-transparent " style={{ padding: "40px 50px" }}>
+          <h2 className="text-[80px]  italic font-bold">TIMELINE</h2>
+          <div className="flex items-center justify-center mb-10">
+            {/* Line */}
+            <div className="bg-white h-[2px] w-[300px] sm:w-[400px] md:w-[500px]"></div>
+
+            {/* Asterisk Icon */}
+            <span className="material-symbols-outlined text-white text-3xl ml-4">
+              asterisk
+            </span>
+          </div>
+
+          <div className="relative w-[169px] h-[190px] rounded-full bg-[#27DCFF] blur-[200px] opacity-100 top-[270px] left-[-28px] z-0 -mt-40" />
+
+          <div className="grid grid-cols-5 gap-y-4 relative z-10 m-10">
+            <div className="col-start-1 row-start-1">
+              <TimelineSnap year="2022" text="Agency founded in Dublin." />
+            </div>
+            <div className="col-start-2 row-start-2">
+              <TimelineSnap year="2023" text="50 startups launched." />
+            </div>
+            <div className="col-start-3 row-start-3">
+              <TimelineSnap
+                year="2024"
+                text="Pay What You Can” initiative introduced."
+              />
+            </div>
+            <div className="col-start-4 row-start-4">
+              <TimelineSnap
+                year="2025"
+                text="Expanded to serve clients across Europe."
+              />
+            </div>
+          </div>
+        </div>
+
+        <section className="bg-[#00080A] flex justify-center text-center h-[600px] px-4 py-12">
+          {/* Card Container */}
+          <div className="relative rounded-3xl p-8 sm:p-12 text-center bg-transparent h-[427px] w-full max-w-[1300px] overflow-hidden">
+            {/* Glowing Ellipses */}
+            <div className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
+            <div className="absolute -top-[100px] -right-[80px] w-[300px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
+
+            {/* Content */}
+            <div className="relative z-10 ">
+              {/* Subheading */}
+              <p className="text-white font-bold font-cursive text-md mb-4 italic tracking-wider">
+                Brand Loomi
+              </p>
+
+              {/* Main Heading - No animation */}
+              <h1 className="text-white text-center text-3xl sm:text-4xl md:text-4xl lg:text-7xl  font-black  mb-8 font-sans italic">
+                Lest's Build Your Success <br /> Story Together
+              </h1>
+
+              {/* Email Input Field */}
+              <div className="flex justify-center">
+                <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md h-[57px] w-full max-w-[472px]">
+                  <input
+                    type="email"
+                    placeholder="Enter Your Email"
+                    className="flex-grow text-sm sm:text-base px-2 py-2 outline-none bg-transparent text-black placeholder-gray-500"
+                  />
+                  <button className="bg-blue-400 hover:bg-blue-500 text-white p-2 rounded-full transition-all duration-200">
+                    <FaArrowRight className="text-2xl" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* */}
       </div>
+      <Footer />
     </>
   );
 }
 
 export default About;
+
+// card
 
 const Card = ({ title, description }) => {
   return (

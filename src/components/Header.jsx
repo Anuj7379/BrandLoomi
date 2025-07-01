@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import logo from '../assets/brandloomiLogo.png'
 
 const Header = () => {
   return (
     <nav className="flex justify-between items-center px-6 lg:px-20 pt-8 text-sm relative z-10 font-medium">
-      <div className="text-xl font-bold tracking-tight">Brandloomi</div>
+      <img className="h-[48px]" src={logo} alt="logo" />
       <ul className="hidden md:flex space-x-6 items-center">
         <li>
           <Link to="/" className="hover:text-cyan-400 transition duration-200">Home</Link>

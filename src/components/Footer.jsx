@@ -1,4 +1,9 @@
 import React from "react";
+import logo from "../assets/logoblack.png";
+import facebookIcon from "../assets/blackfacebookLogo.png";
+import instaIcon from "../assets/blackinstaLogo.png";
+import xIcon from "../assets/BlackXLogo.png";
+import linkedinIcon from "../assets/blacklinkedinLogo.png";
 import {
   FaFacebookF,
   FaInstagram,
@@ -15,42 +20,31 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         {/* Brand Info */}
         <div className="flex flex-col">
-          <h2 className="text-xl sm:text-2xl font-semibold font-serif mb-2">
-            Brand Loomi
-          </h2>
+          <img src={logo} alt="" className="h-[48px] w-[176px]" />
           <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed">
-            Affordable, high-quality digital solutions to help startups and small
-            businesses launch, grow, and thrive
+            Affordable, high-quality digital solutions to help startups and
+            small businesses launch, grow, and thrive
           </p>
           <div className="flex space-x-4">
-            <a
-              href="https://facebook.com"
-              aria-label="Facebook"
-              className="text-gray-700 hover:text-blue-600 transition-colors duration-200"
-            >
-              <FaFacebookF className="text-lg sm:text-xl" />
-            </a>
-            <a
-              href="https://instagram.com"
-              aria-label="Instagram"
-              className="text-gray-700 hover:text-pink-600 transition-colors duration-200"
-            >
-              <FaInstagram className="text-lg sm:text-xl" />
-            </a>
-            <a
-              href="https://twitter.com"
-              aria-label="Twitter"
-              className="text-gray-700 hover:text-blue-400 transition-colors duration-200"
-            >
-              <FaTwitter className="text-lg sm:text-xl" />
-            </a>
-            <a
-              href="https://linkedin.com"
-              aria-label="LinkedIn"
-              className="text-gray-700 hover:text-blue-700 transition-colors duration-200"
-            >
-              <FaLinkedinIn className="text-lg sm:text-xl" />
-            </a>
+            <img
+              src={facebookIcon}
+              alt="Facebook"
+              className="w-10 h-10 cursor-pointer"
+            />
+
+            <img
+              src={instaIcon}
+              alt="Instagram"
+              className="w-10 h-10 cursor-pointer"
+            />
+
+            <img src={xIcon} alt="X" className="w-10 h-10 cursor-pointer" />
+
+            <img
+              src={linkedinIcon}
+              alt="LinkedIn"
+              className="w-10 h-10 cursor-pointer"
+            />
           </div>
         </div>
 
@@ -180,13 +174,8 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="flex justify-between mt-8 border-t pt-4 text-center text-xs sm:text-sm text-gray-500">
-        <p className="mb-2 sm:mb-0">
-          © 2025 Brandloomi. All rights reserved.
-        </p>
-        <a
-          href=""
-          className="hover:text-black transition-colors duration-200"
-        >
+        <p className="mb-2 sm:mb-0">© 2025 Brandloomi. All rights reserved.</p>
+        <a href="" className="hover:text-black transition-colors duration-200">
           Terms of Services
         </a>
       </div>

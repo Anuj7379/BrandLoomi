@@ -4,6 +4,7 @@ import 'material-symbols';
 import About from './pages/About';
 import LandingPage from './pages/LandingPage';
 import ServicesPage from './pages/ServicesPage';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path='/about' element={<About/>}/>
+        <Route path='/contact' element={<ContactUs/>}/>
       </Routes>
     </Router>
   );

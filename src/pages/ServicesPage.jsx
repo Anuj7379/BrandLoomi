@@ -5,6 +5,8 @@ import { FaArrowRight } from "react-icons/fa";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceCard from "../components/ServiceCard";
+import logo from '../assets/brandloomiLogo.png'
+
 
 const ServicePage = () => {
   return (
@@ -138,9 +140,9 @@ const ServicePage = () => {
             {/* Content */}
             <div className="relative z-10 ">
               {/* Subheading */}
-              <p className="text-white font-bold font-cursive text-sm mb-4 italic tracking-wider">
-                Brand Loomi
-              </p>
+              <div className="flex justify-center mb-6">
+                          <img className="h-[48px]" src={logo} alt="logo" />
+                        </div>
 
               {/* Main Heading - No animation */}
               <h1 className="text-white text-center text-3xl sm:text-4xl md:text-4xl lg:text-7xl  font-black  mb-8 font-sans italic">
