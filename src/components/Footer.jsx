@@ -5,10 +5,7 @@ import instaIcon from "../assets/blackinstaLogo.png";
 import xIcon from "../assets/BlackXLogo.png";
 import linkedinIcon from "../assets/blacklinkedinLogo.png";
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaTwitter,
-  FaLinkedinIn,
+  
   FaEnvelope,
   FaPhone,
   FaMapMarkerAlt,

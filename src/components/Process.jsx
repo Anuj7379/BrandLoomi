@@ -1,5 +1,4 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa6";
 
 const ProcessStep = ({ number, title, description, className }) => (
   <div className={`relative max-w-xs ${className}`}>
