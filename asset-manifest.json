@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/BrandLoomi/static/css/main.daad6339.css",
-    "main.js": "/BrandLoomi/static/js/main.92b81771.js",
+    "main.css": "/BrandLoomi/static/css/main.50bae490.css",
+    "main.js": "/BrandLoomi/static/js/main.d9ed5f76.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
     "static/media/material-symbols-outlined.woff2": "/BrandLoomi/static/media/material-symbols-outlined.3b63aa0cf7bc79a5a85b.woff2",
     "static/media/material-symbols-sharp.woff2": "/BrandLoomi/static/media/material-symbols-sharp.1aafe4e59b1473e734d1.woff2",
     "static/media/img2.png": "/BrandLoomi/static/media/img2.61cd167b8e8dc208d7f7.png",
+    "static/media/CEOImage.png": "/BrandLoomi/static/media/CEOImage.10dfa36d9e2fc9e84e51.png",
     "static/media/material-icons-two-tone.woff": "/BrandLoomi/static/media/material-icons-two-tone.3baa5b8f3469222b822d.woff",
     "static/media/material-icons-two-tone.woff2": "/BrandLoomi/static/media/material-icons-two-tone.4ef4218c522f1eb6b5b1.woff2",
     "static/media/material-icons-round.woff": "/BrandLoomi/static/media/material-icons-round.5d681e2edae8c60630db.woff",
@@ -19,12 +20,12 @@
     "static/media/material-icons-sharp.woff2": "/BrandLoomi/static/media/material-icons-sharp.219aa9140e099e6c72ed.woff2",
     "static/media/material-icons.woff2": "/BrandLoomi/static/media/material-icons.0c35d18bf06992036b69.woff2",
     "index.html": "/BrandLoomi/index.html",
-    "main.daad6339.css.map": "/BrandLoomi/static/css/main.daad6339.css.map",
-    "main.92b81771.js.map": "/BrandLoomi/static/js/main.92b81771.js.map",
+    "main.50bae490.css.map": "/BrandLoomi/static/css/main.50bae490.css.map",
+    "main.d9ed5f76.js.map": "/BrandLoomi/static/js/main.d9ed5f76.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.daad6339.css",
-    "static/js/main.92b81771.js"
+    "static/css/main.50bae490.css",
+    "static/js/main.d9ed5f76.js"
   ]
 }
