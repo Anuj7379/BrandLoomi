@@ -26,7 +26,11 @@ function Process() {
           <p className="text-md italic text-white">Process</p>
           <div className="flex items-center space-x-2 text-sm">
             <div className="w-[483px] h-px bg-white"></div>
-            <span className="text-cyan-400 text-xl">✶</span>
+            <div className="text-2xl">
+  <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
+    asterisk
+  </span>
+</div>
           </div>
         </div>
         <h2 className="text-5xl mb-10 font-black italic tracking-wide">
@@ -82,7 +86,11 @@ function Process() {
             className="max-w-md"
           />
           <div className="flex items-center space-x-6 mt-8">
-            <span className=" text-xl">✶</span>
+            <div className="text-2xl">
+  <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
+    asterisk
+  </span>
+</div>
             <div className="flex-1 h-px w-[300px] bg-white "></div>
             <button className="relative flex items-center justify-between w-[200px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-transparent text-white overflow-hidden group">
               {/* Button Text */}

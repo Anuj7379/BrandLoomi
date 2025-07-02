@@ -49,7 +49,9 @@ const LandingPage = () => {
             <div className="flex flex-row items-center space-x-3">
               <div className="flex flex-row space-x-3 items-center">
                 <div className="text-2xl">
-                  <span class="material-symbols-outlined ">asterisk</span>
+                  <span className="material-symbols-outlined animate-[spin_3s_linear_infinite]">
+                    asterisk
+                  </span>
                 </div>
                 <div className="bg-white h-[2px] w-[176px]"></div>
               </div>

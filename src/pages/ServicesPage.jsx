@@ -1,12 +1,10 @@
 import React from "react";
-import { GoNorthStar } from "react-icons/go";
 import { FaArrowRight } from "react-icons/fa";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceCard from "../components/ServiceCard";
-import logo from '../assets/brandloomiLogo.png'
-
+import logo from "../assets/brandloomiLogo.png";
 
 const ServicePage = () => {
   return (
@@ -20,7 +18,7 @@ const ServicePage = () => {
 
         {/* Hero Section */}
         <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 max-w-7xl mx-auto">
-          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase">
+          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
             <div>OUR</div>
             <div>SERVICES</div>
             <div>LAUNCHPAD</div>
@@ -29,8 +27,10 @@ const ServicePage = () => {
 
           {/* Button + Line */}
           <div className="flex items-center justify-end mt-[-65px] gap-3">
-            <div className="text-2xl text-white">
-              <GoNorthStar />
+            <div className="text-2xl">
+              <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
+                asterisk
+              </span>
             </div>
 
             <div className="bg-white h-[2px] w-[380px]"></div>
@@ -141,8 +141,8 @@ const ServicePage = () => {
             <div className="relative z-10 ">
               {/* Subheading */}
               <div className="flex justify-center mb-6">
-                          <img className="h-[48px]" src={logo} alt="logo" />
-                        </div>
+                <img className="h-[48px]" src={logo} alt="logo" />
+              </div>
 
               {/* Main Heading - No animation */}
               <h1 className="text-white text-center text-3xl sm:text-4xl md:text-4xl lg:text-7xl  font-black  mb-8 font-sans italic">

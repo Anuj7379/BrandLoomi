@@ -58,7 +58,7 @@ const ContactUs = () => {
 
         {/* Hero Section */}
         <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 max-w-7xl mx-auto">
-          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase">
+          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
             <div>LET'S</div>
             <div>BUILD GREAT</div>
             <div>SOMETHING </div>
@@ -106,7 +106,11 @@ const ContactUs = () => {
                 Work Inquiries
               </h3>
               <div className="h-px w-[400px] bg-white"></div>
-              <span class="material-symbols-outlined ">asterisk</span>
+              <div className="text-2xl">
+                <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
+                  asterisk
+                </span>
+              </div>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4 items-center">

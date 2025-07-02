@@ -16,6 +16,7 @@ module.exports = {
         slideInLeft: "slideInLeft 0.7s ease-out forwards",
         typing: "typing 2s steps(7, end) 1s forwards",
         blink: "blink 0.75s step-end infinite",
+        spinSlow: 'spin 20s linear infinite',
       },
 
       //  Custom Keyframes
