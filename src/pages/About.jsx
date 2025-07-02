@@ -7,6 +7,9 @@ import Image2 from "../assets/img2.png";
 import TimelineSnap from "../components/TimelineSnap";
 import Footer from "../components/Footer";
 import { FaArrowRight } from "react-icons/fa";
+import CEOImage from "../assets/CEOImage.png";
+import logo from "../assets/brandloomiLogo.png";
+
 
 function About() {
   return (
@@ -184,7 +187,7 @@ function About() {
             {/* Team Member 1 */}
             <div className="flex flex-col items-center">
               <img
-                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                src={CEOImage}
                 alt="Team Member 1"
                 className="w-[360px] h-[447px] object-cover rounded-xl"
               />
@@ -210,7 +213,7 @@ function About() {
                 </p>
               </div>
               <img
-                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                src={CEOImage}
                 alt="Team Member 1"
                 className="w-[360px] h-[447px] object-cover rounded-xl"
               />
@@ -218,7 +221,7 @@ function About() {
 
             <div className="flex flex-col items-center">
               <img
-                src="https://images.unsplash.com/photo-1607746882042-944635dfe10e"
+                src={CEOImage}
                 alt="Team Member 1"
                 className="w-[360px] h-[447px] object-cover rounded-xl"
               />
@@ -282,9 +285,9 @@ function About() {
             {/* Content */}
             <div className="relative z-10 ">
               {/* Subheading */}
-              <p className="text-white font-bold font-cursive text-md mb-4 italic tracking-wider">
-                Brand Loomi
-              </p>
+              <div className="flex justify-center mb-6">
+                          <img className="h-[48px]" src={logo} alt="logo" />
+                        </div>
 
               {/* Main Heading - No animation */}
               <h1 className="text-white text-center text-3xl sm:text-4xl md:text-4xl lg:text-7xl  font-black  mb-8 font-sans italic">

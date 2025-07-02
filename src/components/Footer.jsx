@@ -4,6 +4,8 @@ import facebookIcon from "../assets/blackfacebookLogo.png";
 import instaIcon from "../assets/blackinstaLogo.png";
 import xIcon from "../assets/BlackXLogo.png";
 import linkedinIcon from "../assets/blacklinkedinLogo.png";
+import { useNavigate } from 'react-router-dom';
+
 import {
   
   FaEnvelope,
@@ -12,6 +14,10 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
+
+    const navigate = useNavigate();
+
+
   return (
     <footer className="bg-white border-t border-gray-200 font-semibold px-4 sm:px-6 py-8 text-gray-700">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -103,40 +109,40 @@ const Footer = () => {
         {/* Company */}
         <div>
           <h3 className="font-bold text-base sm:text-lg mb-3">Company</h3>
-          <ul className="space-y-1.5 text-xs sm:text-sm">
-            <li>
-              <a
-                href="/about"
-                className="hover:text-black transition-colors duration-200"
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="/portfolio"
-                className="hover:text-black transition-colors duration-200"
-              >
-                Portfolio
-              </a>
-            </li>
-            <li>
-              <a
-                href="/contact"
-                className="hover:text-black transition-colors duration-200"
-              >
-                Contact
-              </a>
-            </li>
-            <li>
-              <a
-                href="/privacy-policy"
-                className="hover:text-black transition-colors duration-200"
-              >
-                Privacy Policy
-              </a>
-            </li>
-          </ul>
+            <ul className="space-y-1.5 text-xs sm:text-sm">
+      <li>
+        <a
+          onClick={() => navigate('/about')}
+          className="hover:text-black transition-colors duration-200 cursor-pointer"
+        >
+          About Us
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={() => navigate('/portfolio')}
+          className="hover:text-black transition-colors duration-200 cursor-pointer"
+        >
+          Portfolio
+        </a>
+      </li>
+      <li>
+        <a
+          onClick={() => navigate('/contact')}
+          className="hover:text-black transition-colors duration-200 cursor-pointer"
+        >
+          Contact
+        </a>
+      </li>
+      <li>
+        <a
+          href="/privacy-policy"
+          className="hover:text-black transition-colors duration-200"
+        >
+          Privacy Policy
+        </a>
+      </li>
+    </ul>
         </div>
 
         {/* Contact */}
@@ -146,10 +152,10 @@ const Footer = () => {
             <li className="flex items-center space-x-2">
               <FaEnvelope className="text-gray-600" />
               <a
-                href="mailto:brandloomi@gmail.com"
+                href="mailto:hello@brandloomi.com"
                 className="hover:text-black transition-colors duration-200"
               >
-                brandloomi@gmail.com
+                hello@brandloomi.com
               </a>
             </li>
             <li className="flex items-center space-x-2">
