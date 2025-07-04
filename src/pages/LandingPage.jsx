@@ -3,18 +3,19 @@ import Header from "../components/Header";
 import Empowering from "../components/Empowering";
 import Services from "../components/Services";
 import Process from "../components/Process";
-import TestimonialsAndFAQs from "../components/TestimonialsAndFAQs";
 import LaunchBanner from "../components/LaunchBanner";
 import Footer from "../components/Footer";
+import FAQs from "../components/FAQ";
+import Testimonials from "../components/Testimonial";
 
 const LandingPage = () => {
   return (
-    <>
+    <div style={{ background: "#00080A" }}>
       <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden">
         {/* Background */}
         <div
           className="absolute inset-0 z-0"
-          style={{ background: "#00080A" }}
+          
         />
 
         {/* Glows */}
@@ -98,10 +99,12 @@ const LandingPage = () => {
       <Empowering />
       <Services />
       <Process />
-      <TestimonialsAndFAQs />
-      <LaunchBanner />
+      <Testimonials />
+      <FAQs />
+      <LaunchBanner headingText="Ready to Launch your business Online ? " />
+
       <Footer />
-    </>
+    </div>
   );
 };
 

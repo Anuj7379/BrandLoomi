@@ -1,27 +1,50 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-const TimelineSnap = ({ year, text }) => {
-  return (
-    <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start', marginBottom: '40px' }}>
-      {/* Icon + Line + Year */}
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <LocationOnOutlinedIcon style={{ fontSize: 40, color: 'white' }} />
+const TimelineSnap = ({ year, text, underlineWidth = 160 }) => {
+  const lastWordRef = useRef(null);
+  const [lastWordOffset, setLastWordOffset] = useState(0);
 
-        {/* Small vertical line below the icon */}
+  const words = text.trim().split(" ");
+  const lastWord = words.pop();
+  const restText = words.join(" ");
+
+  useEffect(() => {
+    if (lastWordRef.current) {
+      setLastWordOffset(lastWordRef.current.offsetLeft);
+    }
+  }, []);
+
+  return (
+    <div className="flex gap-5 items-start mb-10">
+      {/* Icon + Year */}
+      <div className="flex flex-col items-center">
+        <LocationOnOutlinedIcon className="text-white text-[40px]" />
         <div className="flex flex-col">
           <div className="bg-white h-px w-4 ml-12 mb-2" />
-
-        <div className="ml-12 text-xl font-bold italic  text-white" >{year}</div>
+          <div className="ml-12 text-xl font-bold italic text-white">{year}</div>
         </div>
       </div>
 
-      {/* Text with left border and underline */}
-      <div>
-        <div style={{ borderLeft: '2px solid #00BFFF', paddingLeft: 16, color: 'white' }}>
-          {text}
+      {/* Text + underline */}
+      <div className="relative text-[20px]">
+        <div className="border-l-2 border-[#00BFFF] pl-4 text-white whitespace-nowrap">
+          {restText}{" "}
+          <span ref={lastWordRef} className="font-semibold text-white inline-block relative z-10">
+            {lastWord}
+          </span>
         </div>
-        <div style={{ width: 158, height: 1, backgroundColor:"white" , marginTop: 8 , marginLeft :150  }} />
+
+        {/* Custom underline starting at last word */}
+        <div
+          className="h-[1px] bg-white absolute"
+          style={{
+            top: "100%",
+            left: lastWordOffset,
+            width: `${underlineWidth}px`,
+            marginTop: "8px",
+          }}
+        />
       </div>
     </div>
   );

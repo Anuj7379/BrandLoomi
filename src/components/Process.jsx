@@ -10,10 +10,10 @@ const ProcessStep = ({ number, title, description, className }) => (
       }}
     ></div>
 
-    <h3 className="text-white italic font-semibold text-base mb-1">
-      <span className="text-cyan-400">{number}.</span> {title}
+    <h3 className="text-white italic font-semibold text-[25px] mb-1">
+      <span className="text-cyan-400 ">{number}.</span> {title}
     </h3>
-    <p className="text-white/70 text-xs leading-relaxed">{description}</p>
+    <p className="text-white/70 text-lg leading-relaxed">{description}</p>
   </div>
 );
 

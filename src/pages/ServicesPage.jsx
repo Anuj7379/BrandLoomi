@@ -63,28 +63,34 @@ const ServicePage = () => {
             <ServiceCard
               title="Software Development"
               description="Custom software that solves your business problems and scales with your growth."
+              link="/services/Softwaredevelopment"
             />
             <ServiceCard
               title="Web App Development"
               description="Responsive, high-performance web applications for any device."
+              link="/services/websitedevelopment"
             />
             <ServiceCard
               title="Mobile App Development"
               description="iOS, Android, and cross-platform experiences that engage users."
+              link="/services/MobileAppDevelopment"
             />
           </div>
           <div className="flex gap-8 mt-6">
             <ServiceCard
               title="Digital Media Marketing"
               description="Grow your brand and reach your target audience with proven strategies."
+              link="/services/SocialmediaAndmarketing"
             />
             <ServiceCard
               title="Branding & Design"
               description="Stand out with a memorable brand, crafted by our creative experts."
+              link="/services/BrandingAndDesign"
             />
             <ServiceCard
               title="Startup Consulting"
               description="From business plans to funding, we guide you every step of the way."
+              link="/services/StartupConsulting"
             />
           </div>
         </div>
