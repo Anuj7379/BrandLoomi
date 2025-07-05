@@ -10,7 +10,6 @@ import { FaArrowRight } from "react-icons/fa";
 import CEOImage from "../assets/CEOImage.png";
 import logo from "../assets/brandloomiLogo.png";
 
-
 function About() {
   return (
     <>
@@ -21,8 +20,8 @@ function About() {
         <Header />
 
         {/* Hero Section */}
-        <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 max-w-7xl mx-auto">
-          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase">
+        <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 lg:px-24 mx-auto">
+          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-tight">
             <div>YOUR</div>
             <div>DIGITAL</div>
             <div>INFORMATION</div>
@@ -122,12 +121,12 @@ function About() {
           </div>
         </section>
 
-        <div className="text-[80px] text-white italic space-x-8 space-y-14 ml-24    font-bold mt-20 mb-8">
+        <div className="text-[80px] text-white italic space-x-8 space-y-14 ml-24 font-bold mt-20 mb-8">
           Empowering Growth <br />
           Through Affordable <br />
           Digital innovation
         </div>
-        <div className="flex gap-8 m-6">
+        <div className="flex items-center justify-center gap-8 m-6">
           <Card
             title="OUR MISSION "
             description="We empower startups and small businesses with affordable, innovative digital branding solutions that drive growth and amplify impact.
@@ -286,8 +285,8 @@ function About() {
             <div className="relative z-10 ">
               {/* Subheading */}
               <div className="flex justify-center mb-6">
-                          <img className="h-[48px]" src={logo} alt="logo" />
-                        </div>
+                <img className="h-[48px]" src={logo} alt="logo" />
+              </div>
 
               {/* Main Heading - No animation */}
               <h1 className="text-white text-center text-3xl sm:text-4xl md:text-4xl lg:text-7xl  font-black  mb-8 font-sans italic">

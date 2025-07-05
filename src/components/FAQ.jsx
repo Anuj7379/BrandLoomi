@@ -61,7 +61,7 @@ export default function FAQs() {
   };
 
   return (
-    <div className="pt-16 px-16 bg-transparent">
+    <div className="pt-16 px-16 bg-transparent text-white">
       <div className="flex items-center justify-between mb-10">
         <h2 className="text-4xl font-black italic">FAQs</h2>
         <button className="flex items-center text-sm text-white hover:text-cyan-400">

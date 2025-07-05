@@ -7,7 +7,6 @@ import WhatWeDeliver from "../components/WhatWeDeliver";
 import TimelineSnap from "../components/TimelineSnap";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonial";
-import FAQs from "../components/FAQ";
 
 const StartupAndConsulting = () => {
   return (

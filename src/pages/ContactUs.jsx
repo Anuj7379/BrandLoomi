@@ -6,6 +6,9 @@ import facebookIcon from "../assets/facebook.png";
 import instaIcon from "../assets/insta.png";
 import xIcon from "../assets/X.png";
 import linkedinIcon from "../assets/linkedin.png";
+import Lottie from "lottie-react";
+import ContactAnimation from "../assets/animation/contactAnimation.json";
+
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -49,47 +52,42 @@ const ContactUs = () => {
 
   return (
     <>
-      {/* Full Page with Dark Background */}
       <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden bg-[#00080A]">
-        {/* Glow */}
         <div className="absolute w-[300px] h-[200px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[270px] left-[-28px] z-0" />
 
         <Header />
 
-        {/* Hero Section */}
-        <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 max-w-7xl mx-auto">
-          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
+        <div className="relative z-10 px-6 pt-24 pb-10 max-w-screen-xl mx-auto lg:mx-16">
+          <h1 className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
             <div>LET'S</div>
             <div>BUILD GREAT</div>
             <div>SOMETHING </div>
           </h1>
         </div>
 
-        <section className="flex justify-center px-6 py-10">
+        <section className="flex flex-col lg:flex-row justify-center gap-12 px-6 pb-20">
           {/* Left Section */}
-          <div className="text-white pr-10 border-r border-white w-1/3 flex flex-col items-center">
-            <div className=" w-60">
-              <img className="h-[48px]" src={logo} alt="logo" />
+          <div className="text-white border-r lg:pr-10 border-white lg:w-1/3 w-full flex flex-col items-center">
+            <div className="w-full max-w-xs text-left">
+              <img className="h-[57px]" src={logo} alt="logo" />
 
-              <p className="mt-3 text-sm leading-6">
+              <p className="mt-3 text-[20px] leading-6">
                 Affordable, high-quality digital solutions to help startups and
                 small businesses launch, grow, and thrive
               </p>
+
               <div className="flex gap-4 mt-6">
                 <img
                   src={facebookIcon}
                   alt="Facebook"
                   className="w-10 h-10 cursor-pointer"
                 />
-
                 <img
                   src={instaIcon}
                   alt="Instagram"
                   className="w-10 h-10 cursor-pointer"
                 />
-
                 <img src={xIcon} alt="X" className="w-10 h-10 cursor-pointer" />
-
                 <img
                   src={linkedinIcon}
                   alt="LinkedIn"
@@ -97,15 +95,19 @@ const ContactUs = () => {
                 />
               </div>
             </div>
+
+            <div className="w-72 h-72 lg:w-96 lg:h-96 mt-16">
+              <Lottie animationData={ContactAnimation} loop={true} />
+            </div>
           </div>
 
           {/* Right Form Section */}
-          <div className="pl-32 w-2/3">
-            <div className="flex items-center space-x-4 mb-8">
+          <div className="lg:pl-16 w-full lg:w-2/3">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mb-8">
               <h3 className="text-white text-2xl font-bold italic">
                 Work Inquiries
               </h3>
-              <div className="h-px w-[400px] bg-white"></div>
+              <div className="hidden sm:block h-px flex-1 bg-white"></div>
               <div className="text-2xl">
                 <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
                   asterisk
@@ -113,63 +115,49 @@ const ContactUs = () => {
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4 items-center">
-              <input
-                name="name"
-                type="text"
-                placeholder="Enter Your Full Name"
-                onChange={handleChange}
-                className="w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white"
-              />
-              <input
-                name="email"
-                type="email"
-                placeholder="Email Address"
-                onChange={handleChange}
-                className="w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white"
-              />
-              <input
-                name="phone"
-                type="tel"
-                placeholder="Mobile Number"
-                onChange={handleChange}
-                className="w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white"
-              />
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {[
+                {
+                  name: "name",
+                  placeholder: "Enter Your Full Name",
+                  type: "text",
+                },
+                { name: "email", placeholder: "Email Address", type: "email" },
+                { name: "phone", placeholder: "Mobile Number", type: "tel" },
+                { name: "company", placeholder: "Company Name", type: "text" },
+              ].map((input, i) => (
+                <input
+                  key={i}
+                  name={input.name}
+                  type={input.type}
+                  placeholder={input.placeholder}
+                  onChange={handleChange}
+                  className="w-full lg:w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white"
+                />
+              ))}
 
               <select
                 name="subject"
                 onChange={handleChange}
-                className="w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white"
+                className="w-full lg:w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white"
               >
-                <div className="text-black">
-                  <option value="">Subject</option>
-                  <option value="branding">Branding</option>
-                  <option value="development">Development</option>
-                </div>
+                <option value="">Subject</option>
+                <option value="branding">Branding</option>
+                <option value="development">Development</option>
               </select>
-
-              <input
-                name="company"
-                type="text"
-                placeholder="Company Name"
-                onChange={handleChange}
-                className="w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white"
-              />
 
               <select
                 name="referral"
                 onChange={handleChange}
-                className="w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white"
+                className="w-full lg:w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white"
               >
-                <div className="text-black ">
-                  <option value="">How did you hear about us?</option>
-                  <option value="google">Google</option>
-                  <option value="instagram">Instagram</option>
-                  <option value="linkedin">LinkedIn</option>
-                </div>
+                <option value="">How did you hear about us?</option>
+                <option value="google">Google</option>
+                <option value="instagram">Instagram</option>
+                <option value="linkedin">LinkedIn</option>
               </select>
 
-              <div className="relative w-full text-white md:w-[614px]">
+              <div className="relative text-white w-full lg:w-[614px]">
                 <input
                   id="fileUpload"
                   name="file"
@@ -181,12 +169,8 @@ const ContactUs = () => {
                   htmlFor="fileUpload"
                   className="flex items-center justify-between w-full h-[59px] px-6 border border-white rounded-3xl bg-transparent cursor-pointer"
                 >
-                  <span className="text-white opacity-100">
-                    Upload Your File
-                  </span>
-                  <span className="material-symbols-outlined !text-white">
-                    upload
-                  </span>
+                  <span className="text-white">Upload Your File</span>
+                  <span className="material-symbols-outlined">upload</span>
                 </label>
               </div>
 
@@ -195,7 +179,7 @@ const ContactUs = () => {
                 placeholder="Message"
                 rows={4}
                 onChange={handleChange}
-                className="w-[614px] h-[209px] bg-transparent border border-white rounded-2xl px-6 py-4 text-white placeholder-white resize-none"
+                className="w-full lg:w-[614px] h-[209px] bg-transparent border border-white rounded-2xl px-6 py-4 text-white placeholder-white resize-none"
               />
 
               <button
@@ -208,9 +192,8 @@ const ContactUs = () => {
             </form>
           </div>
         </section>
-
-        {/* */}
       </div>
+
       <Footer />
     </>
   );

@@ -11,22 +11,23 @@ import Testimonials from "../components/Testimonial";
 const LandingPage = () => {
   return (
     <div style={{ background: "#00080A" }}>
+      
+
       <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden">
         {/* Background */}
-        <div
-          className="absolute inset-0 z-0"
-          
-        />
+        <div className="absolute inset-0 z-0" />
+        
 
         {/* Glows */}
-        <div className="absolute w-[183px] h-[244px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[419px] right-[100px] z-0" />
+        <div className="absolute w-[183px] h-[244px] rounded-full bg-cyan-600 blur-[200px] opacity-100 top-[419px] right-[100px] z-0" />
         <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-400 blur-[200px] opacity-100 bottom-[100px] left-[-28px] z-0" />
 
         {/* Use Header component */}
         <Header />
 
         {/* Hero Section stays here */}
-        <div className="relative z-10 px-6 md:px-20 pt-24 pb-32 max-w-7xl mx-auto">
+        <div className="relative z-10   pt-24 pb-32 max-w-7xl lg:mx-24 mx-auto">
+        
           <h1 className="text-5xl sm:text-4xl lg:text-6xl font-black italic uppercase space-y-2">
             <div>Launch Your</div>
             <div>Vision</div>

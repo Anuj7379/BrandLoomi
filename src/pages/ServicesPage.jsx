@@ -17,7 +17,7 @@ const ServicePage = () => {
         <Header />
 
         {/* Hero Section */}
-        <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 max-w-7xl mx-auto">
+        <div className="relative z-10 md:px-10 pt-24 pb-32   lg:px-20  ">
           <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
             <div>OUR</div>
             <div>SERVICES</div>
@@ -26,7 +26,7 @@ const ServicePage = () => {
           </h1>
 
           {/* Button + Line */}
-          <div className="flex items-center justify-end mt-[-65px] gap-3">
+          <div className="flex items-center justify-end mt-[-65px] ">
             <div className="text-2xl">
               <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
                 asterisk
@@ -50,7 +50,7 @@ const ServicePage = () => {
         </div>
 
         {/* Services Label Section */}
-        <div className="flex items-center  relative z-10 px-4 md:px-10 mt-[-40px] pb-10">
+        <div className="flex items-center  relative z-10  md:px-10 mt-[-40px] pb-10">
           <div className="text-2xl px-8 italic font-semibold text-white whitespace-nowrap">
             SERVICES
           </div>
@@ -58,8 +58,8 @@ const ServicePage = () => {
         </div>
 
         {/*service card */}
-        <div className="px-6 pb-6">
-          <div className="flex gap-8 ">
+        <div className="max-w-7xl  mx-20 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-28 gap-y-12">
             <ServiceCard
               title="Software Development"
               description="Custom software that solves your business problems and scales with your growth."
@@ -75,8 +75,6 @@ const ServicePage = () => {
               description="iOS, Android, and cross-platform experiences that engage users."
               link="/services/MobileAppDevelopment"
             />
-          </div>
-          <div className="flex gap-8 mt-6">
             <ServiceCard
               title="Digital Media Marketing"
               description="Grow your brand and reach your target audience with proven strategies."
@@ -94,6 +92,7 @@ const ServicePage = () => {
             />
           </div>
         </div>
+
         <div className="flex items-center  relative z-10 px-4 md:px-10  pb-10">
           <div className="text-2xl px-8 italic font-semibold text-white whitespace-nowrap">
             Why Choose Us

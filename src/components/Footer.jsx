@@ -11,12 +11,12 @@ const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="bg-white border-t border-gray-200 font-semibold px-4 sm:px-6 py-8 text-gray-700">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+    <footer className="bg-white border-t border-gray-200 font-semibold   py-8 text-gray-700 items-center">
+      <div className="px-14  mx-auto lg:gap-16   grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 ">
         {/* Brand Info */}
         <div className="flex flex-col">
           <img src={logo} alt="Brandloomi Logo" className="h-[48px] w-[176px]" />
-          <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed">
+          <p className="text-xs sm:text-sm text-gray-600 mb-4 leading-relaxed ">
             Affordable, high-quality digital solutions to help startups and
             small businesses launch, grow, and thrive.
           </p>
@@ -193,7 +193,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-2 mt-8 border-t pt-4 text-center text-xs sm:text-sm text-gray-500">
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-2 mt-8 border-t pt-4 text-center text-xs sm:text-sm text-gray-500 mx-14">
         <p>© 2025 Brandloomi. All rights reserved.</p>
         <a
           href="/terms-of-service"
