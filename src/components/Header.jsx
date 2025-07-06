@@ -13,7 +13,7 @@ const Header = ({ title }) => {
 
   return (
     <nav className="w-full bg-transparent text-white font-normal relative z-50">
-      <div className="flex justify-between items-center px-6 lg:px-12 pt-6">
+      <div className="flex justify-between items-center px-6 lg:px-12 pt-5">
         {/* Logo + Title */}
         <div className="flex items-center italic font-extrabold">
           <Link to="/">

@@ -14,6 +14,7 @@ import SocialmediaAndmarketing from "./pages/SocialMediaAndDigitalmarketing";
 import Careers from "./pages/Careers";
 import PayWhatYouCanPage from "./pages/PayWhatYouCanPage";
 import HowWeWork from "./pages/HowWeWork";
+import Industries from "./pages/Industries";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/company/careers" element={<Careers/>} />
         <Route path="/services/PayWhatYouCanPage" element={<PayWhatYouCanPage/>} />
         <Route path="/services/HowWeWork" element={<HowWeWork/>} />
+        <Route path="/services/industries" element={<Industries/>} />
         
         
       </Routes>
