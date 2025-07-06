@@ -57,8 +57,8 @@ const ContactUs = () => {
 
         <Header />
 
-        <div className="relative z-10 px-6 pt-24 pb-10 max-w-screen-xl mx-auto lg:mx-16">
-          <h1 className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
+        <div className="relative z-10 px-6 pt-24 pb-10 max-w-screen-xl mx-auto lg:mx-12">
+          <h1 className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[80px] font-black italic uppercase leading-[1.08]">
             <div>LET'S</div>
             <div>BUILD GREAT</div>
             <div>SOMETHING </div>
@@ -102,20 +102,20 @@ const ContactUs = () => {
           </div>
 
           {/* Right Form Section */}
-          <div className="lg:pl-16 w-full lg:w-2/3">
+          <div className="w-full px-4 sm:px-8 lg:pl-16 max-w-3xl">
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4 mb-8">
               <h3 className="text-white text-2xl font-bold italic">
                 Work Inquiries
               </h3>
               <div className="hidden sm:block h-px flex-1 bg-white"></div>
-              <div className="text-2xl">
+              <div className="text-2xl mt-4 sm:mt-0">
                 <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
                   asterisk
                 </span>
               </div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 w-full">
               {[
                 {
                   name: "name",
@@ -132,24 +132,26 @@ const ContactUs = () => {
                   type={input.type}
                   placeholder={input.placeholder}
                   onChange={handleChange}
-                  className="w-full lg:w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white"
+                  className="w-full h-[55px] bg-transparent border border-white rounded-3xl px-6 text-white placeholder-white focus:outline-none"
                 />
               ))}
 
+              {/* Subject Select */}
               <select
                 name="subject"
                 onChange={handleChange}
-                className="w-full lg:w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white"
+                className="w-full h-[55px] bg-transparent border border-white rounded-3xl px-6 text-white focus:outline-none"
               >
                 <option value="">Subject</option>
                 <option value="branding">Branding</option>
                 <option value="development">Development</option>
               </select>
 
+              {/* Referral Select */}
               <select
                 name="referral"
                 onChange={handleChange}
-                className="w-full lg:w-[614px] h-[59px] bg-transparent border border-white rounded-3xl px-6 text-white"
+                className="w-full h-[55px] bg-transparent border border-white rounded-3xl px-6 text-white focus:outline-none"
               >
                 <option value="">How did you hear about us?</option>
                 <option value="google">Google</option>
@@ -157,7 +159,8 @@ const ContactUs = () => {
                 <option value="linkedin">LinkedIn</option>
               </select>
 
-              <div className="relative text-white w-full lg:w-[614px]">
+              {/* File Upload */}
+              <div className="relative w-full text-white">
                 <input
                   id="fileUpload"
                   name="file"
@@ -167,27 +170,29 @@ const ContactUs = () => {
                 />
                 <label
                   htmlFor="fileUpload"
-                  className="flex items-center justify-between w-full h-[59px] px-6 border border-white rounded-3xl bg-transparent cursor-pointer"
+                  className="flex items-center justify-between w-full h-[55px] px-6 border border-white rounded-3xl bg-transparent cursor-pointer"
                 >
-                  <span className="text-white">Upload Your File</span>
+                  <span>Upload Your File</span>
                   <span className="material-symbols-outlined">upload</span>
                 </label>
               </div>
 
+              {/* Message Textarea */}
               <textarea
                 name="message"
                 placeholder="Message"
                 rows={4}
                 onChange={handleChange}
-                className="w-full lg:w-[614px] h-[209px] bg-transparent border border-white rounded-2xl px-6 py-4 text-white placeholder-white resize-none"
+                className="w-full bg-transparent border border-white rounded-2xl px-6 py-4 text-white placeholder-white resize-none focus:outline-none"
               />
 
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="bg-white text-black font-semibold rounded-xl px-8 py-3 flex items-center space-x-2 hover:bg-gray-200"
+                className="bg-white text-black font-semibold rounded-xl px-8 py-3 flex items-center space-x-2 hover:bg-gray-200 transition duration-200"
               >
                 <span>SUBMIT</span>
-                <span>➡</span>
+                <span class="material-symbols-outlined">arrow_right_alt</span>
               </button>
             </form>
           </div>

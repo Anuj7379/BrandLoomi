@@ -58,8 +58,8 @@ const ServicePage = () => {
         </div>
 
         {/*service card */}
-        <div className="max-w-7xl  mx-20 pb-12">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-28 gap-y-12">
+        <div className="max-w-full ml-4 pb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 gap-y-10">
             <ServiceCard
               title="Software Development"
               description="Custom software that solves your business problems and scales with your growth."

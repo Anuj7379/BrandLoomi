@@ -6,59 +6,80 @@ import { useNavigate } from "react-router-dom";
 const Services = () => {
   const navigate = useNavigate();
 
+  const services = [
+    {
+      title: "Software Development",
+      description:
+        "Custom software that solves your business problems and scales with your growth.",
+      link: "/services/Softwaredevelopment",
+    },
+    {
+      title: "Web App Development",
+      description:
+        "Responsive, high-performance web applications for any device.",
+      link: "/services/websitedevelopment",
+    },
+    {
+      title: "Mobile App Development",
+      description:
+        "iOS, Android, and cross-platform experiences that engage users.",
+      link: "/services/MobileAppDevelopment",
+    },
+    {
+      title: "Digital Media Marketing",
+      description:
+        "Grow your brand and reach your target audience with proven strategies.",
+      link: "/services/SocialmediaAndmarketing",
+    },
+    {
+      title: "Branding & Design",
+      description:
+        "Stand out with a memorable brand, crafted by our creative experts.",
+      link: "/services/BrandingAndDesign",
+    },
+    {
+      title: "Startup Consulting",
+      description:
+        "From business plans to funding, we guide you every step of the way.",
+      link: "/services/StartupConsulting",
+    },
+  ];
+
   return (
-    <div className="bg-[#00080A] text-white px-4 sm:px-8 md:px-12 lg:px-16 py-20 font-['General_Sans',sans-serif] max-w-[1400px] mx-auto">
+    <div className="bg-transparent text-white lg:-mr-4 sm:px-4 md:px-6  py-12 font-['General_Sans',sans-serif] w-full mx-auto  mt-8 ">
+      
       {/* Section Header */}
-      <div className="flex flex-wrap justify-between items-center mb-12 gap-4">
-        <h1 className="text-4xl md:text-5xl font-black italic">SERVICES</h1>
+      <div className="flex flex-wrap justify-between items-center mb-14 gap-4">
+        <h1 className="text-4xl lg:text-[80px] md:text-5xl font-black italic lg:px-16">SERVICES</h1>
         <div className="flex items-center space-x-2 text-sm">
-          <span className="text-cyan-400 text-xl">•</span>
+          <span className="text-cyan-400 text-2xl">•</span>
           <span
-            className="cursor-pointer"
+            className="cursor-pointer text-[22px]"
             onClick={() => navigate("/services")}
           >
             All Services
           </span>
-          <span className="bg-cyan-400 text-black rounded-full w-5 h-5 flex items-center justify-center">
-            <FaArrowRight size={10} />
+          <span className="bg-cyan-400 text-black rounded-full w-8 h-8 flex items-center justify-center">
+            <FaArrowRight size={15} />
           </span>
         </div>
       </div>
 
       {/* Services Grid */}
-      <div className="flex gap-8 ">
-        <ServiceCard
-          title="Software Development"
-          description="Custom software that solves your business problems and scales with your growth."
-          link="/services/Softwaredevelopment"
-        />
-        <ServiceCard
-          title="Web App Development"
-          description="Responsive, high-performance web applications for any device."
-          link="/services/websitedevelopment"
-        />
-        <ServiceCard
-          title="Mobile App Development"
-          description="iOS, Android, and cross-platform experiences that engage users."
-          link="/services/MobileAppDevelopment"
-        />
-      </div>
-      <div className="flex gap-8 mt-6">
-        <ServiceCard
-          title="Digital Media Marketing"
-          description="Grow your brand and reach your target audience with proven strategies."
-          link="/services/SocialmediaAndmarketing"
-        />
-        <ServiceCard
-          title="Branding & Design"
-          description="Stand out with a memorable brand, crafted by our creative experts."
-          link="/services/BrandingAndDesign"
-        />
-        <ServiceCard
-          title="Startup Consulting"
-          description="From business plans to funding, we guide you every step of the way."
-          link="/services/StartupConsulting"
-        />
+      <div className="flex flex-wrap justify-center gap-y-6 gap-6">
+        
+        {services.map((service, idx) => (
+          <div
+            key={idx}
+            className="w-full sm:w-full md:w-[48%] lg:w-[412px] max-w-[412px]"
+          >
+            <ServiceCard
+              title={service.title}
+              description={service.description}
+              link={service.link}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );
