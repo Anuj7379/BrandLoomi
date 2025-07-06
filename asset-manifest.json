@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BrandLoomi/static/css/main.8fa6c4db.css",
-    "main.js": "/BrandLoomi/static/js/main.a44f0c8a.js",
+    "main.css": "/BrandLoomi/static/css/main.1fdab129.css",
+    "main.js": "/BrandLoomi/static/js/main.39c41c50.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
@@ -15,17 +15,18 @@
     "static/media/material-icons-outlined.woff": "/BrandLoomi/static/media/material-icons-outlined.f882956fd323fd322f31.woff",
     "static/media/material-icons-round.woff2": "/BrandLoomi/static/media/material-icons-round.c380809fd3677d7d6903.woff2",
     "static/media/material-icons.woff": "/BrandLoomi/static/media/material-icons.4d73cb90e394b34b7670.woff",
+    "static/media/DoubleDaimond.png": "/BrandLoomi/static/media/DoubleDaimond.aa924eb4a4a4a115b67c.png",
     "static/media/material-icons-sharp.woff": "/BrandLoomi/static/media/material-icons-sharp.3a4004a46a653d4b2166.woff",
     "static/media/material-icons-outlined.woff2": "/BrandLoomi/static/media/material-icons-outlined.6f420cf17cc0d7676fad.woff2",
     "static/media/material-icons-sharp.woff2": "/BrandLoomi/static/media/material-icons-sharp.219aa9140e099e6c72ed.woff2",
     "static/media/material-icons.woff2": "/BrandLoomi/static/media/material-icons.0c35d18bf06992036b69.woff2",
     "index.html": "/BrandLoomi/index.html",
-    "main.8fa6c4db.css.map": "/BrandLoomi/static/css/main.8fa6c4db.css.map",
-    "main.a44f0c8a.js.map": "/BrandLoomi/static/js/main.a44f0c8a.js.map",
+    "main.1fdab129.css.map": "/BrandLoomi/static/css/main.1fdab129.css.map",
+    "main.39c41c50.js.map": "/BrandLoomi/static/js/main.39c41c50.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fa6c4db.css",
-    "static/js/main.a44f0c8a.js"
+    "static/css/main.1fdab129.css",
+    "static/js/main.39c41c50.js"
   ]
 }
