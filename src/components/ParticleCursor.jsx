@@ -2,30 +2,42 @@ import React, { useEffect, useRef } from "react";
 
 const LiquidCursor = () => {
   const canvasRef = useRef(null);
+  const parentRef = useRef(null);
   const particles = useRef([]);
   const animationFrame = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    const container = canvas.parentElement; // 👈 use parent container
     const ctx = canvas.getContext("2d");
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const resizeCanvas = () => {
+      canvas.width = container.clientWidth;
+      canvas.height = container.clientHeight;
+    };
 
-    const colors = ["#00FFF0", ]; // Cyan-green liquid tones
+    resizeCanvas();
+
+    const colors = [
+  "#00FFF3",
+  "#00CFFF",
+  "#009BFF",
+  "#00FFB3",
+  "#14F2D2",
+  "#4EF8F3",
+  "#12D7E6"
+];
+
 
     const createParticle = (x, y) => {
-      const size = Math.random() * 60 + 30; // ⬅ Large particles (30-60px)
-      const speed = Math.random() * 0.1 - 0.05; // ⬅ Super slow
-      const angle = Math.random() * Math.PI * 2;
-
+      const rect = container.getBoundingClientRect();
       particles.current.push({
-        x,
-        y,
-        size,
-        alpha: 0.1, // ⬅️ Low opacity for soft look
-        dx: Math.cos(angle) * speed,
-        dy: Math.sin(angle) * speed,
+        x: x - rect.left,
+        y: y - rect.top,
+        size: Math.random() * 60 + 30,
+        alpha: 0.1,
+        dx: Math.random() * 0.1 - 0.05,
+        dy: Math.random() * 0.1 - 0.05,
         color: colors[Math.floor(Math.random() * colors.length)],
       });
     };
@@ -36,7 +48,7 @@ const LiquidCursor = () => {
       particles.current.forEach((p, i) => {
         p.x += p.dx;
         p.y += p.dy;
-        p.alpha -= 0.002; // ⬅️ Slow fade
+        p.alpha -= 0.002;
 
         if (p.alpha <= 0) {
           particles.current.splice(i, 1);
@@ -58,14 +70,16 @@ const LiquidCursor = () => {
     };
 
     const handleMouseMove = (e) => {
-      createParticle(e.clientX, e.clientY); // Only 1 particle per move
+      createParticle(e.clientX, e.clientY);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", resizeCanvas);
     animate();
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", resizeCanvas);
       cancelAnimationFrame(animationFrame.current);
     };
   }, []);
@@ -73,12 +87,10 @@ const LiquidCursor = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 pointer-events-none z-50"
+      className="absolute top-0 left-0 w-full h-full pointer-events-none z-20"
       style={{
-        width: "100vw",
-        height: "100vh",
-        filter: "blur(10px)", 
-        opacity: 0.6,          
+        filter: "blur(10px)",
+        opacity: 0.6,
       }}
     />
   );

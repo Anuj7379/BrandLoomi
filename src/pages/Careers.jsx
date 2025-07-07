@@ -4,6 +4,12 @@ import Footer from "../components/Footer";
 import logo from "../assets/brandloomiLogo.png";
 
 function Careers() {
+  const formRef = useRef(null); 
+
+  const scrollToForm = () => {
+    formRef.current?.scrollIntoView({ behavior: "smooth" }); 
+  };
+
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden bg-[#00080A]">
       <Header title="CAREERS" />
@@ -33,7 +39,7 @@ function Careers() {
       </div>
 
       {/* Care & Form Section */}
-      <div className="lg:mx-14">
+      <div className="lg:mx-14" ref={formRef}> {/*  ref here */}
         <div className="flex items-center font-sans font-bold italic gap-4 px-4">
           <div className="text-[25px] whitespace-nowrap">ONE STEP AWAY</div>
           <div className="h-px flex-1 bg-white/90"></div>
@@ -153,13 +159,19 @@ function Careers() {
         </div>
       </div>
 
-      <LaunchBanner headingText="Work alongside industry leaders and innovators." />
+      <LaunchBanner
+        headingText="Work alongside industry leaders and innovators."
+        onClickScroll={scrollToForm}
+      />
+
       <Footer />
     </div>
   );
 }
 
 export default Careers;
+
+
 
 const descriptionText =
   "The web developer is responsible for planning and developing software solutions and web applications, supporting and maintaining a company’s websites and digital products. The day-to-day work of the web developer highly depends on constantly evolving internet innovations.";
@@ -189,7 +201,7 @@ const Card = ({ title, description }) => (
   </div>
 );
 
-const LaunchBanner = ({ headingText }) => (
+const LaunchBanner = ({ headingText, onClickScroll }) => (
   <section className="w-full bg-[#00080A] h-[600px] py-14">
     <div className="relative rounded-3xl p-6 sm:p-10 text-center bg-transparent h-[467px] sm:w-full md:w-[90%] lg:w-[95%] max-w-[1700px] mx-[10px] sm:mx-auto overflow-hidden">
       {/* Background Glows */}
@@ -198,29 +210,29 @@ const LaunchBanner = ({ headingText }) => (
 
       {/* Content */}
       <div className="relative z-10">
-        {/* Logo */}
         <div className="flex justify-center mb-6">
           <img className="h-[58px]" src={logo} alt="logo" />
         </div>
 
-        {/* Heading */}
         {headingText && (
           <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-black italic mb-8 font-sans lg:w-[1000px] max-w-[1000px] mx-auto">
             {headingText}
           </h1>
         )}
 
-        {/* Email Input Field */}
-
+        {/* Glowing Button (click to scroll) */}
         <div className="flex justify-center px-4 sm:px-0">
-          <div className="relative flex items-center justify-between w-[290px] h-[52px] sm:h-[56px] pl-5 sm:pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group">
+          <div
+            onClick={onClickScroll} // ✅ scroll trigger
+            className="relative flex items-center justify-between w-[290px] h-[52px] sm:h-[56px] pl-5 sm:pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group cursor-pointer"
+          >
             <input
               type="email"
               disabled
               placeholder="Fill Out This Form"
-              className="bg-transparent outline-none text-white placeholder-white  text-sm sm:text-base w-full pr-16"
+              className="bg-transparent outline-none text-white placeholder-white text-sm sm:text-base w-full pr-16 cursor-pointer"
             />
-            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cyan-500 text-[28px] sm:text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF] cursor-pointer">
+            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cyan-500 text-[28px] sm:text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
               <span className="material-symbols-outlined leading-none text-[24px] sm:text-[28px]">
                 arrow_outward
               </span>

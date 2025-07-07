@@ -36,7 +36,7 @@ function App() {
         <Route path="/services/SocialmediaAndmarketing" element={<SocialmediaAndmarketing/>} />
         <Route path="/company/careers" element={<Careers/>} />
         <Route path="/services/PayWhatYouCanPage" element={<PayWhatYouCanPage/>} />
-        <Route path="/services/HowWeWork" element={<HowWeWork/>} />
+        <Route path="/company/HowWeWork" element={<HowWeWork/>} />
         <Route path="/services/industries" element={<Industries/>} />
         
         

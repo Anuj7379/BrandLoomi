@@ -10,8 +10,10 @@ import { FaArrowRight } from "react-icons/fa";
 import CEOImage from "../assets/CEOImage.png";
 import logo from "../assets/brandloomiLogo.png";
 import LaunchBanner from "../components/LaunchBanner";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate()
   return (
     <>
       <div className="relative min-h-screen text-white  overflow-hidden bg-[#00080A]">
@@ -42,7 +44,7 @@ function About() {
 
               {/* Glowing Circle with arrow_outward icon */}
               <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-                <span className="material-symbols-outlined leading-none text-[28px]">
+                <span className="material-symbols-outlined leading-none text-[28px]" onClick={() => navigate("/contact")}>
                   arrow_outward
                 </span>
               </span>
@@ -265,6 +267,7 @@ const Card = ({ title, description }) => {
 };
 
 const WhoWeAre = () => {
+  const navigate = useNavigate();
   return (
     <div className="md:flex lg:flex items-center justify-between ">
       <div className="flex flex-wrap justify-between items-start px-4 md:px-10 py-10 gap-10">
@@ -317,7 +320,7 @@ const WhoWeAre = () => {
               <button className="relative flex items-center justify-between w-[200px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group">
                 <span className="text-base font-medium z-10">Get Started</span>
                 <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-                  <span className="material-symbols-outlined leading-none text-[28px]">
+                  <span className="material-symbols-outlined leading-none text-[28px]" onClick={() => navigate("/contact")}>
                     arrow_outward
                   </span>
                 </span>

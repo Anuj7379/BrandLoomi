@@ -7,13 +7,15 @@ import LaunchBanner from "../components/LaunchBanner";
 import Footer from "../components/Footer";
 import FAQs from "../components/FAQ";
 import Testimonials from "../components/Testimonial";
+import { useNavigate } from "react-router-dom";
+import ParticleCursor from '../components/ParticleCursor'
 
 const LandingPage = () => {
+
   return (
     <div style={{ background: "#00080A" }} className="overflow-x-hidden">
       <Header />
-      <Hero/>
-      
+      <Hero />
 
       {/* Other Sections */}
       <Empowering />
@@ -31,10 +33,12 @@ const LandingPage = () => {
 
 export default LandingPage;
 
-
 const Hero = () => {
+      const navigate = useNavigate();
+
   return (
     <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden bg-transparent">
+      <ParticleCursor/>
       {/* Background Glows */}
       <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-600 blur-[100px] opacity-100 top-[359px] right-[100px] z-0" />
       <div className="absolute w-[183px] h-[200px] rounded-full bg-cyan-400 blur-[130px] opacity-100 bottom-[260px] left-[-8px] z-0" />
@@ -51,10 +55,13 @@ const Hero = () => {
         {/* Button + Satisfaction */}
         <div className="flex flex-col lg:flex-row justify-between items-center mt-10 lg:ml-16  gap-6 px-2 lg:px-0">
           {/* CTA Button */}
-          <button className="relative flex items-center justify-between w-[220px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group">
+          <button
+            className="relative flex items-center justify-between w-[220px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group"
+            
+          >
             <span className="text-base font-medium z-10">Get Started</span>
             <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-              <span className="material-symbols-outlined leading-none text-[28px]">
+              <span className="material-symbols-outlined leading-none text-[28px]" onClick={() => navigate("/contact")}>
                 arrow_outward
               </span>
             </span>
@@ -110,5 +117,3 @@ const Hero = () => {
     </div>
   );
 };
-
-

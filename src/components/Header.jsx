@@ -48,11 +48,9 @@ const Header = ({ title }) => {
                   <Link to="/company/careers" className="block px-4 py-2 hover:text-cyan-400">Careers</Link>
                 </li>
                 <li>
-                  <Link to="/company/faq" className="block px-4 py-2 hover:text-cyan-400">FAQ</Link>
+                  <Link to="/company/HowWeWork" className="block px-4 py-2 hover:text-cyan-400">How It Works</Link>
                 </li>
-                <li>
-                  <Link to="/company/blogs" className="block px-4 py-2 hover:text-cyan-400">Blogs</Link>
-                </li>
+                
               </ul>
             )}
           </li>
@@ -80,11 +78,9 @@ const Header = ({ title }) => {
                 <li>
                   <Link to="/services" className="block px-4 py-2 hover:text-cyan-400">Our Services</Link>
                 </li>
+                
                 <li>
-                  <Link to="/services/HowWeWork" className="block px-4 py-2 hover:text-cyan-400">How It Works</Link>
-                </li>
-                <li>
-                  <Link to="/services/industries" className="block px-4 py-2 hover:text-cyan-400">Industries</Link>
+                  <Link to="/company/industries" className="block px-4 py-2 hover:text-cyan-400">Industries</Link>
                 </li>
               </ul>
             )}

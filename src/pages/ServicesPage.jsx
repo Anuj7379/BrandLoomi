@@ -5,8 +5,10 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceCard from "../components/ServiceCard";
 import logo from "../assets/brandloomiLogo.png";
+import { useNavigate } from "react-router-dom";
 
 const ServicePage = () => {
+  const navigate = useNavigate();
   return (
     <>
       {/* Full Page with Dark Background */}
@@ -41,7 +43,7 @@ const ServicePage = () => {
 
               {/* Glowing Circle with arrow_outward icon */}
               <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center  shadow-[0_0_10px_#00FFFF]">
-                <span className="material-symbols-outlined leading-none text-[28px]">
+                <span className="material-symbols-outlined leading-none text-[28px]" onClick={() => navigate("/contact")}>
                   arrow_outward
                 </span>
               </span>
