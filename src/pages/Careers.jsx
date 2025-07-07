@@ -1,14 +1,41 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import logo from "../assets/brandloomiLogo.png";
 
+const cardData = [
+  {
+    id: 1,
+    title: "Web Developer",
+    description:
+      "The web developer is responsible for planning and developing software solutions and web applications, supporting and maintaining a company’s websites and digital products. The day-to-day work of the web developer highly depends on constantly evolving internet innovations. Providing a targeted web developer job description and salary range information can help you attract top talent.",
+  },
+  {
+    id: 2,
+    title: "UI/UX Designer",
+    description:
+      "Designs intuitive and visually engaging user interfaces. Collaborates with teams to conduct research, create wireframes, and build responsive prototypes. Focuses on user experience, accessibility, and design consistency to ensure digital products are user-friendly, efficient, and aligned with brand goals.",
+  },
+  {
+    id: 3,
+    title: "Backend Developer",
+    description:
+      "Builds and maintains scalable server-side systems and APIs. Works with databases, handles authentication, and ensures app performance and security. Collaborates with frontend teams to support data flow, business logic, and integration with external services using modern backend technologies.",
+  },
+];
+
 function Careers() {
-  const formRef = useRef(null); 
+  const formRef = useRef(null);
 
   const scrollToForm = () => {
-    formRef.current?.scrollIntoView({ behavior: "smooth" }); 
+    formRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [searchInput, setSearchInput] = useState(""); // live typing
+  const [search, setSearch] = useState("");
+  const filteredCards = cardData.filter((card) =>
+    card.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden bg-[#00080A]">
@@ -21,10 +48,13 @@ function Careers() {
           type="text"
           placeholder="Seek and you shall find"
           className="w-full sm:w-[614px] h-[59px] bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
+          value={searchInput}
+          onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
           type="submit"
           className="bg-white text-black font-semibold rounded-xl h-16 w-full sm:w-32 hover:bg-gray-200 flex items-center justify-center gap-2"
+          onClick={() => setSearch(searchInput)}
         >
           <span>Discover</span>
           <span className="material-symbols-outlined">arrow_right_alt</span>
@@ -32,19 +62,30 @@ function Careers() {
       </div>
 
       {/* Job Cards */}
-      <div className="flex flex-col md:flex-row lg:flex-row mt-14 items-center justify-evenly  mb-10 ">
-        <Card title="Web Developer" description={descriptionText} />
-        <Card title="Web Developer" description={descriptionText} />
-        <Card title="Web Developer" description={descriptionText} />
+      <div className="flex flex-col md:flex-row lg:flex-row mt-14 items-center justify-evenly mb-10 flex-wrap gap-6">
+        {filteredCards.length > 0 ? (
+          filteredCards.map((card) => (
+            <Card
+              key={card.id}
+              title={card.title}
+              description={card.description}
+            />
+          ))
+        ) : (
+          <p className="text-white text-lg italic mt-6">
+            No matching jobs found.
+          </p>
+        )}
       </div>
 
       {/* Care & Form Section */}
-      <div className="lg:mx-14" ref={formRef}> {/*  ref here */}
+      <div className="lg:mx-14" ref={formRef}>
+        {" "}
+        {/*  ref here */}
         <div className="flex items-center font-sans font-bold italic gap-4 px-4">
           <div className="text-[25px] whitespace-nowrap">ONE STEP AWAY</div>
           <div className="h-px flex-1 bg-white/90"></div>
         </div>
-
         <div className="flex flex-col lg:flex-row justify-between gap-10 mt-12 px-4 sm:px-10">
           {/* Care Section */}
           <div className="w-full lg:w-1/2 pr-0 lg:pr-10">
@@ -171,13 +212,8 @@ function Careers() {
 
 export default Careers;
 
-
-
-const descriptionText =
-  "The web developer is responsible for planning and developing software solutions and web applications, supporting and maintaining a company’s websites and digital products. The day-to-day work of the web developer highly depends on constantly evolving internet innovations.";
-
 const Card = ({ title, description }) => (
-  <div className="w-full  max-w-[410px] lg:h-[503px] h-auto bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border">
+  <div className="w-full  max-w-[412px] lg:h-[503px] h-auto bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border">
     <div
       className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"
       style={{ background: "#00829B" }}
@@ -188,7 +224,7 @@ const Card = ({ title, description }) => (
     <div className="relative z-10 flex flex-col justify-between h-full">
       <div>
         <h3 className="text-3xl font-bold pt-14 mb-4">{title}</h3>
-        <p className="text-[16px] font-normal font-sans leading-relaxed pt-4">
+        <p className="text-[14px] font-normal font-sans leading-relaxed pt-4">
           {description}
         </p>
       </div>
