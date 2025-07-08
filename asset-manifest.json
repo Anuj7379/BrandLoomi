@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BrandLoomi/static/css/main.dde3884e.css",
-    "main.js": "/BrandLoomi/static/js/main.b7178fa8.js",
+    "main.js": "/BrandLoomi/static/js/main.b9760812.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
@@ -29,11 +29,11 @@
     "static/media/messa.png": "/BrandLoomi/static/media/messa.0c4b7bc7967c051f2f7f.png",
     "index.html": "/BrandLoomi/index.html",
     "main.dde3884e.css.map": "/BrandLoomi/static/css/main.dde3884e.css.map",
-    "main.b7178fa8.js.map": "/BrandLoomi/static/js/main.b7178fa8.js.map",
+    "main.b9760812.js.map": "/BrandLoomi/static/js/main.b9760812.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.dde3884e.css",
-    "static/js/main.b7178fa8.js"
+    "static/js/main.b9760812.js"
   ]
 }
