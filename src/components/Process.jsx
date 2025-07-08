@@ -3,13 +3,13 @@ import DoubleDiamond from "../assets/DoubleDaimond.png";
 
 function Process() {
   return (
-    <div className="w-full bg-[#00080A] text-white min-h-screen   py-20 font-sans overflow-hidden">
+    <div className="w-full bg-[#00080A] text-white min-h-screen   py-20 font-creato overflow-hidden">
       <div className="w-full">
         {/* === Header Section === */}
         {/* === Top Label with Line and Asterisk === */}
         <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 sm:gap-6 lg:gap-8 w-full mb-6 px-5 sm:px-10 lg:px-20">
           {/* Left Label */}
-          <p className="italic text-white text-[30px] font-bold tracking-wide whitespace-nowrap">
+          <p className="italic text-white text-[25px] font-black tracking-wide whitespace-nowrap">
             Process
           </p>
 

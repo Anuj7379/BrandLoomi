@@ -61,19 +61,19 @@ export default function FAQs() {
   };
 
   return (
-    <div className="pt-16 px-16 bg-transparent text-white">
+    <div className="pt-16 px-16 bg-transparent text-white font-creato">
       <div className="flex items-center justify-between mb-10">
-        <h2 className="text-4xl font-black italic">FAQs</h2>
-        <button className="flex items-center text-sm text-white hover:text-cyan-400">
+        <h2 className="text-[80px] font-black italic">FAQs</h2>
+        <button className="flex items-center text-[25px] font-medium text-white hover:text-cyan-400">
           All FAQs <FaChevronRight className="ml-2" size={14} />
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 font-normal">
         {faqs.map((faq, index) => (
           <div key={index} className="border-l-2 border-cyan-500 pl-4 transition-all duration-500">
             <div className="flex justify-between items-start cursor-pointer" onClick={() => toggleFAQ(index)}>
-              <h3 className="text-white text-base font-medium max-w-[90%] leading-snug">{faq.question}</h3>
+              <h3 className="text-white text-[25px] font-medium max-w-[90%] leading-snug">{faq.question}</h3>
               <FaPlus
                 className={`transition-transform duration-300 mt-1 ${
                   openIndex === index ? "rotate-45 text-cyan-400" : "text-white"

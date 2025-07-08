@@ -37,7 +37,7 @@ const Hero = () => {
       const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden bg-transparent">
+    <div className="relative min-h-screen text-white font-creato  overflow-hidden bg-transparent">
       <ParticleCursor/>
       {/* Background Glows */}
       <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-600 blur-[100px] opacity-100 top-[359px] right-[100px] z-0" />
@@ -46,7 +46,7 @@ const Hero = () => {
       {/* Main Content without horizontal padding */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto pt-20 pb-16">
         {/* Headline */}
-        <h1 className="text-[42px] sm:text-[52px] lg:text-[80px] font-black italic uppercase leading-tight text-center lg:text-left lg:ml-16 lg:px-0 lg:mt-12">
+        <h1 className="text-[42px] sm:text-[52px] lg:text-[80px]  italic uppercase leading-tight text-center lg:text-left lg:ml-16 lg:px-0 lg:mt-12 font-creato font-extrabold">
           <div>Launch Your</div>
           <div>Vision.</div>
           <div>Grow Your Impact.</div>
@@ -117,3 +117,34 @@ const Hero = () => {
     </div>
   );
 };
+
+
+
+// const Hero = () => {
+//   return (
+//     <div className="relative overflow-hidden min-h-screen bg-transparent text-white font-sans px-6 lg:px-24 py-20">
+//       {/* Blurred Blobs */}
+//       <div className="absolute w-[959px] h-[1531px] bg-[#34BDFE] rounded-full blur-[160px] opacity-50 -top-96 -left-[550px] rotate-[-85.71deg] z-0"></div>
+//       <div className="absolute w-[1076px] h-[1718px] bg-[#009252] rounded-full blur-[160px] opacity-50 top-10 left-[550px] rotate-[85.71deg] z-0"></div>
+
+//       {/* Main Content */}
+//       <div className="relative z-10 flex flex-col items-start max-w-4xl">
+//         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+//           <span className="inline-block">your brand deserves more than a template</span><br />
+//           <span className="text-[#34BDFE]">- Build it together</span>
+//         </h1>
+
+//         <p className="mt-6 text-lg text-gray-300 max-w-2xl">
+//           Affordable high-quality web and app development, branding, and consulting
+//           for startups and small businesses in Ireland and beyond.
+//         </p>
+
+//         <button className="mt-8 bg-gradient-to-r from-[#34BDFE] to-white text-black font-semibold py-3 px-6 rounded-full flex items-center gap-2 hover:scale-105 transition-all duration-300">
+//           Get Started <span className="text-xl">↗</span>
+//         </button>
+//       </div>
+//     </div>
+//   );
+// };
+
+

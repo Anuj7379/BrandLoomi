@@ -15,11 +15,17 @@ import Careers from "./pages/Careers";
 import PayWhatYouCanPage from "./pages/PayWhatYouCanPage";
 import HowWeWork from "./pages/HowWeWork";
 import Industries from "./pages/Industries";
+import { Toaster } from "sonner";
 
 function App() {
   return (
+    
     <Router>
+            <Toaster richColors position="top-right" />
+
       <Routes>
+        
+
         {/* default route handling  */}
         <Route path="*" element={<LandingPage />} />
 

@@ -32,9 +32,9 @@ export default function Testimonials() {
     setTestimonialIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
 
   return (
-    <div className="pb-16 border-b border-white/10 px-16 mt-6 text-white mx-14">
-      <div className="flex items-center gap-3 mb-6">
-        <h2 className="text-2xl font-bold italic ">Testimonials</h2>
+    <div className="pb-16 border-b border-white/10 px-16 mt-6 text-white mx-14 font-creato  ">
+      <div className="flex items-center gap-3 mb-6 font-black">
+        <h2 className="text-[25px]  italic ">Testimonials</h2>
         <span className="h-px flex-1 bg-white max-w-[483px]"  />
         <span className="text-md text-white">
           {String(testimonialIndex + 1).padStart(2, "0")}/
@@ -42,23 +42,23 @@ export default function Testimonials() {
         </span>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
-        <div>
-          <p className="text-5xl font-bold mb-2">50+</p>
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 font-creato">
+        <div className=" font-black">
+          <p className="text-[80px] mb-2">50+</p>
           <p className="text-white text-lg">Happy Clients</p>
         </div>
 
         <div className="md:w-3/5 lg:w-1/2">
-          <p className="text-lg max-w-[600px] text-gray-100 mb-6">{currentTestimonial.text}</p>
+          <p className="text-[25px] max-w-[600px] text-gray-100 mb-6 font-normal">{currentTestimonial.text}</p>
           <div className="flex items-center space-x-4">
             <img
               src={currentTestimonial.image}
               alt={currentTestimonial.name}
-              className="w-10 h-10 rounded-full object-cover"
+              className="w-[89px] h-[89px] rounded-full object-cover "
             />
             <div>
-              <p className="font-semibold italic">{currentTestimonial.name}</p>
-              <p className="text-sm text-gray-400">{currentTestimonial.title}</p>
+              <p className="italic text-[25px]  font-black">{currentTestimonial.name}</p>
+              <p className="text-[18px] text-white/80  italic">{currentTestimonial.title}</p>
             </div>
             <div className="flex space-x-4 ml-auto">
               <button

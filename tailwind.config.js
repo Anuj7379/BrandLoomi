@@ -7,7 +7,8 @@ module.exports = {
       //  Custom Fonts (Add in index.html too)
       fontFamily: {
         playfair: ["'Playfair Display'", "serif"],
-        instink: ["'Instink'", "sans-serif"], // Optional if you plan to use custom brand font
+        instink: ["'Instink'", "sans-serif"],
+        creato: ['CreatoDisplay', 'sans-serif'],
       },
 
       //  Custom Animations

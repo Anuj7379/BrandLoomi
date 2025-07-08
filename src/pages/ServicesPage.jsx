@@ -12,7 +12,7 @@ const ServicePage = () => {
   return (
     <>
       {/* Full Page with Dark Background */}
-      <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden bg-[#00080A]">
+      <div className="relative min-h-screen text-white  overflow-hidden bg-[#00080A] font-creato">
         {/* Glow */}
         <div className="absolute w-[300px] h-[200px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[270px] left-[-28px] z-0" />
 
@@ -20,7 +20,7 @@ const ServicePage = () => {
 
         {/* Hero Section */}
         <div className="relative z-10 md:px-10 pt-24 pb-32   lg:px-20  ">
-          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] font-black italic uppercase leading-[1.08]">
+          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] font-black italic uppercase leading-tight font-creato">
             <div>OUR</div>
             <div>SERVICES</div>
             <div>LAUNCHPAD</div>

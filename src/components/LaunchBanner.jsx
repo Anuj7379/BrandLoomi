@@ -10,7 +10,7 @@ export default function LaunchBanner({ headingText }) {
         <div className="absolute -top-[100px] -right-[80px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
 
         {/* Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 font-creato">
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <img className="h-[58px]" src={logo} alt="logo" />
@@ -18,7 +18,7 @@ export default function LaunchBanner({ headingText }) {
 
           {/* Heading */}
           {headingText && (
-            <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-black italic mb-8 font-sans lg:w-[1000px] max-w-[910px] mx-auto">
+            <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-black italic mb-8  lg:w-[1000px] max-w-[910px] mx-auto">
               {headingText}
             </h1>
           )}

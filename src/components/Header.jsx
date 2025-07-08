@@ -12,7 +12,7 @@ const Header = ({ title }) => {
   };
 
   return (
-    <nav className="w-full bg-transparent text-white font-normal relative z-50">
+    <nav className="w-full bg-transparent text-white font-normal relative z-50 font-creato">
       <div className="flex justify-between items-center px-6 lg:px-12 pt-5">
         {/* Logo + Title */}
         <div className="flex items-center italic font-extrabold">
@@ -30,7 +30,7 @@ const Header = ({ title }) => {
         </div>
 
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 items-center text-[20px] text-white/80">
+        <ul className="hidden md:flex space-x-6 items-center text-[20px] text-white/80 font-normal">
           {/* Company */}
           <li className="relative">
             <button

@@ -16,7 +16,7 @@ function About() {
   const navigate = useNavigate()
   return (
     <>
-      <div className="relative min-h-screen text-white  overflow-hidden bg-[#00080A]">
+      <div className="relative min-h-screen text-white  overflow-hidden bg-[#00080A] font-creato">
         {/* Glow */}
         <div className="absolute w-[300px] h-[200px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[270px] left-[-28px] z-0" />
 
@@ -61,9 +61,9 @@ function About() {
 
         <WhoWeAre />
 
-        <div className="text-[80px] text-white italic space-x-8 space-y-14 ml-10 font-bold mt-20 mb-8">
-          Empowering Growth <br />
-          Through Affordable <br />
+        <div className="lg:text-[80px] md:text-[50px] text-white italic font-black space-x-8 space-y-14 ml-10  mt-20 mb-8 leading-tight">
+          Empowering Growth Through <br />
+           Affordable 
           Digital innovation
         </div>
         <div className="flex flex-col  lg:flex-row items-center justify-center gap-8 md:px-6  my-8">
@@ -93,11 +93,11 @@ function About() {
 
           {/* Text Section */}
           <div className="flex flex-col w-full max-w-xl text-white space-y-6 font-sans px-4 sm:px-6 md:px-0">
-            <p className="italic text-2xl sm:text-3xl text-center text-[#17E48A] font-semibold">
+            <p className="italic text-2xl sm:text-3xl lg:text-[50px] font-black ml-8 text-center text-[#17E48A] ">
               OUR STORY
             </p>
 
-            <p className="text-sm sm:text-base md:text-[20px] text-white leading-relaxed">
+            <p className="text-sm sm:text-base md:text-[20px] lg:text-[20px] text-white leading-relaxed font-creato font-normal">
               Brandloomi began with a simple goal: to make digital branding
               accessible for startups and small businesses often overlooked by
               traditional agencies. By offering premium services at a fraction
@@ -116,7 +116,7 @@ function About() {
 
         <section className="w-full bg-transparent text-white py-16 px-4 md:px-20 font-['General_Sans',sans-serif]">
           {/* Heading */}
-          <h2 className="text-center text-[32px] sm:text-[40px] md:text-[59px] font-bold text-green-400 italic mb-16 md:mb-28 leading-tight">
+          <h2 className="text-center text-[32px] sm:text-[40px] md:text-[59px]  text-green-400 italic mb-16 md:mb-28 leading-tigh font-black">
             MEET OUR TEAM
           </h2>
 
@@ -245,7 +245,7 @@ export default About;
 
 const Card = ({ title, description }) => {
   return (
-    <div className="w-[418px] h-[300px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border">
+    <div className="w-[418px] h-[300px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border font-creato">
       {/* Glow ellipse */}
       <div
         className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"
@@ -269,7 +269,7 @@ const Card = ({ title, description }) => {
 const WhoWeAre = () => {
   const navigate = useNavigate();
   return (
-    <div className="md:flex lg:flex items-center justify-between ">
+    <div className="md:flex lg:flex items-center justify-between font-creato ">
       <div className="flex flex-wrap justify-between items-start px-4 md:px-10 py-10 gap-10">
         {/* LEFT SIDE: 60% on large screens */}
         <div className=" md:w-[60%] lg:w-[50%] flex gap-6">
@@ -295,7 +295,7 @@ const WhoWeAre = () => {
               </h2>
 
               <div>
-                <p className="text-white leading-relaxed text-[20px] md:text-base max-w-[595px] mt-4">
+                <p className="text-white leading-relaxed text-[20px] md:text-base max-w-[595px] mt-4 font-normal">
                   At Brandloomi, we believe that digital success should be
                   accessible to every entrepreneur and small business, not just
                   those with big budgets. Founded in Dublin, our agency was born

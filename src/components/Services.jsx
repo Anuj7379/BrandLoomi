@@ -46,7 +46,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="bg-transparent text-white lg:-mr-4 sm:px-4 md:px-6  py-12 font-['General_Sans',sans-serif] w-full mx-auto  mt-8 ">
+    <div className="bg-transparent text-white lg:-mr-4 sm:px-4 md:px-6  py-12 font-creato w-full mx-auto  mt-8 ">
       
       {/* Section Header */}
       <div className="flex flex-wrap justify-between items-center mb-14 gap-4">
