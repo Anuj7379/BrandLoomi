@@ -80,7 +80,7 @@ const Header = ({ title }) => {
                 </li>
                 
                 <li>
-                  <Link to="/company/industries" className="block px-4 py-2 hover:text-cyan-400">Industries</Link>
+                  <Link to="/services/industries" className="block px-4 py-2 hover:text-cyan-400">Industries</Link>
                 </li>
               </ul>
             )}
