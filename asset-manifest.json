@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BrandLoomi/static/css/main.1bf4bc13.css",
-    "main.js": "/BrandLoomi/static/js/main.54de9611.js",
+    "main.css": "/BrandLoomi/static/css/main.dde3884e.css",
+    "main.js": "/BrandLoomi/static/js/main.b7178fa8.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
@@ -20,13 +20,20 @@
     "static/media/material-icons-outlined.woff2": "/BrandLoomi/static/media/material-icons-outlined.6f420cf17cc0d7676fad.woff2",
     "static/media/material-icons-sharp.woff2": "/BrandLoomi/static/media/material-icons-sharp.219aa9140e099e6c72ed.woff2",
     "static/media/material-icons.woff2": "/BrandLoomi/static/media/material-icons.0c35d18bf06992036b69.woff2",
+    "static/media/CreatoDisplay-ExtraBoldItalic.otf": "/BrandLoomi/static/media/CreatoDisplay-ExtraBoldItalic.171e1aee3b442d15132f.otf",
+    "static/media/CreatoDisplay-BlackItalic.otf": "/BrandLoomi/static/media/CreatoDisplay-BlackItalic.19f8dfdfa3baa94bf83f.otf",
+    "static/media/CreatoDisplay-LightItalic.otf": "/BrandLoomi/static/media/CreatoDisplay-LightItalic.275fb00937893c286fca.otf",
+    "static/media/CreatoDisplay-Bold.otf": "/BrandLoomi/static/media/CreatoDisplay-Bold.07b3a53b2cf3578267fe.otf",
+    "static/media/CreatoDisplay-Regular.otf": "/BrandLoomi/static/media/CreatoDisplay-Regular.6d28723c4e0b525a515f.otf",
+    "static/media/CreatoDisplay-Thin.otf": "/BrandLoomi/static/media/CreatoDisplay-Thin.ae8a7aa43ddc34448980.otf",
+    "static/media/messa.png": "/BrandLoomi/static/media/messa.0c4b7bc7967c051f2f7f.png",
     "index.html": "/BrandLoomi/index.html",
-    "main.1bf4bc13.css.map": "/BrandLoomi/static/css/main.1bf4bc13.css.map",
-    "main.54de9611.js.map": "/BrandLoomi/static/js/main.54de9611.js.map",
+    "main.dde3884e.css.map": "/BrandLoomi/static/css/main.dde3884e.css.map",
+    "main.b7178fa8.js.map": "/BrandLoomi/static/js/main.b7178fa8.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1bf4bc13.css",
-    "static/js/main.54de9611.js"
+    "static/css/main.dde3884e.css",
+    "static/js/main.b7178fa8.js"
   ]
 }
