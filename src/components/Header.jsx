@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/brandloomiLogo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -6,14 +6,28 @@ import { FaBars, FaTimes } from "react-icons/fa";
 const Header = ({ title }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Detect scroll to apply background/shadow
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleDropdown = (menu) => {
     setOpenDropdown((prev) => (prev === menu ? null : menu));
   };
 
   return (
-    <nav className="w-full bg-transparent text-white font-normal relative z-50 font-creato">
-      <div className="flex justify-between items-center px-6 lg:px-12 pt-5">
+    <nav
+      className={`fixed top-0 left-0 w-full transition-all duration-300 ease-in-out z-50 font-creato ${
+        scrolled ? "bg-[#00080A]/70 backdrop-blur-md shadow-md" : "bg-transparent "
+      }`}
+    >
+      <div className="flex justify-between items-center px-6 lg:px-12 pt-5 ">
         {/* Logo + Title */}
         <div className="flex items-center italic font-extrabold">
           <Link to="/">
@@ -31,7 +45,6 @@ const Header = ({ title }) => {
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-6 items-center text-[20px] text-white/80 font-normal">
-          {/* Company */}
           <li className="relative">
             <button
               onClick={() => toggleDropdown("company")}
@@ -50,22 +63,16 @@ const Header = ({ title }) => {
                 <li>
                   <Link to="/company/HowWeWork" className="block px-4 py-2 hover:text-cyan-400">How It Works</Link>
                 </li>
-                
               </ul>
             )}
           </li>
 
-          {/* Pay What You Can */}
           <li>
-            <Link
-              to="/services/PayWhatYouCanPage"
-              className="block px-4 py-2 hover:text-cyan-400 text-white/80"
-            >
+            <Link to="/services/PayWhatYouCanPage" className="block px-4 py-2 hover:text-cyan-400 text-white/80">
               Pay What You Can
             </Link>
           </li>
 
-          {/* Services */}
           <li className="relative">
             <button
               onClick={() => toggleDropdown("services")}
@@ -78,7 +85,6 @@ const Header = ({ title }) => {
                 <li>
                   <Link to="/services" className="block px-4 py-2 hover:text-cyan-400">Our Services</Link>
                 </li>
-                
                 <li>
                   <Link to="/services/industries" className="block px-4 py-2 hover:text-cyan-400">Industries</Link>
                 </li>
@@ -86,7 +92,6 @@ const Header = ({ title }) => {
             )}
           </li>
 
-          {/* Let's Connect */}
           <li>
             <Link
               to="/contact"
@@ -125,7 +130,6 @@ const Header = ({ title }) => {
             </ul>
           </div>
 
-          {/* Let's Connect for Mobile */}
           <div>
             <Link
               to="/contact"

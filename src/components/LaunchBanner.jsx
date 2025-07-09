@@ -1,10 +1,12 @@
 import { FaArrowRight } from "react-icons/fa";
 import logo from "../assets/brandloomiLogo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function LaunchBanner({ headingText }) {
+  const navigate = useNavigate();
   return (
     <section className="w-full bg-[#00080A] h-[600px] py-14">
-      <div className="relative rounded-3xl p-6 sm:p-10 text-center bg-transparent h-[467px] sm:w-full md:w-[90%] lg:w-[95%] max-w-[1700px] mx-[10px] sm:mx-auto overflow-hidden">
+      <div className="relative rounded-3xl p-6 sm:p-10 text-center bg-transparent max-h-full sm:w-full md:w-[90%] lg:w-[95%] max-w-[1700px] mx-[10px] sm:mx-auto overflow-hidden">
         {/* Background Glows */}
         <div className="absolute bottom-[-60px] left-[-60px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
         <div className="absolute -top-[100px] -right-[80px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
@@ -31,7 +33,7 @@ export default function LaunchBanner({ headingText }) {
                 placeholder="Enter your email"
                 className="flex-grow text-sm sm:text-base px-2 py-2 outline-none bg-transparent text-black placeholder-gray-500"
               />
-              <button className="bg-[#00BBDC] text-white p-2 rounded-full transition-all duration-200">
+              <button className="bg-[#00BBDC] text-white p-2 rounded-full transition-all duration-200" onClick={() => navigate("/contact")}>
                 <FaArrowRight className="text-2xl" />
               </button>
             </div>

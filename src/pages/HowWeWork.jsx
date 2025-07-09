@@ -5,26 +5,40 @@ import Footer from "../components/Footer";
 
 function HowWeWork() {
   return (
-    <div className="bg-[#00080A] text-white w-full">
+    <div className="relative bg-[#00080A] text-white w-full  overflow-hidden">
+      {/* Glowing Background Blur */}
       <div className="absolute w-[200px] h-[200px] rounded-full bg-cyan-400 blur-[150px] opacity-100 bottom-[400px] left-[20px] z-0" />
-      <Header />
-      <div className="sm:text-[30px] md:text-[40px] lg:text-[50px] italic ml-20 leading-tight mt-20">
-        <div>How We Work , Process :</div>
-        <div className="font-extrabold text-green-400">
-          Transparent, Collaborative, Proven
-        </div>
-        <div className="flex items-center justify-center space-x-2 text-sm mt-4">
-<div className="h-px bg-white w-[150px] sm:w-[200px] md:w-[300px] lg:w-[483px] 2xl:w-[583px] "></div>
-          <div className="text-2xl">
-            <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
-              asterisk
-            </span>
+
+      {/* Main Page Content Layered Above Glow */}
+      <div className="relative z-10">
+        <Header />
+
+        {/* Title Section */}
+        <div className="sm:text-[30px] md:text-[40px] lg:text-[50px] italic ml-20 leading-tight md:mt-28 xl:mt-36 pt-10">
+          <div>How We Work , Process :</div>
+          <div className="font-extrabold text-green-400">
+            Transparent, Collaborative, Proven
+          </div>
+
+          <div className="flex items-center justify-center space-x-2 text-sm mt-4">
+            <div className="h-px bg-white w-[150px] sm:w-[200px] md:w-[300px] lg:w-[483px] 2xl:w-[583px]" />
+            <div className="text-2xl">
+              <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
+                asterisk
+              </span>
+            </div>
           </div>
         </div>
+
+        {/* Process Cards */}
+        <WhyChooseUs />
+
+        {/* CTA Section */}
+        <LaunchBanner headingText="Curious about how we can help you?" />
+
+        {/* Footer */}
+        <Footer />
       </div>
-      <WhyChooseUs />
-      <LaunchBanner headingText="Curious about how we can help you?"/>
-      <Footer/>
     </div>
   );
 }
@@ -89,14 +103,14 @@ const WhyChooseUs = () => {
                 </div>
               </div>
 
-              {/* Glowing Background Circle */}
+              {/* Glowing Circle Behind */}
               <div
-                className="absolute top-1/2 left-1/2 w-[100px] h-[100px] opacity-100 blur-[80px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-20"
+                className="absolute top-1/2 left-1/2 w-[100px] h-[100px] opacity-100 blur-[80px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-10"
                 style={{ background: "#00829B" }}
               />
 
               {/* Card Content */}
-              <div className="bg-transparent rounded-[40px] pt-10 pb-6 px-6 w-full h-full border border-white/10 shadow-md relative z-10">
+              <div className="bg-transparent rounded-[40px] pt-10 pb-6 px-6 w-full h-full border border-white/10 shadow-md relative z-20">
                 <h3 className="text-lg font-semibold mb-2 mt-2">
                   {item.title}
                 </h3>

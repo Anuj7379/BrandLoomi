@@ -18,7 +18,7 @@ const Hero = () => (
     <div className="absolute w-[296px] h-[231px] rounded-full bg-[#009252] blur-[150px] opacity-100 top-[259px] right-[100px] z-0" />
     <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-400 blur-[150px] opacity-100 bottom-[300px] left-[20px] z-0" />
     <div className="text-white font-sans mx-auto relative overflow-hidden">
-      <div className="relative lg:ml-20 md:ml-8 sm:ml-2">
+      <div className="relative lg:ml-20 md:ml-8 sm:ml-2 mt-20">
         <div className="z-10 relative leading-none">
           <div className="italic sm:text-[18px] md:text-[30px] lg:text-[50px] lg:pl-5">
             NO STARTUP LEFT BEHIND
@@ -154,7 +154,7 @@ export default function PayWhatYouCanPage() {
   };
 
   return (
-    <div className="bg-[#00080A] text-white font-creato">
+    <div className="bg-[#00080A] text-white font-creato ">
       <Header />
       <Hero />
 

@@ -1,5 +1,5 @@
 import React from "react";
-import SecondLogo from "../assets/SecondLogo.png";
+import logo from "../assets/logoblack.png";
 import facebookIcon from "../assets/blackfacebookLogo.png";
 import instaIcon from "../assets/blackinstaLogo.png";
 import xIcon from "../assets/BlackXLogo.png";
@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="px-14 mx-auto lg:gap- flex flex-wrap  justify-between gap-10 sm:gap-8">
         {/* Brand Info */}
         <div className="flex flex-col w-[314px]">
-          <img src={SecondLogo} alt="Brandloomi Logo" className="h-[32px] w-[176px]" />
+          <img src={logo} alt="Brandloomi Logo" className="h-[50px] w-[176px]" />
           <p className="text-gray-600 mb-4 leading-tight mt-4 text-[20px] font-normal">
             Affordable, high-quality digital solutions to help startups and
             small businesses launch, grow, and thrive.

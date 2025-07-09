@@ -23,7 +23,7 @@ function About() {
         <Header />
 
         {/* Hero Section */}
-        <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 lg:px-14 mx-auto">
+        <div className="relative z-10 px-4 md:px-10 pt-24 pb-32 lg:px-14 mx-auto mt-14">
           <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] font-black italic uppercase leading-tight">
             <div>YOUR</div>
             <div>DIGITAL</div>

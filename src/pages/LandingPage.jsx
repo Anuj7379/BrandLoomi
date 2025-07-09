@@ -40,14 +40,14 @@ const Hero = () => {
 
   return (
     <div
-      className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover min-h-screen"
+      className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover "
       style={{ backgroundImage: `url(${vector1})` }}
     >
       {/* Top Layer Content */}
       <Header />
 
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto pt-20 pb-16 flex flex-col justify-center items-center">
-        <p className="text-[50px] font-bethany">
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto pt-20 pb-16 flex flex-col justify-center items-center mt-10">
+        <p className="text-[50px] font-bethany md:pt-10 lg:pt-16">
           your brand deserves more than a template
         </p>
         <div className="flex flex-col items-center">

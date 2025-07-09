@@ -53,11 +53,12 @@ const ContactUs = () => {
   return (
     <>
       <div className="relative min-h-screen text-white font-['General_Sans',sans-serif] overflow-hidden bg-[#00080A]">
-        <div className="absolute w-[300px] h-[200px] rounded-full bg-cyan-400 blur-[200px] opacity-100 top-[270px] left-[-28px] z-0" />
+        <div className="absolute w-[240px] h-[200px] rounded-full bg-cyan-400 blur-[120px] opacity-100 top-[150px] left-[80px] z-0" />
+        <div className="absolute w-[240px] h-[200px] rounded-full bg-[#009252] blur-[120px] opacity-100 top-[240px] left-80 z-0" />
 
         <Header />
 
-        <div className="relative z-10 px-6 pt-24 pb-10 max-w-screen-xl mx-auto lg:mx-12">
+        <div className="relative z-10 px-6 pt-24 pb-10 max-w-screen-xl mx-auto lg:mx-12 mt-16 ">
           <h1 className="text-[36px] sm:text-[48px] md:text-[60px] lg:text-[80px] font-black italic uppercase leading-[1.08]">
             <div>LET'S</div>
             <div>BUILD GREAT</div>
@@ -65,7 +66,7 @@ const ContactUs = () => {
           </h1>
         </div>
 
-        <section className="flex flex-col lg:flex-row justify-center gap-12 px-6 pb-20">
+        <section className="flex flex-col lg:flex-row justify-center gap-12 px-6 pb-20 mt-24">
           {/* Left Section */}
           <div className="text-white border-r lg:pr-10 border-white lg:w-1/3 w-full flex flex-col items-center">
             <div className="w-full max-w-xs text-left">

@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import ServiceCard from "../components/ServiceCard";
 import logo from "../assets/brandloomiLogo.png";
 import { useNavigate } from "react-router-dom";
+import LaunchBanner from "../components/LaunchBanner";
 
 const ServicePage = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const ServicePage = () => {
 
         {/* Hero Section */}
         <div className="relative z-10 md:px-10 pt-24 pb-32   lg:px-20  ">
-          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] font-black italic uppercase leading-tight font-creato">
+          <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[80px] font-black italic uppercase leading-tight font-creato mt-16">
             <div>OUR</div>
             <div>SERVICES</div>
             <div>LAUNCHPAD</div>
@@ -137,41 +138,7 @@ const ServicePage = () => {
           </div>
         </div>
 
-        <section className="bg-[#00080A] flex justify-center text-center h-[500px] px-4 py-12">
-          {/* Card Container */}
-          <div className="relative rounded-3xl p-8 sm:p-12 text-center bg-transparent h-[327px] w-full max-w-[1300px] overflow-hidden">
-            {/* Glowing Ellipses */}
-            <div className="absolute bottom-[-60px] left-[-60px] w-[300px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
-            <div className="absolute -top-[100px] -right-[80px] w-[300px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
-
-            {/* Content */}
-            <div className="relative z-10 ">
-              {/* Subheading */}
-              <div className="flex justify-center mb-6">
-                <img className="h-[48px]" src={logo} alt="logo" />
-              </div>
-
-              {/* Main Heading - No animation */}
-              <h1 className="text-white text-center text-3xl sm:text-4xl md:text-4xl lg:text-7xl  font-black  mb-8 font-sans italic">
-                Ready to get Started ?
-              </h1>
-
-              {/* Email Input Field */}
-              <div className="flex justify-center">
-                <div className="flex items-center bg-white rounded-full px-4 py-2 shadow-md h-[57px] w-full max-w-[472px]">
-                  <input
-                    type="email"
-                    placeholder="Enter Your Email"
-                    className="flex-grow text-sm sm:text-base px-2 py-2 outline-none bg-transparent text-black placeholder-gray-500"
-                  />
-                  <button className="bg-blue-400 hover:bg-blue-500 text-white p-2 rounded-full transition-all duration-200">
-                    <FaArrowRight className="text-2xl" />
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+       <LaunchBanner headingText="Ready to get Started ?"/>
 
         {/* */}
       </div>

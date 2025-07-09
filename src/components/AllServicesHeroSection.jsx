@@ -2,7 +2,7 @@ import React from "react";
 
 function AllServicesHeroSection({ title, description }) {
   return (
-    <section className="py-16 px-6 sm:px-10 max-w-7xl mx-auto mt-10">
+    <section className="py-16 px-6 sm:px-10 max-w-screen-xl mx-auto mt-10 lg:mt-28">
       <div className="flex flex-col lg:flex-row items-start justify-between gap-12">
         {/* Left Content */}
         <div className="max-w-2xl space-y-6">
