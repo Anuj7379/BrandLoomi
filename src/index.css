@@ -71,3 +71,9 @@
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: 'BethanyElingston';
+  src: url('./assets/fonts/Bethany-Elingston.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}

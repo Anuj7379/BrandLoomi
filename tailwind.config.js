@@ -9,6 +9,7 @@ module.exports = {
         playfair: ["'Playfair Display'", "serif"],
         instink: ["'Instink'", "sans-serif"],
         creato: ['CreatoDisplay', 'sans-serif'],
+        bethany: ['BethanyElingston', 'cursive'],
       },
 
       //  Custom Animations

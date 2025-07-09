@@ -8,13 +8,15 @@ import Footer from "../components/Footer";
 import FAQs from "../components/FAQ";
 import Testimonials from "../components/Testimonial";
 import { useNavigate } from "react-router-dom";
-import ParticleCursor from '../components/ParticleCursor'
+import ParticleCursor from "../components/ParticleCursor";
+import vector1 from "../assets/vector1.png";
+import vector2 from "../assets/vector2.png";
+import vector3 from "../assets/vector3.svg";
+import Landingtext from "../assets/Landingtext.png";
 
 const LandingPage = () => {
-
   return (
     <div style={{ background: "#00080A" }} className="overflow-x-hidden">
-      <Header />
       <Hero />
 
       {/* Other Sections */}
@@ -34,117 +36,71 @@ const LandingPage = () => {
 export default LandingPage;
 
 const Hero = () => {
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen text-white font-creato  overflow-hidden bg-transparent">
-      <ParticleCursor/>
-      {/* Background Glows */}
-      <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-600 blur-[100px] opacity-100 top-[359px] right-[100px] z-0" />
-      <div className="absolute w-[183px] h-[200px] rounded-full bg-cyan-400 blur-[130px] opacity-100 bottom-[260px] left-[-8px] z-0" />
+    <div
+      className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover min-h-screen"
+      style={{ backgroundImage: `url(${vector1})` }}
+    >
+      {/* Top Layer Content */}
+      <Header />
 
-      {/* Main Content without horizontal padding */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto pt-20 pb-16">
-        {/* Headline */}
-        <h1 className="text-[42px] sm:text-[52px] lg:text-[80px]  italic uppercase leading-tight text-center lg:text-left lg:ml-16 lg:px-0 lg:mt-12 font-creato font-extrabold">
-          <div>Launch Your</div>
-          <div>Vision.</div>
-          <div>Grow Your Impact.</div>
-        </h1>
-
-        {/* Button + Satisfaction */}
-        <div className="flex flex-col lg:flex-row justify-between items-center mt-10 lg:ml-16  gap-6 px-2 lg:px-0">
-          {/* CTA Button */}
-          <button
-            className="relative flex items-center justify-between w-[220px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group"
-            
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto pt-20 pb-16 flex flex-col justify-center items-center">
+        <p className="text-[50px] font-bethany">
+          your brand deserves more than a template
+        </p>
+        <div className="flex flex-col items-center">
+          <p
+            className="text-[80px] text-transparent font-bethany font-normal text-center"
+            style={{
+              background: `linear-gradient(to bottom, #0A6A97 35%, #34BDFE 53%, #17E48A 70%)`,
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
           >
-            <span className="text-base font-medium z-10">Get Started</span>
-            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-              <span className="material-symbols-outlined leading-none text-[28px]" onClick={() => navigate("/contact")}>
+            Build it together
+          </p>
+          <img
+            src={vector3}
+            alt="vector3"
+            className=" h-[29px] ml-[470px] -mt-4"
+          />
+        </div>
+        <p className="text-[18px] font-creato font-normal text-center max-w-[665px] mt-9">
+          Affordable high-quality web and app development branding and
+          consulting for startups and small businesses in Ireland and beyond.
+        </p>
+        <div className="mt-10 mb-4 pr-8">
+          <button
+            className="relative flex items-center justify-between w-[246px] h-[62px] pl-6 pr-0 rounded-full overflow-hidden group ml-auto border border-cyan-400"
+            style={{
+              background: `linear-gradient(to bottom, #0A6A97 35%, #34BDFE 53%, #17E48A 100%)`,
+            }}
+          >
+            <span className="text-[25px]  z-10 font-creato font-normal text-black ">
+              Get Started
+            </span>
+
+            {/*  white circular arrow button */}
+            <span
+              className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]"
+              onClick={() => navigate("/contact")}
+            >
+              <span className="material-symbols-outlined leading-none text-[28px]">
                 arrow_outward
               </span>
             </span>
           </button>
-
-          {/* Satisfaction Stat */}
-          {/* <div className="flex flex-col sm:flex-row items-center sm:space-x-4 text-center sm:text-left">
-            <div className="flex flex-row items-center mb-2 sm:mb-0">
-              <span className="material-symbols-outlined animate-spin-slow text-2xl mr-2">
-                asterisk
-              </span>
-              <div className="bg-white h-[2px] w-[120px] sm:w-[176px]"></div>
-            </div>
-            <div>
-              <span className="text-lg font-bold">95%</span>
-              <br className="sm:hidden" />
-              <span className="text-sm text-gray-300">Client Satisfaction</span>
-            </div>
-          </div> */}
-        </div>
-
-        {/* Description + Stats */}
-        <div className="flex flex-col lg:flex-row gap-8 mt-10 font-sans items-start lg:items-center px-2 lg:px-0">
-          {/* Description */}
-          {/* <div className="flex items-start lg:w-[645px]">
-            <span className="text-2xl mr-3">+</span>
-            <p className="text-sm text-gray-400">
-              Affordable, high-quality web and app development, branding, and
-              consulting for startups and small businesses in Ireland and beyond.
-            </p>
-          </div> */}
-
-          {/* Quick Stats */}
-          {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm mt-6 sm:mt-0 text-center sm:text-left">
-            <div>
-              <span className="text-sm font-bold">10+</span>
-              <br />
-              Startups Launched
-            </div>
-            <div>
-              <span className="text-sm font-bold">€1,000</span>
-              <br />
-              Average Project Cost
-            </div>
-            <div>
-              <span className="text-sm font-bold">3 Weeks</span>
-              <br />
-              Average Delivery Time
-            </div>
-          </div> */}
         </div>
       </div>
+
+      {/* Bottom-right Vector  */}
+      <img
+        src={vector2}
+        alt="Bottom Right Vector"
+        className="absolute bottom-[-750px] right-[-250px] w-[1076px] h-[1718px] pointer-events-none z-0"
+      />
     </div>
   );
 };
-
-
-
-// const Hero = () => {
-//   return (
-//     <div className="relative overflow-hidden min-h-screen bg-transparent text-white font-sans px-6 lg:px-24 py-20">
-//       {/* Blurred Blobs */}
-//       <div className="absolute w-[959px] h-[1531px] bg-[#34BDFE] rounded-full blur-[160px] opacity-50 -top-96 -left-[550px] rotate-[-85.71deg] z-0"></div>
-//       <div className="absolute w-[1076px] h-[1718px] bg-[#009252] rounded-full blur-[160px] opacity-50 top-10 left-[550px] rotate-[85.71deg] z-0"></div>
-
-//       {/* Main Content */}
-//       <div className="relative z-10 flex flex-col items-start max-w-4xl">
-//         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-//           <span className="inline-block">your brand deserves more than a template</span><br />
-//           <span className="text-[#34BDFE]">- Build it together</span>
-//         </h1>
-
-//         <p className="mt-6 text-lg text-gray-300 max-w-2xl">
-//           Affordable high-quality web and app development, branding, and consulting
-//           for startups and small businesses in Ireland and beyond.
-//         </p>
-
-//         <button className="mt-8 bg-gradient-to-r from-[#34BDFE] to-white text-black font-semibold py-3 px-6 rounded-full flex items-center gap-2 hover:scale-105 transition-all duration-300">
-//           Get Started <span className="text-xl">↗</span>
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-
