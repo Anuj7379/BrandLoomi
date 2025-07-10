@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/brandloomiLogo.png";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Connect from '../assets/Connect.png'
 
 const Header = ({ title }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -99,9 +100,8 @@ const Header = ({ title }) => {
             >
               <span className="text-cyan-400 text-xl">•</span>
               <span className="group-hover:text-cyan-400 text-[20px]">Let's Connect</span>
-              <span className="bg-cyan-400 text-black rounded-full w-9 h-9 flex items-center justify-center text-[20px] font-bold group-hover:bg-white group-hover:text-black transition-all duration-200">
-                →
-              </span>
+              <img src={Connect} alt="connectImage"  className="w-[35px] h-[35px]"/>
+
             </Link>
           </li>
         </ul>
@@ -137,9 +137,7 @@ const Header = ({ title }) => {
             >
               <span className="text-cyan-400 text-xl">•</span>
               <span className="group-hover:text-cyan-400 text-[18px]">Let's Connect</span>
-              <span className="bg-cyan-400 text-black rounded-full w-9 h-9 flex items-center justify-center text-[20px] font-bold group-hover:bg-white group-hover:text-black transition-all duration-200">
-                →
-              </span>
+              <img src={Connect} alt="connectImage" className="w-5 h-5"/>
             </Link>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // 👈 Import Link
 
 const ServiceCard = ({ title, description, link }) => {
   return (
-    <div className="w-[412px] h-[363px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border font-creato">
+    <div className=" max-w-[412px] h-[363px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border font-creato">
       {/* Glow ellipse */}
       <div
         className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"

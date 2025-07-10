@@ -98,13 +98,13 @@ function Careers() {
           name="name"
           type="text"
           placeholder="Seek and you shall find"
-          className="w-full sm:w-[614px] h-[59px] bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
+          className="w-full lg:w-[424px] h-[50px] bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
           type="submit"
-          className="bg-white text-black font-semibold rounded-xl h-16 w-full sm:w-32 hover:bg-gray-200 flex items-center justify-center gap-2"
+          className="bg-white text-black font-semibold rounded-xl h-12 w-full sm:w-32 hover:bg-gray-200 flex items-center justify-center gap-2"
           onClick={() => setSearch(searchInput)}
         >
           <span>Discover</span>

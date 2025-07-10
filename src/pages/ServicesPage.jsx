@@ -1,10 +1,8 @@
 import React from "react";
-import { FaArrowRight } from "react-icons/fa";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceCard from "../components/ServiceCard";
-import logo from "../assets/brandloomiLogo.png";
 import { useNavigate } from "react-router-dom";
 import LaunchBanner from "../components/LaunchBanner";
 
@@ -29,14 +27,14 @@ const ServicePage = () => {
           </h1>
 
           {/* Button + Line */}
-          <div className="flex items-center justify-end mt-[-65px] ">
+          <div className="flex  items-center justify-end mt-[-65px] gap-4 ">
             <div className="text-2xl">
               <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
                 asterisk
               </span>
             </div>
 
-            <div className="bg-white h-[2px] w-[380px]"></div>
+            <div className="bg-white h-[2px] sm:min-w-[200px] md:min-w-[200px] xl:min-w-[350px] max-w-[380px]"></div>
 
             <button className="relative flex items-center justify-between w-[200px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-transparent text-white overflow-hidden group">
               {/* Button Text */}

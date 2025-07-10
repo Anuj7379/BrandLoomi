@@ -12,14 +12,25 @@ import achievement from "../assets/achievement.png";
 import submit from "../assets/submit.png";
 import { toast } from "sonner";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import vector1 from "../assets/vector1.png";
+import vector2 from "../assets/vector2.png";
 
-const Hero = () => (
-  <div className="pt-16 font-creato">
-    <div className="absolute w-[296px] h-[231px] rounded-full bg-[#009252] blur-[150px] opacity-100 top-[259px] right-[100px] z-0" />
-    <div className="absolute w-[283px] h-[244px] rounded-full bg-cyan-400 blur-[150px] opacity-100 bottom-[300px] left-[20px] z-0" />
-    <div className="text-white font-sans mx-auto relative overflow-hidden">
+
+
+
+const Hero = () => {
+
+  return (
+    <div
+      className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover "
+      style={{ backgroundImage: `url(${vector1})` }}
+    >
+      {/* Top Layer Content */}
+      <Header />
+
+       <div className="text-white font-sans mx-auto relative overflow-hidden">
       <div className="relative lg:ml-20 md:ml-8 sm:ml-2 mt-20">
-        <div className="z-10 relative leading-none">
+        <div className="z-10 relative leading-none pt-24">
           <div className="italic sm:text-[18px] md:text-[30px] lg:text-[50px] lg:pl-5">
             NO STARTUP LEFT BEHIND
           </div>
@@ -30,15 +41,24 @@ const Hero = () => (
         </div>
         <div className="flex gap-4 lg:w-[600px] md:w-[450px] sma:w-[250px] lg:text-[18px] sm:[16px] mt-16">
           <div className="text-3xl">+</div>
-          <div>
+          <div className="pb-10 mb-14">
             Every month, we select a deserving startup to receive a professional
             landing page—regardless of their budget.
           </div>
         </div>
       </div>
     </div>
-  </div>
-);
+
+      {/* Bottom-right Vector  */}
+      <img
+        src={vector2}
+        alt="Bottom Right Vector"
+        className="absolute bottom-[-750px] right-[-250px] w-[1076px] h-[1718px] pointer-events-none z-0"
+      />
+    </div>
+  );
+};
+
 
 const LaunchBanner = ({ headingText }) => (
   <section className="w-full bg-[#00080A] h-[500px] py-14 font-creato">
@@ -155,7 +175,7 @@ export default function PayWhatYouCanPage() {
 
   return (
     <div className="bg-[#00080A] text-white font-creato ">
-      <Header />
+      
       <Hero />
 
       <div className="lg:mt-32 md:mt-24 sm:mt-10">
