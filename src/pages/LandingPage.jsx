@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import vector1 from "../assets/vector1.png";
 import vector2 from "../assets/vector2.png";
 import vector3 from "../assets/vector3.svg";
-import LandingPageHeading from '../assets/LandingPageHeading.png'
+import LandingPageHeading from '../assets/LandingPageHeading.svg'
 const LandingPage = () => {
   return (
     <div style={{ background: "#00080A" }} className="overflow-x-hidden">
@@ -45,7 +45,7 @@ const Hero = () => {
       <Header />
 
       <div className="relative z-10 w-full max-w-[1440px] mx-auto pt-20 pb-16 flex flex-col justify-center items-center mt-10">
-        <p className="text-[50px] font-bethany md:pt-10 lg:pt-16">
+        <p className="text-[50px] font-bethany md:pt-6 lg:pt-10">
           <img src={LandingPageHeading} alt="heading" />
         </p>
         <div className="flex flex-col items-center">

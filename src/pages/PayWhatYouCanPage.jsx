@@ -11,7 +11,7 @@ import code from "../assets/code.png";
 import achievement from "../assets/achievement.png";
 import submit from "../assets/submit.png";
 import { toast } from "sonner";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
+import {  FaChevronRight } from "react-icons/fa6";
 import vector1 from "../assets/vector1.png";
 import vector2 from "../assets/vector2.png";
 
