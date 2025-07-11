@@ -25,7 +25,7 @@ const ServiceCard = ({ title, description, link }) => {
         <div className="absolute bottom-[10px] left-[10px]">
           <Link to={link}>
             <div className="w-[50px] h-[50px] bg-white text-black flex items-center justify-center rounded-full transform rotate-[30deg] hover:scale-110 transition duration-300 shadow-[0_0_10px_#00FFFF] group-hover:shadow-[0_0_20px_#00ffff]">
-              <FaArrowRight size={21} className="-rotate-45 text-cyan-500 " />
+              <FaArrowRight size={21} className="-rotate-45 text-cyan-500 hover:-rotate-90 " />
             </div>
           </Link>
         </div>

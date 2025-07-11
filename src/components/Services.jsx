@@ -51,18 +51,7 @@ const Services = () => {
       {/* Section Header */}
       <div className="flex flex-wrap justify-between items-center mb-14 gap-4">
         <h1 className="text-4xl lg:text-[80px] md:text-5xl font-black italic lg:px-16">SERVICES</h1>
-        <div className="flex items-center space-x-2 text-sm">
-          <span className="text-cyan-400 text-2xl">•</span>
-          <span
-            className="cursor-pointer text-[22px]"
-            onClick={() => navigate("/services")}
-          >
-            All Services
-          </span>
-          <span className="bg-cyan-400 text-black rounded-full w-8 h-8 flex items-center justify-center">
-            <FaArrowRight size={15} />
-          </span>
-        </div>
+        
       </div>
 
       {/* Services Grid */}

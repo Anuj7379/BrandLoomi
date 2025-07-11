@@ -12,6 +12,8 @@ import privacyPdf from "../assets/pdfs/Privacy-Policy.pdf";
 const Footer = () => {
   const navigate = useNavigate();
 
+  
+
   return (
     <footer className="bg-white border-t border-gray-200 font-medium py-8 text-black items-center  font-creato">
       <div className="px-14 mx-auto lg:gap- flex flex-wrap  justify-between gap-10 sm:gap-8">

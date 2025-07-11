@@ -20,7 +20,8 @@ const cardData = [
       "Experience with modern CSS, Tailwind CSS, accessibility practices, Git, and basic testing frameworks (Jest/React Testing Library).",
       "Must be based in or willing to relocate to Noida.",
     ],
-    skills: "React.js, Next.js, Tailwind CSS, TypeScript, Redux Toolkit, REST APIs",
+    skills:
+      "React.js, Next.js, Tailwind CSS, TypeScript, Redux Toolkit, REST APIs",
     salary: {
       fixed: "₹ 2,00,000 - ₹ 2,20,000 /year",
       variable: "₹ 5,000 /year (performance-based)",
@@ -42,7 +43,8 @@ const cardData = [
       "Familiarity with handoff tools (Zeplin, Figma Inspect) and close collaboration with frontend teams.",
       "Must be located in or ready to work from Noida.",
     ],
-    skills: "Figma, Adobe XD, UX Research, Wireframing, Prototyping, Design Systems",
+    skills:
+      "Figma, Adobe XD, UX Research, Wireframing, Prototyping, Design Systems",
     salary: {
       fixed: "₹ 2,00,000 - ₹ 2,40,000 /year",
       variable: "₹ 5,000 /year (performance-based)",
@@ -73,10 +75,10 @@ const cardData = [
   },
 ];
 
-
 function Careers() {
   const formRef = useRef(null);
-  const scrollToForm = () => formRef.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToForm = () =>
+    formRef.current?.scrollIntoView({ behavior: "smooth" });
 
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
@@ -87,6 +89,21 @@ function Careers() {
   );
 
   const handleCloseModal = () => setModalData(null);
+
+  // form handle -- api calls //
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    linkedInProfile: "",
+    interestReason: "",
+    skillsExperience: "",
+    referralSource: "",
+    eligibleToWorkInIreland: "",
+    consent: false,
+    agreeToPolicy: false,
+    portfolioUrl: "",
+  });
 
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden bg-[#00080A]">
@@ -130,7 +147,9 @@ function Careers() {
               </div>
               <div className="relative z-10 flex flex-col justify-between h-full">
                 <div>
-                  <h3 className="text-3xl font-bold pt-14 mb-4">{card.title}</h3>
+                  <h3 className="text-3xl font-bold pt-14 mb-4">
+                    {card.title}
+                  </h3>
                   <p className="text-[14px] font-normal font-sans leading-relaxed pt-4">
                     {card.description}
                   </p>
@@ -144,7 +163,9 @@ function Careers() {
             </div>
           ))
         ) : (
-          <p className="text-white text-lg italic mt-6">No matching jobs found.</p>
+          <p className="text-white text-lg italic mt-6">
+            No matching jobs found.
+          </p>
         )}
       </div>
 
@@ -194,7 +215,8 @@ function Careers() {
 
             {modalData.skills && (
               <p className="mt-4 text-sm text-white/70">
-                <strong className="text-white text-[16px]">Skills : </strong> {modalData.skills}
+                <strong className="text-white text-[16px]">Skills : </strong>{" "}
+                {modalData.skills}
               </p>
             )}
 
@@ -219,11 +241,15 @@ function Careers() {
         </div>
         <div className="flex flex-col lg:flex-row justify-between gap-10 mt-12 px-4 sm:px-10">
           <div className="w-full lg:w-1/2 pr-0 lg:pr-10">
-            <div className="text-xl italic font-bold mb-6">WHAT WE CARE ABOUT</div>
+            <div className="text-xl italic font-bold mb-6">
+              WHAT WE CARE ABOUT
+            </div>
             <ul className="space-y-6 text-white/90 text-[16px] list-disc pl-5">
               {Array(5).fill(
                 <li>
-                  <span className="font-bold">Kindness Over Everything:</span> We're all about good vibes, mutual respect, and lifting each other up.
+                  <span className="font-bold">Kindness Over Everything:</span>{" "}
+                  We're all about good vibes, mutual respect, and lifting each
+                  other up.
                 </li>
               )}
             </ul>
@@ -256,7 +282,13 @@ function Careers() {
                 },
                 {
                   label: "Referral Source",
-                  options: ["LinkedIn", "Employee Referral", "Website", "Social Media", "Other"],
+                  options: [
+                    "LinkedIn",
+                    "Employee Referral",
+                    "Website",
+                    "Social Media",
+                    "Other",
+                  ],
                 },
                 {
                   label: "Eligible to Work in Ireland",
@@ -282,7 +314,10 @@ function Careers() {
                   type="checkbox"
                   className="appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
                 />
-                <p className="text-sm text-white/70">I consent to the processing of my personal data for recruitment purposes.</p>
+                <p className="text-sm text-white/70">
+                  I consent to the processing of my personal data for
+                  recruitment purposes.
+                </p>
               </div>
               <div className="flex items-start gap-3">
                 <input
@@ -291,7 +326,10 @@ function Careers() {
                 />
                 <p className="text-sm text-white/70">
                   *I have read and agree to the{" "}
-                  <a href="#" className="underline text-white">Privacy Policy</a>.
+                  <a href="#" className="underline text-white">
+                    Privacy Policy
+                  </a>
+                  .
                 </p>
               </div>
               <button
@@ -299,14 +337,19 @@ function Careers() {
                 className="bg-white text-black font-semibold rounded-xl h-12 w-full sm:w-40 hover:bg-gray-200 flex items-center justify-center gap-2 mt-4"
               >
                 <span>APPLY NOW</span>
-                <span className="material-symbols-outlined">arrow_right_alt</span>
+                <span className="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
               </button>
             </form>
           </div>
         </div>
       </div>
 
-      <LaunchBanner headingText="Work alongside industry leaders and innovators." onClickScroll={scrollToForm} />
+      <LaunchBanner
+        headingText="Work alongside industry leaders and innovators."
+        onClickScroll={scrollToForm}
+      />
       <Footer />
     </div>
   );
@@ -340,7 +383,9 @@ const LaunchBanner = ({ headingText, onClickScroll }) => (
               className="bg-transparent outline-none text-white placeholder-white text-sm sm:text-base w-full pr-16 cursor-pointer"
             />
             <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cyan-500 text-[28px] sm:text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-              <span className="material-symbols-outlined leading-none text-[24px] sm:text-[28px]">arrow_outward</span>
+              <span className="material-symbols-outlined leading-none text-[24px] sm:text-[28px]">
+                arrow_outward
+              </span>
             </span>
           </div>
         </div>

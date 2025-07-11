@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
 import Empowering from "../components/Empowering";
 import Services from "../components/Services";
@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import vector1 from "../assets/vector1.png";
 import vector2 from "../assets/vector2.png";
 import vector3 from "../assets/vector3.svg";
-import LandingPageHeading from '../assets/LandingPageHeading.svg'
+import LandingPageHeading from "../assets/LandingPageHeading.svg";
 const LandingPage = () => {
   return (
     <div style={{ background: "#00080A" }} className="overflow-x-hidden">
@@ -35,6 +35,32 @@ export default LandingPage;
 
 const Hero = () => {
   const navigate = useNavigate();
+  const words = ["Build", "Grow", "Scale", "Amplify"];
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [speed, setSpeed] = useState(160); // Typing speed
+
+  useEffect(() => {
+  const currentWord = words[currentWordIndex];
+
+  const typing = setTimeout(() => {
+    setDisplayText((prev) =>
+      isDeleting
+        ? currentWord.substring(0, prev.length - 1)
+        : currentWord.substring(0, prev.length + 1)
+    );
+
+    if (!isDeleting && displayText === currentWord) {
+      setTimeout(() => setIsDeleting(true), 1500);
+    } else if (isDeleting && displayText === "") {
+      setIsDeleting(false);
+      setCurrentWordIndex((prev) => (prev + 1) % words.length);
+    }
+  }, speed);
+
+  return () => clearTimeout(typing);
+}, [displayText, isDeleting, words, currentWordIndex, speed]);
 
   return (
     <div
@@ -49,15 +75,21 @@ const Hero = () => {
           <img src={LandingPageHeading} alt="heading" />
         </p>
         <div className="flex flex-col items-center">
-          <p
-            className="text-[80px] text-transparent font-bethany font-normal text-center"
-            style={{
-              background: `linear-gradient(to bottom, #0A6A97 35%, #34BDFE 53%, #17E48A 70%)`,
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Build it together
+          <p className="text-[80px] text-transparent font-bethany font-normal text-center flex gap-4">
+            <span style={{
+                background: `linear-gradient(to bottom, #ff0000 25%, #34BDFE 53%, #17E48A 70%)`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }} className="text-red-600">{displayText}</span>
+            <p
+              style={{
+                background: `linear-gradient(to bottom, #0A6A97 35%, #34BDFE 53%, #17E48A 70%)`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              it together
+            </p>
           </p>
           <img
             src={vector3}

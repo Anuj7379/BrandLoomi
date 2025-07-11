@@ -16,16 +16,14 @@ import PayWhatYouCanPage from "./pages/PayWhatYouCanPage";
 import HowWeWork from "./pages/HowWeWork";
 import Industries from "./pages/Industries";
 import { Toaster } from "sonner";
+import CookieBanner from "./components/CookieBanner";
 
 function App() {
   return (
-    
     <Router>
-            <Toaster richColors position="top-right" />
+      <Toaster richColors position="top-right" />
 
       <Routes>
-        
-
         {/* default route handling  */}
         <Route path="*" element={<LandingPage />} />
 
@@ -34,19 +32,40 @@ function App() {
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<ContactUs />} />
-        <Route path="/services/websitedevelopment" element={<WebsiteDevelopment />} />
-        <Route path="/services/MobileAppDevelopment" element={<MobileAppDevelopment />}/>
-        <Route path="/services/Softwaredevelopment" element={<SoftwareDevelopment />} />
-        <Route path="/services/BrandingAndDesign" element={<BrandingAndDesign/>} />
-        <Route path="/services/StartupConsulting" element={<StartupAndConsulting/>} />
-        <Route path="/services/SocialmediaAndmarketing" element={<SocialmediaAndmarketing/>} />
-        <Route path="/company/careers" element={<Careers/>} />
-        <Route path="/services/PayWhatYouCanPage" element={<PayWhatYouCanPage/>} />
-        <Route path="/company/HowWeWork" element={<HowWeWork/>} />
-        <Route path="/services/industries" element={<Industries/>} />
-        
-        
+        <Route
+          path="/services/websitedevelopment"
+          element={<WebsiteDevelopment />}
+        />
+        <Route
+          path="/services/MobileAppDevelopment"
+          element={<MobileAppDevelopment />}
+        />
+        <Route
+          path="/services/Softwaredevelopment"
+          element={<SoftwareDevelopment />}
+        />
+        <Route
+          path="/services/BrandingAndDesign"
+          element={<BrandingAndDesign />}
+        />
+        <Route
+          path="/services/StartupConsulting"
+          element={<StartupAndConsulting />}
+        />
+        <Route
+          path="/services/SocialmediaAndmarketing"
+          element={<SocialmediaAndmarketing />}
+        />
+        <Route path="/company/careers" element={<Careers />} />
+        <Route
+          path="/services/PayWhatYouCanPage"
+          element={<PayWhatYouCanPage />}
+        />
+        <Route path="/company/HowWeWork" element={<HowWeWork />} />
+        <Route path="/services/industries" element={<Industries />} />
       </Routes>
+      {/* Cookie Banner goes here */}
+      <CookieBanner />
     </Router>
   );
 }
