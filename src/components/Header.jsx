@@ -38,7 +38,7 @@ const Header = ({ title }) => {
         </div>
 
         {/* Hamburger Icon for Mobile */}
-        <div className="md:hidden">
+        <div className="md:hidden  bg-black/90 ]">
           <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
@@ -109,26 +109,32 @@ const Header = ({ title }) => {
 
       {/* Mobile Nav Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black/90 px-6 pt-6 pb-4 space-y-6 text-[18px]">
+        <div className="md:hidden bg-black/90 px-6 pt-6 pb-4 space-y-6 text-[16px] md:text-[18px] leading-tight">
+          <div>
+            <p className="text-cyan-400 uppercase mb-2 ">Company</p>
+            <ul className="space-y-2 pl-2 text-white/80">
+              <li><Link to="/about" className="block hover:text-cyan-400">About Us</Link></li>
+              <li><Link to="/company/careers" className="block hover:text-cyan-400">Careers</Link></li>
+              <li><Link to="/company/HowWeWork" className="block hover:text-cyan-400">How It Works</Link></li>
+            </ul>
+          </div>
+          <div>
+            
+            <ul>
+              <li><Link to="/services/PayWhatYouCanPage" className="text-cyan-400 uppercase mb-2">Pay What You Can</Link></li>
+            </ul>
+            
+          </div>
           <div>
             <p className="text-cyan-400 uppercase mb-2">Services</p>
-            <ul className="space-y-2 pl-2">
+            <ul className="space-y-2 pl-2 text-white/80">
               <li><Link to="/services" className="block hover:text-cyan-400">Our Services</Link></li>
-              <li><Link to="/services/HowWeWork" className="block hover:text-cyan-400">How It Works</Link></li>
               <li><Link to="/services/industries" className="block hover:text-cyan-400">Industries</Link></li>
-              <li><Link to="/services/PayWhatYouCanPage" className="block hover:text-cyan-400">Pay What You Can</Link></li>
+              
             </ul>
           </div>
 
-          <div>
-            <p className="text-cyan-400 uppercase mb-2">Company</p>
-            <ul className="space-y-2 pl-2">
-              <li><Link to="/about" className="block hover:text-cyan-400">About Us</Link></li>
-              <li><Link to="/company/careers" className="block hover:text-cyan-400">Careers</Link></li>
-              <li><Link to="/company/faq" className="block hover:text-cyan-400">FAQ</Link></li>
-              <li><Link to="/company/blogs" className="block hover:text-cyan-400">Blogs</Link></li>
-            </ul>
-          </div>
+          
 
           <div>
             <Link

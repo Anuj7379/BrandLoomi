@@ -42,7 +42,10 @@ const ServicePage = () => {
 
               {/* Glowing Circle with arrow_outward icon */}
               <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center  shadow-[0_0_10px_#00FFFF]">
-                <span className="material-symbols-outlined leading-none text-[28px]" onClick={() => navigate("/contact")}>
+                <span
+                  className="material-symbols-outlined leading-none text-[28px]"
+                  onClick={() => navigate("/contact")}
+                >
                   arrow_outward
                 </span>
               </span>
@@ -136,7 +139,7 @@ const ServicePage = () => {
           </div>
         </div>
 
-       <LaunchBanner headingText="Ready to get Started ?"/>
+        <LaunchBanner headingText="Ready to get Started ?" />
 
         {/* */}
       </div>

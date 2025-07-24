@@ -61,19 +61,28 @@ export default function FAQs() {
   };
 
   return (
-    <div className="pt-16 px-16 bg-transparent text-white font-creato">
-      <div className="flex items-center justify-between mb-10">
-        <h2 className="text-[80px] font-black italic">FAQs</h2>
-        <button className="flex items-center text-[25px] font-medium text-white hover:text-cyan-400">
-          All FAQs <FaChevronRight className="ml-2" size={14} />
-        </button>
+    <div className="pt-16 px-6 bg-transparent text-white font-creato">
+      <div className="flex flex-col justify-center mb-4     ">
+        <h2 className="sm:text-[25px] md:text-[45px] lg:text-[80px] font-black italic">
+          FAQs
+        </h2>
+        {/* Horizontal line only on mobile */}
+        <span className="block md:hidden h-px bg-white/70 w-[160px] my-4 ml-4" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 font-normal">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 font-normal md:h-auto h-[300px] overflow-y-scroll md:overflow-visible  custom-scroll">
         {faqs.map((faq, index) => (
-          <div key={index} className="border-l-2 border-cyan-500 pl-4 transition-all duration-500">
-            <div className="flex justify-between items-start cursor-pointer" onClick={() => toggleFAQ(index)}>
-              <h3 className="text-white text-[25px] font-medium max-w-[90%] leading-snug">{faq.question}</h3>
+          <div
+            key={index}
+            className="border-l-2 border-cyan-500 pl-4 transition-all duration-500"
+          >
+            <div
+              className="flex justify-between items-start cursor-pointer"
+              onClick={() => toggleFAQ(index)}
+            >
+              <h3 className="text-white/70 sm:text-[30px] md:text-[25px] font-medium max-w-[90%] leading-snug">
+                {faq.question}
+              </h3>
               <FaPlus
                 className={`transition-transform duration-300 mt-1 ${
                   openIndex === index ? "rotate-45 text-cyan-400" : "text-white"
@@ -82,7 +91,9 @@ export default function FAQs() {
             </div>
             <div
               className={`overflow-hidden transition-all duration-300 ease-in-out text-sm mt-2 text-white/70 leading-relaxed ${
-                openIndex === index ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+                openIndex === index
+                  ? "max-h-40 opacity-100"
+                  : "max-h-0 opacity-0"
               }`}
             >
               {faq.answer}

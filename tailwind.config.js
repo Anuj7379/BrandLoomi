@@ -11,6 +11,9 @@ module.exports = {
         creato: ['CreatoDisplay', 'sans-serif'],
         bethany: ['BethanyElingston', 'cursive'],
       },
+      screens: {
+        xs: '500px', // custom breakpoint at 500px
+      },
 
       //  Custom Animations
       animation: {

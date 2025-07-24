@@ -3,7 +3,7 @@ import DoubleDiamond from "../assets/DoubleDaimond.svg";
 
 function Process() {
   return (
-    <div className="w-full bg-[#00080A] text-white min-h-screen   py-20 font-creato overflow-hidden">
+    <div className="w-full bg-[#00080A] text-white  font-creato overflow-hidden">
       <div className="w-full">
 
         {/* === Full Width Image === */}

@@ -1,31 +1,35 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
-import { Link } from "react-router-dom"; // 👈 Import Link
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ title, description, link }) => {
   return (
-    <div className=" max-w-[412px] h-[363px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border font-creato">
-      {/* Glow ellipse */}
+    <div className="w-[90vw] max-w-[300px] sm:max-w-[360px] h-[260px] sm:h-[300px] md:h-[320px] xl:h-[340px] bg-transparent rounded-[20px] border border-white/10 px-6 py-8 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 font-creato mx-auto">
+
+      
+      {/* Glowing Background */}
       <div
-        className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"
+        className="absolute top-1/2 left-1/2 w-[200px] h-[200px] sm:w-[200px] sm:h-[260px] opacity-50 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2 z-0"
         style={{ background: "#00829B" }}
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full">
+      <div className="relative z-10 flex flex-col justify-between h-full sm:mt-4">
         {/* Title & Description */}
-        <div className="px-4 py-8 mt-3">
-          <h3 className="text-[25px] font-black italic mb-3">{title}</h3>
-          <p className="text-gray-400 text-[20px] font-normal leading-relaxed">
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[20px] sm:text-[24px] font-bold italic md:mb-2">
+            {title}
+          </h3>
+          <p className="text-gray-400 text-[14px]  sm:text-[16px] leading-relaxed">
             {description}
           </p>
         </div>
 
-        {/* Link Button */}
-        <div className="absolute bottom-[10px] left-[10px]">
+        {/* Bottom Left Circular Button */}
+        <div className="pt-4 mt-auto">
           <Link to={link}>
-            <div className="w-[50px] h-[50px] bg-white text-black flex items-center justify-center rounded-full transform rotate-[30deg] hover:scale-110 transition duration-300 shadow-[0_0_10px_#00FFFF] group-hover:shadow-[0_0_20px_#00ffff]">
-              <FaArrowRight size={21} className="-rotate-45 text-cyan-500 hover:-rotate-90 " />
+            <div className="w-[42px] h-[42px] sm:w-[50px] sm:h-[50px] bg-white text-black flex items-center justify-center rounded-full rotate-[30deg] hover:scale-110 transition duration-300 shadow-[0_0_10px_#00FFFF] group-hover:shadow-[0_0_20px_#00ffff]">
+              <FaArrowRight size={18} className="-rotate-45 text-cyan-500 hover:-rotate-90" />
             </div>
           </Link>
         </div>

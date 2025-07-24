@@ -6,17 +6,13 @@ import xIcon from "../assets/BlackXLogo.png";
 import linkedinIcon from "../assets/blacklinkedinLogo.png";
 import { useNavigate } from "react-router-dom";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
-import termsPdf from "../assets/pdfs/Terms-of-Service.pdf";
-import privacyPdf from "../assets/pdfs/Privacy-Policy.pdf";
 
 const Footer = () => {
   const navigate = useNavigate();
 
-  
-
   return (
-    <footer className="bg-white border-t border-gray-200 font-medium py-8 text-black items-center  font-creato">
-      <div className="px-14 mx-auto lg:gap- flex flex-wrap  justify-between gap-10 sm:gap-8">
+    <footer className="bg-white border-t border-gray-200 font-medium py-8 text-black/80 items-center  font-creato">
+      <div className="px-4 mx-4 flex flex-col md:flex-row  justify-between gap-10 sm:gap-8">
         {/* Brand Info */}
         <div className="flex flex-col w-[314px]">
           <img
@@ -24,7 +20,7 @@ const Footer = () => {
             alt="Brandloomi Logo"
             className="h-[50px] w-[176px]"
           />
-          <p className="text-gray-600 mb-4 leading-tight mt-4 text-[20px] font-normal">
+          <p className="text-[#000000]/80 mb-4 leading-tight mt-4 sm:text-[16px] md:text-[18px] font-normal">
             Affordable, high-quality digital solutions to help startups and
             small businesses launch, grow, and thrive.
           </p>
@@ -105,7 +101,7 @@ const Footer = () => {
               <li key={i}>
                 <span
                   onClick={() => navigate(item.path)}
-                  className="cursor-pointer hover:text-black transition-colors duration-200 text-[18px] font-creato font-normal"
+                  className="cursor-pointer  text-black/80 transition-colors duration-200 sm:text-[16px] md:text-[18px] font-creato font-normal"
                 >
                   {item.label}
                 </span>
@@ -117,31 +113,38 @@ const Footer = () => {
         {/* Company */}
         <div>
           <h3 className="font-bold text-[22px] mb-3">Company</h3>
-          <ul className="space-y-1.5 text-[18px] font-creato font-normal">
+          <ul className="grid grid-cols-2 md:grid-cols-1 gap-y-2 gap-x-4 text-[16px] md:text-[18px] font-creato font-normal">
             <li>
               <span
                 onClick={() => navigate("/about")}
-                className="cursor-pointer hover:text-black transition-colors duration-200 text-[16px]"
+                className="cursor-pointer hover:text-black transition-colors duration-200"
               >
                 About Us
               </span>
             </li>
-
             <li>
               <span
                 onClick={() => navigate("/contact")}
-                className="cursor-pointer hover:text-black transition-colors duration-200 text-[16px]"
+                className="cursor-pointer hover:text-black transition-colors duration-200"
+              >
+                FAQs
+              </span>
+            </li>
+            <li>
+              <span
+                onClick={() => navigate("/contact")}
+                className="cursor-pointer hover:text-black transition-colors duration-200"
               >
                 Contact
               </span>
             </li>
             <li>
-              <a
-                href={privacyPdf}
-                className="hover:text-black transition-colors duration-200 text-[16px]"
+              <span
+                onClick={() => navigate("/contact")}
+                className="cursor-pointer hover:text-black transition-colors duration-200"
               >
-                Privacy Policy
-              </a>
+                Blog
+              </span>
             </li>
           </ul>
         </div>
@@ -149,7 +152,7 @@ const Footer = () => {
         {/* Contact */}
         <div>
           <h3 className="font-bold text-[22px] mb-3">Contact</h3>
-          <ul className="space-y-1.5  text-[18px] font-creato font-normal">
+          <ul className="space-y-1.5  sm:text-[16px] md:text-[18px] font-creato font-normal">
             <li className="flex items-center space-x-2">
               <FaEnvelope className="text-gray-600" />
               <a
@@ -177,11 +180,35 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-2 mt-10 lg:mb-10 border-t pt-4 text-center text-[20px] text-gray-700 mx-14 font-creato font-normal">
+      <div className="flex flex-row justify-between items-center gap-8 mt-10 lg:mb-10 border-t pt-4 text-start md:text-left text-[12px] md:text-[16px] text-[#000000]/80 font-creato font-normal mx-2 md:mx-6">
         <p>© 2025 Brandloomi. All rights reserved.</p>
-        <a href={termsPdf} target="_blank" rel="noopener noreferrer">
-          Terms of Service
-        </a>
+
+        <div className="flex  md:flex-row items-center gap-2 md:gap-6 text-[14px] md:text-[16px]">
+          <a
+            href="https://drive.google.com/file/d/1E1FSyZYgqBoaNq3lheAzeo6kYUgDlQPC/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-black transition"
+          >
+            Privacy Policy
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1-_Knw7morQiatWLt1cHpxx7hKZj2Ec-v/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-black transition"
+          >
+            Refund Policy
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1dvEnZJKM6XLmqnaRtp6ObRaHGi1mJ0mB/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-black transition"
+          >
+            Terms of Service
+          </a>
+        </div>
       </div>
     </footer>
   );

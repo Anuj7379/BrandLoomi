@@ -1,25 +1,15 @@
 import React, { useState } from "react";
 import api from "../utils/api.js";
 import Header from "../components/Header";
-import ImageSlider from "../components/ImageSlider";
 import Footer from "../components/Footer";
 import logo from "../assets/brandloomiLogo.png";
-import messageImage from "../assets/messa.png";
-import greenTick from "../assets/greenTick.png";
-import winner from "../assets/winner.png";
-import code from "../assets/code.png";
-import achievement from "../assets/achievement.png";
-import submit from "../assets/submit.png";
+
 import { toast } from "sonner";
-import {  FaChevronRight } from "react-icons/fa6";
 import vector1 from "../assets/vector1.png";
 import vector2 from "../assets/vector2.png";
-
-
-
+import ParticipationAndWorking from "../components/ParticipationAndWorking.jsx";
 
 const Hero = () => {
-
   return (
     <div
       className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover "
@@ -28,26 +18,29 @@ const Hero = () => {
       {/* Top Layer Content */}
       <Header />
 
-       <div className="text-white font-sans mx-auto relative overflow-hidden">
-      <div className="relative lg:ml-20 md:ml-8 sm:ml-2 mt-20">
-        <div className="z-10 relative leading-none pt-24">
-          <div className="italic sm:text-[18px] md:text-[30px] lg:text-[50px] lg:pl-5">
-            NO STARTUP LEFT BEHIND
+      <div className="text-white font-sans mx-auto relative overflow-hidden">
+        <div className="relative lg:ml-20 md:ml-8 sm:ml-2 mt-20">
+          <div className="z-10 relative leading-none pt-24">
+            <div className="italic sm:text-[18px] md:text-[30px] lg:text-[50px] lg:pl-5">
+              NO STARTUP LEFT BEHIND
+            </div>
+            <div className="italic sm:text-[30px] md:text-[50px] lg:text-[80px] leading-tight font-extrabold">
+              <div>INTRODUCING</div>
+              <div   style={{
+                background: `linear-gradient(to bottom,  #34BDFE 53%, #17E48A 70%)`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}>PAY WHAT YOU CAN</div>
+            </div>
           </div>
-          <div className="italic sm:text-[30px] md:text-[50px] lg:text-[80px] leading-tight font-extrabold">
-            <div>INTRODUCING</div>
-            <div>PAY WHAT YOU CAN</div>
-          </div>
-        </div>
-        <div className="flex gap-4 lg:w-[600px] md:w-[450px] sma:w-[250px] lg:text-[18px] sm:[16px] mt-16">
-          <div className="text-3xl">+</div>
-          <div className="pb-10 mb-14">
-            Every month, we select a deserving startup to receive a professional
-            landing page—regardless of their budget.
+          <div className=" max-w-[1240px] font-creato mt-16">
+            <p className="text-[38px] leading-tight font-black italic">We believe every great idea deserves a digital home - regardless of budget. Apply for our monthly draw and get a professional website or app built at a price you decide.</p>
+            <div className="pb-10 mb-14 text-[18px] mt-4 font-normal">
+              At Brandloomi, we understand that many startups and small businesses struggle to afford quality digital services. That’s why we created the “Pay What You Can” program - a unique initiative designed to democratize access to professional websites, mobile apps, and digital marketing.
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
       {/* Bottom-right Vector  */}
       <img
@@ -58,7 +51,6 @@ const Hero = () => {
     </div>
   );
 };
-
 
 const LaunchBanner = ({ headingText }) => (
   <section className="w-full bg-[#00080A] h-[500px] py-14 font-creato">
@@ -175,237 +167,393 @@ export default function PayWhatYouCanPage() {
 
   return (
     <div className="bg-[#00080A] text-white font-creato ">
-      
       <Hero />
 
-      <div className="lg:mt-32 md:mt-24 sm:mt-10">
-        <div className="leading-none w-full">
-          <div className="lg:text-[80px] md:text-[50px] sm:text-[30px] font-bold italic ml-8">
-            MEET OUR CHAMPS
-          </div>
+      <ParticipationAndWorking />
 
-          <div className="flex justify-end items-center mt-4 mr-8 space-x-2 lg:mr-40">
-            <div className="h-px bg-white w-[150px] sm:w-[130px] md:w-[200px] lg:w-[372px] 2xl:w-[583px]" />
-            <div className="text-2xl">
-              <span className="material-symbols-outlined animate-[spin_5s_linear_infinite]">
-                asterisk
-              </span>
+      <div className=" font-creato">
+        <div className="w-full max-w-screen-xl mx-auto ">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Heading -1 */}
+            <div className="gap-4">
+              <div className="flex flex-col font-creato  mb-4 ">
+                <p className="text-[50px] font-black italic space-y-4">
+                  Contact & Business Information
+                </p>
+                <p>
+                  We need some basic details about you and your business so we
+                  can get in touch and understand your context better.
+                </p>
+                <p>
+                  Please double-check your email and phone number — that’s how
+                  we’ll contact you if you’re selected!
+                </p>
+              </div>
+              <div className="flex flex-row mb-10 gap-10">
+                {/* first half */}
+                <div className="w-1/2 space-y-4">
+                  {[
+                    { label: "businessName", name: "businessName" },
+                    { label: "Contact Person Full Name", name: "contactName" },
+                    {
+                      label: "Contact Person Email ",
+                      name: "contactEmail",
+                      type: "email",
+                    },
+                    { label: "Conact person Phone", name: "contactPhone" },
+                  ].map((field, i) => (
+                    <input
+                      key={i}
+                      type={field.type || "text"}
+                      name={field.name}
+                      placeholder={field.label}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                    />
+                  ))}
+                </div>
+                {/* second half */}
+                <div className="w-1/2 space-y-4">
+                  {[
+                    { label: "businessIndustry", name: "businessIndustry" },
+                    { label: "businessLocation", name: "businessLocation" },
+                    { label: "websiteUrl", name: "website" },
+                    { label: "Social Media Links", name: "socialMediaLinks" },
+                  ].map((field, i) => (
+                    <input
+                      key={i}
+                      type={field.type || "text"}
+                      name={field.name}
+                      placeholder={field.label}
+                      value={formData[field.name]}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                    />
+                  ))}
+                </div>
+              </div>
+              {/* ......... */}
+              <div className="flex-col mt-4">
+                <div className="flex flex-col font-creato mb-4 ">
+                  <p className="text-[50px] font-black italic  space-y-4">
+                    About Your Business/Startup
+                  </p>
+                  <p>We’d love to know what drives you.</p>
+                  <p>
+                    This section helps us understand what your business is all
+                    about, what makes it special, and how a website could
+                    support your growth. Be authentic — we value honesty over
+                    perfection!
+                  </p>
+                </div>
+                <div className="flex gap-10">
+                  <div className="w-1/2  space-y-4">
+                    {[
+                      { label: "Business Description", name: "description" },
+                      { label: "Problem Solved", name: "problemSolve" },
+
+                      {
+                        label: "Founded Date",
+                        name: "foundedDate",
+                        type: "date",
+                      },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                  <div className="1/2  space-y-4">
+                    {[
+                      {
+                        label: "Marketing Challenges",
+                        name: "marketingChallenges",
+                      },
+                      { label: "Target Audience", name: "targetAudience" },
+
+                      { label: "Employees Count", name: "employeesCount" },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* ..... */}
+              <div className="flex-col mt-4">
+                <div className="flex flex-col font-creato mb-4 ">
+                  <p className="text-[50px] font-black italic  space-y-4">
+                    Your Vision for a Website
+                  </p>
+                  <p>You don’t need to be a tech expert!</p>
+                  <p>
+                    Just tell us what you'd love your future website to do.
+                    Whether it’s about getting more customers, showcasing your
+                    work, or simplifying bookings — we’re here to help you bring
+                    that vision to life. Feel free to dream big!
+                  </p>
+                </div>
+                <div className="flex gap-10">
+                  <div className="w-1/2  space-y-4">
+                    {[
+                      { label: "Website Goals", name: "websiteGoals" },
+                      {
+                        label: "Branding Assets Description",
+                        name: "brandingAssetsDescription",
+                      },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                  <div className="w-1/2  space-y-4">
+                    {[
+                      {
+                        label: "Other Website Goals",
+                        name: "websiteGoalsOther",
+                      },
+
+                      { label: "Admired Websites", name: "admiredWebsites" },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* ................... */}
+              <div className="flex-col mt-4">
+                <div className="flex flex-col font-creato mb-4 ">
+                  <p className="text-[50px] font-black italic  space-y-4">
+                    The 2-Minute Video Submission (Essential!)
+                  </p>
+                  <p>
+                    This short video is your chance to shine! We want to see the
+                    real, passionate human behind the business. Don’t stress
+                    about making it “perfect” — we’re not judging your video
+                    editing skills, just your sincerity and drive. <br />
+                    Keep it under 2 minutes. Make sure the file is under 200MB
+                    if uploading. <br /> Or share a public link (Google Drive,
+                    YouTube, etc.).
+                  </p>
+                </div>
+                <div className="flex gap-10">
+                  <div className="w-1/2  space-y-4">
+                    <input
+                      type="file"
+                      accept="video/*"
+                      onChange={handleFileChange}
+                      className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white focus:outline-none "
+                    />
+                  </div>
+                  <div className="w-1/2  space-y-4">
+                    {[
+                      { label: "Video Link (Optional)", name: "videoLink" },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* ......... */}
+              <div className="flex-col mt-4">
+                <div className="flex flex-col font-creato mb-4">
+                  <p className="text-[50px] font-black italic  space-y-4">
+                    How You Heard About Us
+                  </p>
+                  <p>This part is totally optional.</p>
+                  <p>
+                    It helps us understand who we’re reaching and how we can
+                    improve. Your answers here will not affect your application.
+                  </p>
+                </div>
+                <div className="flex gap-10">
+                  <div className="w-1/2  space-y-4">
+                    {[
+                      {
+                        label: "How did you hear about us?",
+                        name: "heardAboutUs",
+                      },
+                      {
+                        label: "Other (Heard About Us)",
+                        name: "heardAboutUsOther",
+                      },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                  <div className="w-1/2  space-y-4">
+                    {[
+                      { label: "Years in Business", name: "yearsInBusiness" },
+                      { label: "Annual Revenue", name: "annualRevenue" },
+                    ].map((field, i) => (
+                      <input
+                        key={i}
+                        type={field.type || "text"}
+                        name={field.name}
+                        placeholder={field.label}
+                        value={formData[field.name]}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </div>
+              {/* ,............ */}
+
+              <div className="mt-8 mb-4 space-x-4">
+                <div className="text-[18px] mb-4 font-creato ">
+                  <p className="font-normal">
+                    A quick recap before you hit submit. <br /> We believe in
+                    making professional websites accessible. If you’re selected,
+                    we’ll build your site — and you’ll pay what you truly can
+                    afford, no pressure. <br />
+                    Please review and accept the terms to complete your
+                    application.
+                  </p>
+                </div>
+
+                <div className="font-creato ">
+                  <p className="text-[50px] font-black italic">
+                    "Pay What You Can" Agreement & Terms
+                  </p>
+                  <p className="font-black italic text-[30px] ">
+                    Understanding the "Pay What You Can" Model:
+                  </p>
+                  <p className="text-[18px] font-normal">
+                    "As part of our commitment to supporting small businesses,
+                    if you are selected as our monthly winner, we will design
+                    and develop a professional website tailored to your needs.
+                    In return, we ask you to contribute what you genuinely can
+                    afford. This is a voluntary contribution, and your ability
+                    to pay will not influence your selection."
+                  </p>
+                  <div className="flex items-center gap-3 mt-2">
+                    <input
+                      type="checkbox"
+                      name="agreementPayWhatYouCan"
+                      checked={formData.agreementPayWhatYouCan}
+                      onChange={handleChange}
+                      className="font-creato font-normal appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
+                    />
+                    <p className="text-[18px] text-white/90 leading-snug">
+                      I understand and agree to the{" "}
+                      <strong>"Pay What You Can"</strong> model.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <p className="font-black italic text-[30px]">
+                    Terms and Conditions:
+                  </p>
+                  <ul className="text-white/80 list-disc pl-6  text-[18px] leading-relaxed">
+                    <li>
+                      By submitting this application, you agree to our full
+                      terms and conditions{" "}
+                      <a
+                        href="https://drive.google.com/file/d/1dvEnZJKM6XLmqnaRtp6ObRaHGi1mJ0mB/view?usp=sharing"
+                        className="underline hover:text-white"
+                      >
+                        (View T&Cs)
+                      </a>
+                      .
+                    </li>
+                    <li>
+                      You acknowledge that only one winner will be selected each
+                      month. We reserve the right to verify all information
+                      provided.
+                    </li>
+                    <li>
+                      Winners will be notified via email and phone. If a winner
+                      cannot be reached or does not respond within (e.g., 48
+                      hours), another winner may be selected.
+                    </li>
+                  </ul>
+                </div>
+                {/* .. */}
+                {/* Agreements */}
+
+                <div className="flex items-start gap-3 mt-2">
+                  <input
+                    type="checkbox"
+                    name="agreementTerms"
+                    checked={formData.agreementTerms}
+                    onChange={handleChange}
+                    className="font-creato font-normal appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
+                  />
+                  <p className="text-[19px] text-white/70">
+                    *I have read and agree to the{" "}
+                    <a
+                      href="https://drive.google.com/file/d/1E1FSyZYgqBoaNq3lheAzeo6kYUgDlQPC/view?usp=drive_link"
+                      className="underline text-white"
+                    >
+                      Privacy Policy
+                    </a>
+                    .
+                  </p>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <ImageSlider />
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-white text-black font-bold rounded-xl px-6 py-3 hover:bg-gray-200"
+            >
+              {loading ? "Submitting..." : "Submit"}
+            </button>
 
-        <div className="mt-10 mb-4 pr-8">
-          <button className="relative flex items-center justify-between w-[200px] h-[56px] pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group ml-auto">
-            <span className="text-base font-medium z-10">Let's Discuss</span>
-            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white text-cyan-500 text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-              <span className="material-symbols-outlined leading-none text-[28px]">
-                arrow_outward
-              </span>
-            </span>
-          </button>
-        </div>
-      </div>
-
-      <div className="lg:mx-14 font-creato">
-        <div className="flex items-center font-sans   gap-4 px-4 font-black italic ">
-          <div className="text-[30px] whitespace-nowrap">Why Participate ?</div>
-          <div className="h-px sm:w-[100px] md:w-[250px] lg:w-[490px] bg-white/90" />
-        </div>
-
-        <div className="flex flex-col lg:flex-row justify-between gap-10 mt-12 px-4 sm:px-10">
-          <div className="flex flex-col font-creato max-w-[530px] ">
-            <p className="font-black italic text-[50px] leading-tight">
-              We believe every great idea deserves a digital home - regardless
-              of budget.
-            </p>
-            <div className=" flex mt-4 gap-4 items-center justify-center leading-tight mb-4">
-              <img src={messageImage} alt="" className="w-[61px] h-[56px]" />
-              <p className=" font-creato font-bold text-white/80 text-[25px]">
-                Your participation implies agreement—review the Terms &
-                Conditions thoroughly.
-              </p>
-            </div>
-            {[
-              { text: "Submit your story and a short video." },
-              { text: "We select one winner each month." },
-              {
-                text: "We build your landing page. You pay what you can.",
-              },
-              {
-                text: "Share your testimonial and success story.",
-              },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="flex text-white items-center gap-4 mt-6"
-              >
-                <img
-                  src={greenTick}
-                  alt="logo"
-                  className="w-[40px] h-[40px] "
-                />
-                <p className="font-creato font-normal text-[20px]">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-            <div className="flex items-center gap-8 font-creato font-black italic mt-10 -ml-6">
-              <p className="text-[25px]">how It wroks</p>
-              <div className="h-px  bg-white w-[150px] lg:w-[300px]"></div>
-            </div>
-            {[
-              { img: submit, text: "Submit your story and a short video." },
-              { img: winner, text: "We select one winner each month." },
-              {
-                img: code,
-                text: "We build your landing page. You pay what you can.",
-              },
-              {
-                img: achievement,
-                text: "Share your testimonial and success story.",
-              },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="flex text-white items-center gap-4 mt-6"
-              >
-                <img src={item.img} alt="logo" className="w-[40px] h-[40px] " />
-                <p className="font-creato font-normal text-[20px]">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-            <Card />
-          </div>
-
-          <div className="hidden lg:block w-px bg-white/60" />
-
-          <div className="w-full lg:w-1/2 pl-0 lg:pl-10">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {[
-                { label: "businessName", name: "businessName" },
-                { label: "Contact Person Full Name", name: "contactName" },
-                {
-                  label: "Contact Person Email ",
-                  name: "contactEmail",
-                  type: "email",
-                },
-                { label: "Conact person Phone", name: "contactPhone" },
-                { label: "businessIndustry", name: "businessIndustry" },
-                { label: "businessLocation", name: "businessLocation" },
-                { label: "websiteUrl", name: "website" },
-                { label: "Social Media Links", name: "socialMediaLinks" },
-                { label: "Business Description", name: "description" },
-                { label: "Problem Solved", name: "problemSolve" },
-                { label: "Marketing Challenges", name: "marketingChallenges" },
-                { label: "Target Audience", name: "targetAudience" },
-                { label: "Founded Date", name: "foundedDate", type: "date" },
-                { label: "Employees Count", name: "employeesCount" },
-                { label: "Website Goals", name: "websiteGoals" },
-                { label: "Other Website Goals", name: "websiteGoalsOther" },
-                { label: "Admired Websites", name: "admiredWebsites" },
-                {
-                  label: "Branding Assets Description",
-                  name: "brandingAssetsDescription",
-                },
-                { label: "Video Link (Optional)", name: "videoLink" },
-                { label: "How did you hear about us?", name: "heardAboutUs" },
-                { label: "Other (Heard About Us)", name: "heardAboutUsOther" },
-                { label: "Years in Business", name: "yearsInBusiness" },
-                { label: "Annual Revenue", name: "annualRevenue" },
-              ].map((field, i) => (
-                <input
-                  key={i}
-                  type={field.type || "text"}
-                  name={field.name}
-                  placeholder={field.label}
-                  value={formData[field.name]}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none"
-                />
-              ))}
-
-              {/* Branding Assets Checkbox */}
-              {[
-                { label: "Business Description", name: "description" },
-                { label: "Problem Solved", name: "problemSolve" },
-                { label: "Marketing Challenges", name: "marketingChallenges" },
-                { label: "Target Audience", name: "targetAudience" },
-
-                {
-                  label: "Branding Assets Description",
-                  name: "brandingAssetsDescription",
-                },
-              ].map((field, i) => (
-                <textarea
-                  key={i}
-                  name={field.name}
-                  placeholder={field.label}
-                  value={formData[field.name]}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white placeholder-white focus:outline-none resize-none"
-                />
-              ))}
-
-              {/* Video File Upload */}
-              <input
-                type="file"
-                accept="video/*"
-                onChange={handleFileChange}
-                className="w-full px-4 py-3 bg-transparent border border-white/50 rounded-xl text-white focus:outline-none "
-              />
-
-              {/* Agreements */}
-              <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  name="agreementPayWhatYouCan"
-                  checked={formData.agreementPayWhatYouCan}
-                  onChange={handleChange}
-                  className="appearance-none w-[20px] mt-2 aspect-square border border-white rounded-full checked:bg-blue-500 transition duration-200"
-                />
-                <p className="text-[18px] text-white/90">
-                  I consent to the processing of my personal data for
-                  recruitment purposes.
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  name="agreementTerms"
-                  checked={formData.agreementTerms}
-                  onChange={handleChange}
-                  className="font-creato font-normal appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
-                />
-                <p className="text-[19px] text-white/70">
-                  *I have read and agree to the{" "}
-                  <a href="#" className="underline text-white">
-                    Privacy Policy
-                  </a>
-                  .
-                </p>
-              </div>
-
-              {/* Submit Button */}
-              <button
-                type="submit"
-                disabled={loading}
-                className="bg-white text-black font-bold rounded-xl px-6 py-3 hover:bg-gray-200"
-              >
-                {loading ? "Submitting..." : "Submit"}
-              </button>
-
-              {/* Message */}
-              {message && (
-                <p className="text-sm mt-4 font-medium text-red-500">
-                  {message}
-                </p>
-              )}
-            </form>
-          </div>
+            {/* Message */}
+            {message && (
+              <p className="text-sm mt-4 font-medium text-red-500">{message}</p>
+            )}
+          </form>
         </div>
       </div>
 
@@ -414,81 +562,3 @@ export default function PayWhatYouCanPage() {
     </div>
   );
 }
-
-const testimonials = [
-  {
-    text: `"We got our website live in under four weeks and for less than half the price quoted elsewhere. The team’s support was phenomenal!"`,
-    name: "Anna M",
-    title: "Startup Founder",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
-  },
-  {
-    text: `"Exceptional design and super friendly team. Our brand now looks professional and modern."`,
-    name: "Rahul K",
-    title: "Marketing Head",
-    image: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    text: `"Reliable, fast, and efficient. We couldn't have asked for more. Highly recommended!"`,
-    name: "Sana P",
-    title: "Business Owner",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-];
-
-const Card = () => {
-  const [index, setIndex] = useState(0);
-  const currentTestimonial = testimonials[index];
-
-  const handlePrev = () => {
-    setIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setIndex((prev) => (prev === testimonials.length - 1 ? 0 : prev + 1));
-  };
-
-  return (
-    <section className="w-full bg-[#00080A] py-14 font-creato">
-      <div className="relative rounded-3xl p-6 sm:p-10 text-center bg-transparent h-[447px] sm:w-full md:w-[90%] lg:w-[95%] max-w-[380px] mx-[10px] sm:mx-auto overflow-hidden">
-        <div className="absolute top-52 left-[-100px] w-[214px] h-[175px] bg-cyan-400 opacity-60 blur-[100px] z-0" />
-        <div className="absolute -top-[80px] -right-[70px] w-[210px] h-[170px] bg-cyan-400 opacity-60 blur-[100px] z-0" />
-
-        {/* Main Card Content as Flex Column */}
-        <div className="relative z-10 h-full flex flex-col justify-between">
-          {/* Top Content */}
-          <div>
-            <div className="flex items-center space-x-4 mt-5 mb-6 text-left">
-              <img
-                src={currentTestimonial.image}
-                alt={currentTestimonial.name}
-                className="w-[71px] h-[71px] rounded-full object-cover"
-              />
-              <div>
-                <p className="italic text-[25px] font-black">
-                  {currentTestimonial.name}
-                </p>
-                <p className="text-[18px] text-white/80 italic">
-                  {currentTestimonial.title}
-                </p>
-              </div>
-            </div>
-            <p className="text-white text-[16px] leading-relaxed italic">
-              {currentTestimonial.text}
-            </p>
-          </div>
-
-          {/* Bottom Button Fixed in Flex */}
-          <div className="flex justify-end  mb-5 mr-4">
-            <button
-              onClick={handleNext}
-              className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition"
-            >
-              <FaChevronRight size={14} />
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
