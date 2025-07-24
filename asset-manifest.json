@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BrandLoomi/static/css/main.1e8c167b.css",
-    "main.js": "/BrandLoomi/static/js/main.018bf11f.js",
+    "main.css": "/BrandLoomi/static/css/main.4c029a4d.css",
+    "main.js": "/BrandLoomi/static/js/main.76e6785c.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
@@ -9,7 +9,6 @@
     "static/media/material-symbols-sharp.woff2": "/BrandLoomi/static/media/material-symbols-sharp.1aafe4e59b1473e734d1.woff2",
     "static/media/img2.png": "/BrandLoomi/static/media/img2.61cd167b8e8dc208d7f7.png",
     "static/media/vector2.png": "/BrandLoomi/static/media/vector2.38a33590f088ea742106.png",
-    "static/media/CEOImage.png": "/BrandLoomi/static/media/CEOImage.10dfa36d9e2fc9e84e51.png",
     "static/media/vector1.png": "/BrandLoomi/static/media/vector1.a50b754645f40e77efe4.png",
     "static/media/material-icons-two-tone.woff": "/BrandLoomi/static/media/material-icons-two-tone.3baa5b8f3469222b822d.woff",
     "static/media/material-icons-two-tone.woff2": "/BrandLoomi/static/media/material-icons-two-tone.4ef4218c522f1eb6b5b1.woff2",
@@ -20,11 +19,10 @@
     "static/media/material-icons-sharp.woff": "/BrandLoomi/static/media/material-icons-sharp.3a4004a46a653d4b2166.woff",
     "static/media/material-icons-outlined.woff2": "/BrandLoomi/static/media/material-icons-outlined.6f420cf17cc0d7676fad.woff2",
     "static/media/material-icons-sharp.woff2": "/BrandLoomi/static/media/material-icons-sharp.219aa9140e099e6c72ed.woff2",
-    "static/media/Privacy-Policy.pdf": "/BrandLoomi/static/media/Privacy-Policy.8b754f0295094877252a.pdf",
     "static/media/material-icons.woff2": "/BrandLoomi/static/media/material-icons.0c35d18bf06992036b69.woff2",
-    "static/media/Terms-of-Service.pdf": "/BrandLoomi/static/media/Terms-of-Service.da8ea65758b4ff234803.pdf",
-    "static/media/howWeWorkDoubleDaimod.svg": "/BrandLoomi/static/media/howWeWorkDoubleDaimod.8354c2ac33edee39d7f6f7b25dda5777.svg",
+    "static/media/desktophowWeWorkDoubleDaimod.svg": "/BrandLoomi/static/media/desktophowWeWorkDoubleDaimod.7c482a46822448fce5eb1c62840192eb.svg",
     "static/media/DoubleDaimond.svg": "/BrandLoomi/static/media/DoubleDaimond.0b8a1572c01cba98f3e8a80bbe13e9e0.svg",
+    "static/media/howWeWorkDoubleDaimod.svg": "/BrandLoomi/static/media/howWeWorkDoubleDaimod.e327d5efbca06808714a0dcdf87de59a.svg",
     "static/media/CreatoDisplay-ExtraBoldItalic.otf": "/BrandLoomi/static/media/CreatoDisplay-ExtraBoldItalic.171e1aee3b442d15132f.otf",
     "static/media/CreatoDisplay-BlackItalic.otf": "/BrandLoomi/static/media/CreatoDisplay-BlackItalic.19f8dfdfa3baa94bf83f.otf",
     "static/media/CreatoDisplay-LightItalic.otf": "/BrandLoomi/static/media/CreatoDisplay-LightItalic.275fb00937893c286fca.otf",
@@ -40,12 +38,12 @@
     "static/media/Vector4.svg": "/BrandLoomi/static/media/Vector4.66edb6e5f6e5b48e0482fb1308a928d5.svg",
     "static/media/vector3.svg": "/BrandLoomi/static/media/vector3.e680ebf58ba60fc7707330b4ebd565c0.svg",
     "index.html": "/BrandLoomi/index.html",
-    "main.1e8c167b.css.map": "/BrandLoomi/static/css/main.1e8c167b.css.map",
-    "main.018bf11f.js.map": "/BrandLoomi/static/js/main.018bf11f.js.map",
+    "main.4c029a4d.css.map": "/BrandLoomi/static/css/main.4c029a4d.css.map",
+    "main.76e6785c.js.map": "/BrandLoomi/static/js/main.76e6785c.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e8c167b.css",
-    "static/js/main.018bf11f.js"
+    "static/css/main.4c029a4d.css",
+    "static/js/main.76e6785c.js"
   ]
 }
