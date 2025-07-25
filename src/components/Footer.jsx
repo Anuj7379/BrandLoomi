@@ -180,7 +180,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-row justify-between items-center gap-8 mt-10 lg:mb-10 border-t pt-4 text-start md:text-left text-[12px] md:text-[16px] text-[#000000]/80 font-creato font-normal mx-2 md:mx-6">
+      <div className="flex flex-row justify-between items-center gap-8 mt-10 lg:mb-10 border-t pt-4 text-start md:text-left  text-[14px] md:text-[16px] text-[#000000]/80 font-creato font-normal mx-2 md:mx-6">
         <p>© 2025 Brandloomi. All rights reserved.</p>
 
         <div className="flex  md:flex-row items-center gap-2 md:gap-6 text-[14px] md:text-[16px]">

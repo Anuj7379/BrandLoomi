@@ -9,7 +9,7 @@ const ServiceCard = ({ title, description, link }) => {
       
       {/* Glowing Background */}
       <div
-        className="absolute top-1/2 left-1/2 w-[200px] h-[200px] sm:w-[200px] sm:h-[260px] opacity-50 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2 z-0"
+        className="absolute top-1/2 left-1/2 w-[200px] h-[240px] opacity-50 blur-[100px] rounded-full -translate-x-1/2 -translate-y-1/2 z-0"
         style={{ background: "#00829B" }}
       />
 

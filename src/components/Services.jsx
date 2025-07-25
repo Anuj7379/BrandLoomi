@@ -49,7 +49,7 @@ const Services = () => {
     const container = scrollRef.current;
     if (container) {
       container.scrollBy({
-        left: direction === "left" ? -320 : 320,
+        left: direction === "left" ? -340 : 340,
         behavior: "smooth",
       });
     }
@@ -66,7 +66,7 @@ const Services = () => {
       <div className="lg:hidden relative">
         {/* Left Button */}
         <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[28px] h-[28px] sm:w-[32px] sm:h-[32px] p-1"
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[28px] h-[28px]  "
           onClick={() => scroll("left")}
         >
           <img src={leftArrow} alt="Scroll Left" className="w-full h-full object-contain" />
@@ -86,7 +86,7 @@ const Services = () => {
 
         {/* Right Button */}
         <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[28px] h-[28px] sm:w-[32px] sm:h-[32px] p-1"
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[28px] h-[28px] "
           onClick={() => scroll("right")}
         >
           <img src={rightArrow} alt="Scroll Right" className="w-full h-full object-contain" />
