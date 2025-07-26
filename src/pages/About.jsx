@@ -51,7 +51,7 @@ function About() {
               </span>
             </button>
           </div>
-
+           {/* for desktop */}
           <div className="flex xs:hidden flex-col gap-4  leading-none">
             <div className="flex items-center justify-start gap-3">
               <div className="flex-grow bg-white h-[2px] w-full max-w-[200px] ml-auto" />
@@ -191,7 +191,7 @@ export default About;
 
 const Card = ({ title, description }) => {
   return (
-    <div className="w-[340px] h-[280px] md:w-[418px] md:h-[300px] bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border font-creato">
+    <div className="w-[340px] h-[280px] md:w-[418px] md:h-[300px] bg-transparent rounded-2xl border border-white/30 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border font-creato">
       {/* Glow ellipse */}
       <div
         className="absolute top-1/2 left-1/2 w-[250px] h-[200px] md:w-[337px] md:h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"

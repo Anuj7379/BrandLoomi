@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = ({ title, description, link }) => {
   return (
-    <div className="w-[90vw] max-w-[300px] sm:max-w-[360px] h-[260px] sm:h-[300px] md:h-[320px] xl:h-[340px] bg-transparent rounded-[20px] border border-white/10 px-6 py-8 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 font-creato mx-auto">
+    <div className="w-[90vw] max-w-[330px] md:max-w-[380px] h-[270px] md:h-[320px] lg:h-[340px] bg-transparent rounded-[20px] border border-white/30 px-6 py-8 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 font-creato  mx-auto">
 
       
       {/* Glowing Background */}
@@ -14,10 +14,10 @@ const ServiceCard = ({ title, description, link }) => {
       />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col justify-between h-full sm:mt-4">
+      <div className="relative z-10 flex flex-col justify-between h-full mt-4">
         {/* Title & Description */}
         <div className="flex flex-col gap-4">
-          <h3 className="text-[20px] sm:text-[24px] font-bold italic md:mb-2">
+          <h3 className="text-[23px] md:text-[26px] font-bold italic md:mb-2">
             {title}
           </h3>
           <p className="text-gray-400 text-[14px]  sm:text-[16px] leading-relaxed">

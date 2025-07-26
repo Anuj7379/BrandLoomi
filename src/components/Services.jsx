@@ -43,15 +43,15 @@ const services = [
 ];
 
 const Services = () => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef();
 
   const scroll = (direction) => {
     const container = scrollRef.current;
-    if (container) {
-      container.scrollBy({
-        left: direction === "left" ? -340 : 340,
-        behavior: "smooth",
-      });
+    const cardWidth = container.offsetWidth;
+    if (direction === "left") {
+      container.scrollBy({ left: -cardWidth, behavior: "smooth" });
+    } else {
+      container.scrollBy({ left: cardWidth, behavior: "smooth" });
     }
   };
 
@@ -63,33 +63,46 @@ const Services = () => {
       </h2>
 
       {/* Mobile: Scrollable Cards */}
-      <div className="lg:hidden relative">
+      <div className="lg:hidden relative w-full">
         {/* Left Button */}
         <button
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[28px] h-[28px]  "
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[25px] h-[25px] -ml-4"
           onClick={() => scroll("left")}
         >
-          <img src={leftArrow} alt="Scroll Left" className="w-full h-full object-contain" />
+          <img
+            src={leftArrow}
+            alt="Scroll Left"
+            className="w-full h-full object-contain"
+          />
         </button>
 
-        {/* Cards */}
+        {/* Scrollable Cards */}
         <div
           ref={scrollRef}
-          className="overflow-x-auto scroll-smooth custom flex gap-12 px-10 py-4 items-center custom-scroll "
+          className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-center w-full"
         >
           {services.map((service, idx) => (
-            <div key={idx} className="flex-shrink-0 ">
-              <ServiceCard {...service} />
+            <div
+              key={idx}
+              className="flex-shrink-0 snap-center w-full px-6" // full screen width, with some side padding
+            >
+              <div className="w-full max-w-sm mx-auto">
+                <ServiceCard {...service} />
+              </div>
             </div>
           ))}
         </div>
 
         {/* Right Button */}
         <button
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[28px] h-[28px] "
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 rounded-full w-[25px] h-[25px] -mr-4"
           onClick={() => scroll("right")}
         >
-          <img src={rightArrow} alt="Scroll Right" className="w-full h-full object-contain" />
+          <img
+            src={rightArrow}
+            alt="Scroll Right"
+            className="w-full h-full object-contain"
+          />
         </button>
       </div>
 
