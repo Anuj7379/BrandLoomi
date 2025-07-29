@@ -18,6 +18,7 @@ import Industries from "./pages/Industries";
 import { Toaster } from "sonner";
 import CookieBanner from "./components/CookieBanner";
 
+
 function App() {
   return (
     <Router>
