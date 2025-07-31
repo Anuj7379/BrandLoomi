@@ -2,6 +2,9 @@ import React, { useRef, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import logo from "../assets/brandloomiLogo.png";
+import leftArrow from "../assets/leftScrollArrow.png";
+import rightArrow from "../assets/rightScrollArrow.png";
+import LaunchBanner from "../components/LaunchBanner";
 
 const cardData = [
   {
@@ -80,6 +83,21 @@ function Careers() {
   const scrollToForm = () =>
     formRef.current?.scrollIntoView({ behavior: "smooth" });
 
+  // card scroll
+  const scrollRef = useRef();
+
+  const scroll = (direction) => {
+    const scrollAmount = 340 + 32; // 350px card + 32px margin (16px on both sides)
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: direction === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  // for modal  and search
+
   const [searchInput, setSearchInput] = useState("");
   const [search, setSearch] = useState("");
   const [modalData, setModalData] = useState(null);
@@ -107,42 +125,44 @@ function Careers() {
 
   return (
     <div className="relative min-h-screen text-white font-sans overflow-hidden bg-[#00080A]">
+      <div className="absolute -top-[60px] -right-[60px] w-[250px] h-[250px] bg-[#009252] opacity-40 blur-[80px] sm:blur-[80px]  z-0 xs:hidden" />
+      <div className="absolute w-[200px] h-[200px] md:w-[240px] md:h-[200px] rounded-full bg-cyan-400 blur-[120px] opacity-100 top-[50px] md:top-[150px] left-[80px] z-0" />
       <Header title="CAREERS" />
 
       {/* Input and Discover */}
-      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8 lg:ml-10 lg:mt-36 sm:px-0">
+      <div className="flex flex-row   items-start justify-start gap-4  lg:ml-10 mt-28 md:mt-32 lg:mt-36 mx-4 ">
         <input
           name="name"
           type="text"
           placeholder="Seek and you shall find"
-          className="w-full lg:w-[424px] h-[50px] bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
+          className="w-[260px] md:w-[300px] lg:w-[424px] h-[35px] md:h-[50px]  bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
           type="submit"
-          className="bg-white text-black font-semibold rounded-xl h-12 w-full sm:w-32 hover:bg-gray-200 flex items-center justify-center gap-2"
+          className="bg-white text-black font-semibold rounded-xl h-9 md:h-12 md:w-32 hover:bg-gray-200 flex items-center justify-center gap-2 px-2"
           onClick={() => setSearch(searchInput)}
         >
-          <span>Discover</span>
+          <span className="text-base">Discover</span>
           <span className="material-symbols-outlined">arrow_right_alt</span>
         </button>
       </div>
 
-      {/* Cards */}
-      <div className="flex flex-col md:flex-row mt-14 items-center justify-evenly mb-10 flex-wrap gap-6">
+      {/* Desktop / Tablet View */}
+      <div className="hidden md:flex flex-col md:flex-row mt-14 items-center justify-evenly mb-10 flex-wrap gap-6">
         {filteredCards.length > 0 ? (
           filteredCards.map((card) => (
             <div
               key={card.id}
-              className="w-full max-w-[412px] lg:h-[503px] h-auto bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border cursor-pointer"
+              className="w-full max-w-[412px] lg:h-[440px] h-auto bg-transparent rounded-2xl border border-white/10 p-6 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 box-border cursor-pointer"
               onClick={() => setModalData(card)}
             >
               <div
                 className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"
                 style={{ background: "#00829B" }}
               />
-              <div className="italic text-2xl text-white font-extrabold pt-3 ">
+              <div className="italic text-2xl text-white font-extrabold pt-3">
                 PRODUCT
               </div>
               <div className="relative z-10 flex flex-col justify-between h-full">
@@ -167,6 +187,81 @@ function Careers() {
             No matching jobs found.
           </p>
         )}
+      </div>
+
+      {/* Mobile Carousel View */}
+      <div className="relative w-full flex justify-center overflow-hidden mt-10 block md:hidden">
+        {/* Scrollable Cards */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto snap-x snap-mandatory flex scrollbar-hide scroll-smooth"
+          style={{ width: "340px" }}
+        >
+          {filteredCards.length > 0 ? (
+            filteredCards.map((card) => (
+              <div
+                key={card.id}
+                className="w-[340px] flex-shrink-0 snap-center mx-4"
+              >
+                <div
+                  className="w-full h-auto bg-transparent  rounded-2xl border border-white/10  text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 cursor-pointer  px-6 mr-10"
+                  onClick={() => setModalData(card)}
+                >
+                  <div
+                    className="absolute top-1/2 left-1/2 w-[337px] h-[295px] opacity-40 blur-[100px] rounded-full transform -translate-x-1/2 -translate-y-1/2 z-0"
+                    style={{ background: "#00829B" }}
+                  />
+                  <div className="italic text-2xl text-white font-extrabold pt-3">
+                    PRODUCT
+                  </div>
+                  <div className="relative z-10 flex flex-col justify-between h-full">
+                    <div>
+                      <h3 className="text-3xl font-bold pt-14 mb-4">
+                        {card.title}
+                      </h3>
+                      <p className="text-[14px] font-normal font-sans leading-relaxed pt-4">
+                        {card.description}
+                      </p>
+                    </div>
+                    <div className="flex items-center justify-around my-8 text-[22px] italic font-extrabold">
+                      <h4>FULL TIME</h4>
+                      <div className="w-[1px] h-10 bg-white/60"></div>
+                      <h4>IRELAND</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-white text-lg italic mt-6">
+              No matching jobs found.
+            </p>
+          )}
+        </div>
+
+        {/* Right Button */}
+        <button
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-20 rounded-full w-[20px] h-[20px] flex items-center justify-center"
+          onClick={() => scroll("right")}
+        >
+          <img
+            src={rightArrow}
+            alt="Scroll Right"
+            className="w-5 h-5 object-contain"
+          />
+        </button>
+
+        {/* Left Button */}
+        <button
+          className="absolute left-2 top-1/2 -translate-y-1/2 z-20 rounded-full w-[20px] h-[20px] flex items-center justify-center"
+          onClick={() => scroll("left")}
+        >
+          <img
+            src={leftArrow}
+            alt="Scroll Left"
+            className="w-5 h-5 object-contain"
+          />
+        </button>
       </div>
 
       {/* Modal */}
@@ -234,24 +329,54 @@ function Careers() {
       )}
 
       {/* Form Section */}
-      <div className="lg:mx-14" ref={formRef}>
-        <div className="flex items-center font-sans font-bold italic gap-4 px-4">
+      <div className="lg:mx-14 mt-14" ref={formRef}>
+        <div className="flex flex-col md:flex-row md:items-center font-sans font-bold italic gap-4 px-4">
           <div className="text-[25px] whitespace-nowrap">ONE STEP AWAY</div>
-          <div className="h-px flex-1 bg-white/90"></div>
+          <div className="bg-white/90 h-[1px]  md:h-px md:flex-1 mx-10 md:mx-0 w-[230px] md:w-full"></div>
         </div>
+
         <div className="flex flex-col lg:flex-row justify-between gap-10 mt-12 px-4 sm:px-10">
           <div className="w-full lg:w-1/2 pr-0 lg:pr-10">
-            <div className="text-xl italic font-bold mb-6">
+            <div className="text-[16px] md:text-xl italic font-bold mb-6">
               WHAT WE CARE ABOUT
             </div>
             <ul className="space-y-6 text-white/90 text-[16px] list-disc pl-5">
-              {Array(5).fill(
-                <li>
-                  <span className="font-bold">Kindness Over Everything:</span>{" "}
-                  We're all about good vibes, mutual respect, and lifting each
-                  other up.
-                </li>
-              )}
+              <li>
+                <span className="font-bold">People First, Always:</span> We
+                believe great work happens when our team feels heard, valued,
+                and supported.
+              </li>
+              <li>
+                <span className="font-bold">Kindness Over Everything:</span>{" "}
+                We're all about good vibes, mutual respect, and lifting each
+                other up.
+              </li>
+              <li>
+                <span className="font-bold">
+                  We hire for hunger, not just degrees:
+                </span>{" "}
+                If you're eager to learn, you'll thrive here.
+              </li>
+              <li>
+                <span className="font-bold">We work from everywhere:</span> but
+                stay deeply connected. Slack memes are our love language.
+              </li>
+              <li>
+                <span className="font-bold">We don't clock-watch:</span> We care
+                about meaningful work, not busywork.
+              </li>
+              <li>
+                <span className="font-bold">We give you the space:</span> to
+                experiment, question, and design without fear.
+              </li>
+              <li>
+                <span className="font-bold">We move fast but protect:</span> our
+                people from burnout. Ambition meets balance.
+              </li>
+              <li>
+                <span className="font-bold">No matter where you're from:</span>{" "}
+                or what your story is — your voice matters here.
+              </li>
             </ul>
           </div>
 
@@ -309,32 +434,66 @@ function Careers() {
                   ))}
                 </select>
               ))}
-              <div className="flex items-start gap-3">
+
+              <div className="flex items-start space-x-2 mb-4">
                 <input
                   type="checkbox"
-                  className="appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
+                  name="consent"
+                  id="consent"
+                  checked={formData.consent}
+                  onChange={(e) =>
+                    setFormData({ ...formData, consent: e.target.checked })
+                  }
+                  className="appearance-none w-7 h-5 border border-white rounded-full checked:bg-blue-500 checked:ring-2 checked:ring-black transition-all cursor-pointer"
                 />
-                <p className="text-sm text-white/70">
+                <label
+                  htmlFor="consent"
+                  className="text-sm text-white text-[14px] md:text-[20px]"
+                >
                   I consent to the processing of my personal data for
                   recruitment purposes.
-                </p>
+                </label>
               </div>
-              <div className="flex items-start gap-3">
+
+              {/* Privacy Policy */}
+              <div className="flex items-start space-x-2 mb-4">
                 <input
                   type="checkbox"
-                  className="appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
+                  name="agreePrivacy"
+                  id="agreePrivacy"
+                  checked={formData.agreePrivacy}
+                  className="appearance-none w-5 h-5 border border-white rounded-full checked:bg-blue-500 checked:ring-2 checked:ring-black transition-all cursor-pointer"
                 />
-                <p className="text-sm text-white/70">
-                  *I have read and agree to the{" "}
-                  <a href="#" className="underline text-white">
+                <label
+                  htmlFor="agreePrivacy"
+                  className="text-sm text-white text-[14px] md:text-[20px]"
+                >
+                  "I have read and agree to the{" "}
+                  <a
+                    href="/privacy"
+                    target="_blank"
+                    className="text-white/80 underline text-[14px] md:text-[20px]"
+                  >
                     Privacy Policy
                   </a>
-                  .
-                </p>
+                </label>
               </div>
+              <div className="flex items-start space-x-2 mb-4">
+                <input
+                  type="checkbox"
+                  className="appearance-none w-5 h-5 border border-white rounded-full bg-white checked:bg-blue-500 checked:ring-2 checked:ring-black transition-all cursor-pointer"
+                />
+                <label
+                  htmlFor="newsletter"
+                  className="text-sm text-white text-[14px] md:text-[20px]"
+                >
+                  Subscribing to newsletter{" "}
+                </label>
+              </div>
+
               <button
                 type="submit"
-                className="bg-white text-black font-semibold rounded-xl h-12 w-full sm:w-40 hover:bg-gray-200 flex items-center justify-center gap-2 mt-4"
+                className="bg-white text-black font-semibold rounded-xl h-12 w-36 sm:w-40 hover:bg-gray-200 flex items-center justify-center gap-2 mt-4"
               >
                 <span>APPLY NOW</span>
                 <span className="material-symbols-outlined">
@@ -356,40 +515,3 @@ function Careers() {
 }
 
 export default Careers;
-
-const LaunchBanner = ({ headingText, onClickScroll }) => (
-  <section className="w-full bg-[#00080A] h-[600px] py-14">
-    <div className="relative rounded-3xl p-6 sm:p-10 text-center bg-transparent h-[467px] sm:w-full md:w-[90%] lg:w-[95%] max-w-[1700px] mx-[10px] sm:mx-auto overflow-hidden">
-      <div className="absolute bottom-[-60px] left-[-60px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
-      <div className="absolute -top-[100px] -right-[80px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
-      <div className="relative z-10">
-        <div className="flex justify-center mb-6">
-          <img className="h-[58px]" src={logo} alt="logo" />
-        </div>
-        {headingText && (
-          <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-black italic mb-8 font-sans lg:w-[1000px] max-w-[1000px] mx-auto">
-            {headingText}
-          </h1>
-        )}
-        <div className="flex justify-center px-4 sm:px-0">
-          <div
-            onClick={onClickScroll}
-            className="relative flex items-center justify-between w-[290px] h-[52px] sm:h-[56px] pl-5 sm:pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group cursor-pointer"
-          >
-            <input
-              type="email"
-              disabled
-              placeholder="Fill Out This Form"
-              className="bg-transparent outline-none text-white placeholder-white text-sm sm:text-base w-full pr-16 cursor-pointer"
-            />
-            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cyan-500 text-[28px] sm:text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF]">
-              <span className="material-symbols-outlined leading-none text-[24px] sm:text-[28px]">
-                arrow_outward
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);

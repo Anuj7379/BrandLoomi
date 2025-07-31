@@ -17,6 +17,7 @@ import HowWeWork from "./pages/HowWeWork";
 import Industries from "./pages/Industries";
 import { Toaster } from "sonner";
 import CookieBanner from "./components/CookieBanner";
+import NewApplicationLandingPage from "./pages/NewApplicationLandingPage";
 
 
 function App() {
@@ -64,6 +65,11 @@ function App() {
         />
         <Route path="/company/HowWeWork" element={<HowWeWork />} />
         <Route path="/services/industries" element={<Industries />} />
+        <Route
+          path="/newapplicationlandingpage"
+          element={<NewApplicationLandingPage />}
+          
+        />
       </Routes>
       {/* Cookie Banner goes here */}
       <CookieBanner />

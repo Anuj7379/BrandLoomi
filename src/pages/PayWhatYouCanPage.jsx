@@ -3,7 +3,7 @@ import api from "../utils/api.js";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import logo from "../assets/brandloomiLogo.png";
-
+import LaunchBanner from "../components/LaunchBanner";
 import { toast } from "sonner";
 import vector1 from "../assets/vector1.png";
 import vector2 from "../assets/vector2.png";
@@ -12,79 +12,54 @@ import ParticipationAndWorking from "../components/ParticipationAndWorking.jsx";
 const Hero = () => {
   return (
     <div
-      className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover "
+      className="relative text-white font-creato overflow-hidden bg-no-repeat bg-cover"
       style={{ backgroundImage: `url(${vector1})` }}
     >
       {/* Top Layer Content */}
       <Header />
 
-      <div className="text-white font-sans mx-auto relative overflow-hidden">
-        <div className="relative lg:ml-20 md:ml-8 sm:ml-2 mt-20">
-          <div className="z-10 relative leading-none pt-24">
-            <div className="italic sm:text-[18px] md:text-[30px] lg:text-[50px] lg:pl-5">
+      <div className="text-white font-sans mx-auto relative overflow-hidden px-4 sm:px-6 md:px-10 lg:px-16">
+        <div className="relative mt-10 sm:mt-16 md:mt-20 lg:ml-20 md:ml-8 sm:ml-2">
+          <div className="z-10 relative leading-none pt-16 sm:pt-20">
+            <div className="italic text-[20px]  md:text-[30px] lg:text-[50px] lg:pl-5">
               NO STARTUP LEFT BEHIND
             </div>
-            <div className="italic sm:text-[30px] md:text-[50px] lg:text-[80px] leading-tight font-extrabold">
+            <div className="italic text-[25px]  md:text-[50px] lg:text-[80px] leading-tight font-extrabold">
               <div>INTRODUCING</div>
-              <div   style={{
-                background: `linear-gradient(to bottom,  #34BDFE 53%, #17E48A 70%)`,
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}>PAY WHAT YOU CAN</div>
+              <div
+                style={{
+                  background: `linear-gradient(to bottom,#0A6A97 ,  #34BDFE , #17E48A)`,
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                }}
+              >
+                PAY WHAT YOU CAN
+              </div>
             </div>
           </div>
-          <div className=" max-w-[1240px] font-creato mt-16">
-            <p className="text-[38px] leading-tight font-black italic">We believe every great idea deserves a digital home - regardless of budget. Apply for our monthly draw and get a professional website or app built at a price you decide.</p>
-            <div className="pb-10 mb-14 text-[18px] mt-4 font-normal">
-              At Brandloomi, we understand that many startups and small businesses struggle to afford quality digital services. That’s why we created the “Pay What You Can” program - a unique initiative designed to democratize access to professional websites, mobile apps, and digital marketing.
+
+          <div className="max-w-[1240px] font-creato mt-10 sm:mt-12 md:mt-16">
+            <p className="text-[18px]  md:text-[34px] lg:text-[40px] leading-tight font-bold md:font-medium italic">
+              We believe every great idea deserves a digital home — regardless of budget. Apply for our monthly draw and get a professional website or app built at a price you decide.
+            </p>
+            <div className="text-[12px]  md:text-[18px] mt-4 mb-10 pb-10 font-normal">
+              At Brandloomi, we understand that many startups and small businesses struggle to afford quality digital services. That’s why we created the “Pay What You Can” program — a unique initiative designed to democratize access to professional websites, mobile apps, and digital marketing.
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom-right Vector  */}
+      {/* Bottom-right Vector */}
       <img
         src={vector2}
         alt="Bottom Right Vector"
-        className="absolute bottom-[-750px] right-[-250px] w-[1076px] h-[1718px] pointer-events-none z-0"
+        className="absolute bottom-[-300px] sm:bottom-[-500px] md:bottom-[-750px] right-[-150px] sm:right-[-200px] md:right-[-250px] w-[700px] sm:w-[900px] md:w-[1076px] h-auto pointer-events-none z-0"
       />
     </div>
   );
 };
 
-const LaunchBanner = ({ headingText }) => (
-  <section className="w-full bg-[#00080A] h-[500px] py-14 font-creato">
-    <div className="relative rounded-3xl p-6 sm:p-10 text-center bg-transparent h-[357px] sm:w-full md:w-[90%] lg:w-[95%] max-w-[1700px] mx-[10px] sm:mx-auto overflow-hidden">
-      <div className="absolute bottom-[-60px] left-[-60px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
-      <div className="absolute -top-[100px] -right-[80px] w-[400px] h-[300px] bg-cyan-400 opacity-40 blur-[120px] z-0" />
-      <div className="relative z-10">
-        <div className="flex justify-center mb-6">
-          <img className="h-[58px]" src={logo} alt="logo" />
-        </div>
-        {headingText && (
-          <h1 className="text-white text-center text-3xl sm:text-4xl md:text-5xl lg:text-[80px] font-black italic mb-8 font-sans lg:w-[1000px] max-w-[1000px] mx-auto">
-            {headingText}
-          </h1>
-        )}
-        <div className="flex justify-center px-4 sm:px-0">
-          <div className="relative flex items-center justify-between w-[290px] h-[52px] sm:h-[56px] pl-5 sm:pl-6 pr-0 border border-cyan-400 rounded-full bg-black text-white overflow-hidden group">
-            <input
-              type="email"
-              disabled
-              placeholder="Fill Out This Form"
-              className="bg-transparent outline-none text-white placeholder-white text-sm sm:text-base w-full pr-16"
-            />
-            <span className="absolute right-[-2px] top-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-cyan-500 text-[28px] sm:text-[32px] flex items-center justify-center shadow-[0_0_10px_#00FFFF] cursor-pointer">
-              <span className="material-symbols-outlined leading-none text-[24px] sm:text-[28px]">
-                arrow_outward
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-);
+
 
 // Main component export
 export default function PayWhatYouCanPage() {
@@ -166,32 +141,32 @@ export default function PayWhatYouCanPage() {
   };
 
   return (
-    <div className="bg-[#00080A] text-white font-creato ">
+    <div className="bg-[#00080A] w-full  max-w-full overflow-x-hidden text-white font-creato ">
       <Hero />
 
       <ParticipationAndWorking />
 
       <div className=" font-creato">
-        <div className="w-full max-w-screen-xl mx-auto ">
+        <div className="w-full   ">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Heading -1 */}
-            <div className="gap-4">
+            <div className="gap-4 mx-4 md:mx-8">
               <div className="flex flex-col font-creato  mb-4 ">
-                <p className="text-[50px] font-black italic space-y-4">
+                <p className=" text-[18px] md:text-[50px] font-black italic space-y-4">
                   Contact & Business Information
                 </p>
-                <p>
+                <p className="text-[14px] md:text-[20px] font-normal">
                   We need some basic details about you and your business so we
                   can get in touch and understand your context better.
                 </p>
-                <p>
+                <p  className="text-[14px] md:text-[20px] font-normal">
                   Please double-check your email and phone number — that’s how
                   we’ll contact you if you’re selected!
                 </p>
               </div>
-              <div className="flex flex-row mb-10 gap-10">
+              <div className="flex flex-col md:flex-row mb-10 gap-4 md:gap-10">
                 {/* first half */}
-                <div className="w-1/2 space-y-4">
+                <div className="md:w-1/2 space-y-4">
                   {[
                     { label: "businessName", name: "businessName" },
                     { label: "Contact Person Full Name", name: "contactName" },
@@ -214,7 +189,7 @@ export default function PayWhatYouCanPage() {
                   ))}
                 </div>
                 {/* second half */}
-                <div className="w-1/2 space-y-4">
+                <div className="md:w-1/2 space-y-4">
                   {[
                     { label: "businessIndustry", name: "businessIndustry" },
                     { label: "businessLocation", name: "businessLocation" },
@@ -236,19 +211,19 @@ export default function PayWhatYouCanPage() {
               {/* ......... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4 ">
-                  <p className="text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
                     About Your Business/Startup
                   </p>
-                  <p>We’d love to know what drives you.</p>
-                  <p>
+                  <p  className="text-[14px] md:text-[20px] font-normal m">We’d love to know what drives you.</p>
+                  <p  className="text-[14px] md:text-[20px] font-normal">
                     This section helps us understand what your business is all
                     about, what makes it special, and how a website could
                     support your growth. Be authentic — we value honesty over
                     perfection!
                   </p>
                 </div>
-                <div className="flex gap-10">
-                  <div className="w-1/2  space-y-4">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-10">
+                  <div className="md:w-1/2  space-y-4">
                     {[
                       { label: "Business Description", name: "description" },
                       { label: "Problem Solved", name: "problemSolve" },
@@ -270,7 +245,7 @@ export default function PayWhatYouCanPage() {
                       />
                     ))}
                   </div>
-                  <div className="1/2  space-y-4">
+                  <div className="md:w-1/2  space-y-4">
                     {[
                       {
                         label: "Marketing Challenges",
@@ -296,19 +271,19 @@ export default function PayWhatYouCanPage() {
               {/* ..... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4 ">
-                  <p className="text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
                     Your Vision for a Website
                   </p>
-                  <p>You don’t need to be a tech expert!</p>
-                  <p>
+                  <p  className="text-[14px] md:text-[20px] font-normal">You don’t need to be a tech expert!</p>
+                  <p  className="text-[14px] md:text-[20px] font-normal">
                     Just tell us what you'd love your future website to do.
                     Whether it’s about getting more customers, showcasing your
                     work, or simplifying bookings — we’re here to help you bring
                     that vision to life. Feel free to dream big!
                   </p>
                 </div>
-                <div className="flex gap-10">
-                  <div className="w-1/2  space-y-4">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-10">
+                  <div className="md:w-1/2  space-y-4">
                     {[
                       { label: "Website Goals", name: "websiteGoals" },
                       {
@@ -327,7 +302,7 @@ export default function PayWhatYouCanPage() {
                       />
                     ))}
                   </div>
-                  <div className="w-1/2  space-y-4">
+                  <div className="md:w-1/2  space-y-4">
                     {[
                       {
                         label: "Other Website Goals",
@@ -352,10 +327,10 @@ export default function PayWhatYouCanPage() {
               {/* ................... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4 ">
-                  <p className="text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
                     The 2-Minute Video Submission (Essential!)
                   </p>
-                  <p>
+                  <p  className="text-[14px] md:text-[20px] font-normal">
                     This short video is your chance to shine! We want to see the
                     real, passionate human behind the business. Don’t stress
                     about making it “perfect” — we’re not judging your video
@@ -365,8 +340,8 @@ export default function PayWhatYouCanPage() {
                     YouTube, etc.).
                   </p>
                 </div>
-                <div className="flex gap-10">
-                  <div className="w-1/2  space-y-4">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-10">
+                  <div className="md:w-1/2  space-y-4">
                     <input
                       type="file"
                       accept="video/*"
@@ -394,17 +369,17 @@ export default function PayWhatYouCanPage() {
               {/* ......... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4">
-                  <p className="text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
                     How You Heard About Us
                   </p>
-                  <p>This part is totally optional.</p>
-                  <p>
+                  <p className="text-[14px] md:text-[20px] font-normal">This part is totally optional.</p>
+                  <p  className="text-[14px] md:text-[20px] font-normal">
                     It helps us understand who we’re reaching and how we can
                     improve. Your answers here will not affect your application.
                   </p>
                 </div>
-                <div className="flex gap-10">
-                  <div className="w-1/2  space-y-4">
+                <div className="flex flex-col md:flex-row gap-4 md:gap-10">
+                  <div className="md:w-1/2  space-y-4">
                     {[
                       {
                         label: "How did you hear about us?",
@@ -426,7 +401,7 @@ export default function PayWhatYouCanPage() {
                       />
                     ))}
                   </div>
-                  <div className="w-1/2  space-y-4">
+                  <div className="md:w-1/2  space-y-4">
                     {[
                       { label: "Years in Business", name: "yearsInBusiness" },
                       { label: "Annual Revenue", name: "annualRevenue" },

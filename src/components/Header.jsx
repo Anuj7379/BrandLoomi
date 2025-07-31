@@ -33,9 +33,9 @@ const Header = ({ title }) => {
         {/* Logo + Title */}
         <div className="flex items-center italic font-extrabold">
           <Link to="/">
-            <img className="h-[58px]" src={logo} alt="logo" />
+            <img className="h-[34px] md:h-[58px]" src={logo} alt="logo" />
           </Link>
-          <div className="text-[25px] ml-2 mt-2">{title}</div>
+          <div className="text-[16px] md:text-[25px]  mt-2">{title}</div>
         </div>
 
         {/* Hamburger Icon for Mobile */}

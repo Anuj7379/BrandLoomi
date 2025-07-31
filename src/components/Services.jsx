@@ -79,7 +79,7 @@ const Services = () => {
         {/* Scrollable Cards */}
         <div
           ref={scrollRef}
-          className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-center w-full"
+          className="overflow-x-auto scroll-smooth snap-x snap-mandatory flex items-center w-full scrollbar-hide"
         >
           {services.map((service, idx) => (
             <div

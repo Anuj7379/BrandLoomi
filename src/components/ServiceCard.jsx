@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const ServiceCard = ({ title, description, link }) => {
   return (
-    <div className="w-[90vw] max-w-[330px] md:max-w-[380px] h-[270px] md:h-[320px] lg:h-[340px] bg-transparent rounded-[20px] border border-white/30 px-6 py-8 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 font-creato  mx-auto">
+    <div className="w-[90vw] max-w-[310px] md:max-w-[380px] h-[260px] md:h-[320px] lg:h-[340px] bg-transparent rounded-[20px] border border-white/30 px-6 py-8 text-white relative overflow-hidden group hover:shadow-[0_0_40px_#00ffff33] transition-shadow duration-300 font-creato  mx-auto">
 
       
       {/* Glowing Background */}
