@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BrandLoomi/static/css/main.4ed9ce77.css",
-    "main.js": "/BrandLoomi/static/js/main.012a4e7b.js",
+    "main.css": "/BrandLoomi/static/css/main.53d593b1.css",
+    "main.js": "/BrandLoomi/static/js/main.c8cff545.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
@@ -45,12 +45,12 @@
     "static/media/vector3.svg": "/BrandLoomi/static/media/vector3.e680ebf58ba60fc7707330b4ebd565c0.svg",
     "index.html": "/BrandLoomi/index.html",
     "static/media/FinTech.svg": "/BrandLoomi/static/media/FinTech.5f1bb6b2be031684f7c4e9add6172e66.svg",
-    "main.4ed9ce77.css.map": "/BrandLoomi/static/css/main.4ed9ce77.css.map",
-    "main.012a4e7b.js.map": "/BrandLoomi/static/js/main.012a4e7b.js.map",
+    "main.53d593b1.css.map": "/BrandLoomi/static/css/main.53d593b1.css.map",
+    "main.c8cff545.js.map": "/BrandLoomi/static/js/main.c8cff545.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ed9ce77.css",
-    "static/js/main.012a4e7b.js"
+    "static/css/main.53d593b1.css",
+    "static/js/main.c8cff545.js"
   ]
 }
