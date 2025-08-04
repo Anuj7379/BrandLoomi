@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaPlus, FaChevronRight } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa6";
 
 const faqs = [
   {
@@ -90,7 +90,7 @@ export default function FAQs() {
               />
             </div>
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out text-sm mt-2 text-white/70 leading-relaxed ${
+              className={`overflow-hidden transition-all duration-300 ease-in-out text-[16px] mt-2 text-white/70 leading-relaxed ${
                 openIndex === index
                   ? "max-h-40 opacity-100"
                   : "max-h-0 opacity-0"

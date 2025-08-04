@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from "react";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import location from '../assets/location.png'
 
 const TimelineSnap = ({ year, text, underlineWidth = 160 }) => {
@@ -27,8 +26,8 @@ const TimelineSnap = ({ year, text, underlineWidth = 160 }) => {
       </div>
 
       {/* Text + underline */}
-      <div className="relative text-[16px] md:[18px] lg:text-[25px] font-creato font-normal">
-        <div className="border-l-2 border-[#00BFFF] pl-2 md:pl-4 text-white/70 whitespace-nowrap">
+      <div className="relative text-[16px] lg:text-[25px] font-creato font-normal">
+        <div className="border-l-2 border-[#00BFFF] pl-2 md:pl-4 text-white/80 whitespace-nowrap">
           {restText}{" "}
           <span ref={lastWordRef} className="font-semibold text-white/70 inline-block relative z-10">
             {lastWord}

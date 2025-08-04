@@ -1,4 +1,3 @@
-import { FaArrowRight } from "react-icons/fa";
 import logo from "../assets/brandloomiLogo.png";
 import { useNavigate } from "react-router-dom";
 
@@ -23,7 +22,7 @@ export default function LaunchBanner({ headingText }) {
 
           {/* Heading */}
           {headingText && (
-            <h1 className="text-white text-center  text-[25px] md:text-[55px] lg:text-[80px] font-black italic mb-8  lg:w-[1000px] max-w-[940px] mx-auto">
+            <h1 className="text-white text-center  text-[25px] md:text-[55px] lg:text-[70px] font-black italic mb-8  w-full max-w-[950px] mx-auto">
               {headingText}
             </h1>
           )}

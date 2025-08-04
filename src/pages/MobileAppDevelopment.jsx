@@ -7,6 +7,22 @@ import WhatWeDeliver from "../components/WhatWeDeliver";
 import TimelineSnap from "../components/TimelineSnap";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Testimonials from "../components/Testimonial";
+import ServiceFaqs from "../components/ServiceFaqs";
+
+const AppFeature = [
+  {
+    title: "Affordable",
+    description: "Startup-friendly pricing, no compromise on quality.",
+  },
+  {
+    title: "Speed to Market",
+    description: "MVPs delivered in as little as 4 weeks.",
+  },
+  {
+    title: "Ongoing Partnership",
+    description: "Updates, analytics, and feature enhancements.",
+  },
+];
 
 const MobileAppDevelopment = () => {
   return (
@@ -18,7 +34,7 @@ const MobileAppDevelopment = () => {
 
         <Header />
         <AllServicesHeroSection
-          title="Mobile App Development"
+          titleLine1="Mobile App Development"
           description="In a mobile-first world, your customers expect seamless experiences on the go. We design and develop custom mobile apps for iOS and Android that help you connect, engage, and grow—whether you’re launching a new product or digitizing your services."
         />
 
@@ -39,48 +55,77 @@ const MobileAppDevelopment = () => {
           ]}
         />
 
-        <div className="bg-transparent " style={{ padding: "40px 50px" }}>
-          <h2 className="text-[80px]  italic font-bold">TIMELINE</h2>
-          <div className="flex items-center justify-center mb-10">
-            {/* Line */}
-            <div className="bg-white h-[2px] w-[300px] sm:w-[400px] md:w-[500px]"></div>
+        {/* Desktop View */}
+        <div className="bg-transparent hidden md:block px-[50px] py-[40px]">
+          {/* Heading */}
+          <span className="text-[30px] md:text-[50px] lg:text-[80px] italic font-black text-white">
+            Our Process
+          </span>
 
-            {/* Asterisk Icon */}
-            <span className="material-symbols-outlined text-white text-3xl ml-4">
+          {/* Line + Asterisk */}
+          <div className="flex items-center justify-center mt-2 mb-10">
+            <div className="bg-white h-[1px] w-[220px] sm:w-[300px] md:w-[400px] lg:w-[500px]" />
+            <span className="material-symbols-outlined animate-[spin_3s_linear_infinite] ml-2">
               asterisk
             </span>
           </div>
 
+          {/* Glow */}
           <div className="relative w-[169px] h-[190px] rounded-full bg-[#27DCFF] blur-[200px] opacity-100 top-[270px] left-[-28px] z-0 -mt-40" />
 
-          <div className="grid grid-cols-7 gap-y-6 relative z-10 m-10">
+          {/* Grid Timeline */}
+          <div className="grid grid-cols-6 gap-y-10 relative z-10 ">
             <div className="col-start-1 row-start-1">
               <TimelineSnap
-                text="Discovery & Requirements. "
+                text="Discovery & Requirements"
                 underlineWidth={200}
               />
             </div>
             <div className="col-start-2 row-start-2">
-              <TimelineSnap
-                text="Solution & Architecture."
-                underlineWidth={200}
-              />
+              <TimelineSnap text="Solution Architecture" underlineWidth={200} />
             </div>
-            <div className="col-start-3 row-start-3" underlineWidth={200}>
-              <TimelineSnap text="Agile Development." />
+            <div className="col-start-3 row-start-3">
+              <TimelineSnap text="Agile Development" underlineWidth={200} />
             </div>
-            <div className="col-start-4 row-start-4" underlineWidth={200}>
-              <TimelineSnap text="Testing & QA." />
+            <div className="col-start-4 row-start-4">
+              <TimelineSnap text="Testing & QA" underlineWidth={200} />
             </div>
-            <div className="col-start-5 row-start-5" underlineWidth={200}>
-              <TimelineSnap text="Deployment & Support." />
+            <div className="col-start-5 row-start-5">
+              <TimelineSnap text="Deployment & Support" underlineWidth={200} />
             </div>
           </div>
         </div>
+        {/* Mobile View */}
+        <div className="block md:hidden px-4 py-10 max-w-md mx-auto">
+          <h2 className="text-[24px] font-bold italic text-white mb-6">
+            Our Process
+          </h2>
 
-        <WhyChooseUs />
-        <Testimonials/>
-        <LaunchBanner headingText="Ready to Build your Competative Edge ? " />
+          {/* Line + Asterisk */}
+          <div className="flex items-center justify-center mt-2 mb-10">
+            <div className="bg-white h-[1px] w-[180px]" />
+            <span className="material-symbols-outlined animate-[spin_3s_linear_infinite] ml-2">
+              asterisk
+            </span>
+          </div>
+
+          {/* Vertical Timeline Stack */}
+          <div className="">
+            <TimelineSnap
+              text="Discovery & Requirements"
+              underlineWidth={200}
+            />
+            <TimelineSnap text="Solution Architecture" underlineWidth={200} />
+            <TimelineSnap text="Agile Development" underlineWidth={200} />
+            <TimelineSnap text="Testing & QA" underlineWidth={200} />
+            <TimelineSnap text="Deployment & Support" underlineWidth={200} />
+          </div>
+        </div>
+
+        <WhyChooseUs heading="Why Choose Us?" features={AppFeature} />
+        <Testimonials />
+        <ServiceFaqs/>
+        <LaunchBanner headingText="Tap into the market with an app they can’t put down." />
       </div>
       <Footer />
     </>
