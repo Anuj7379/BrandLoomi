@@ -51,7 +51,7 @@ function About() {
               </span>
             </button>
           </div>
-           {/* for desktop */}
+          {/* for desktop */}
           <div className="flex xs:hidden flex-col gap-4  leading-none">
             <div className="flex items-center justify-start gap-3">
               <div className="flex-grow bg-white h-[2px] w-full max-w-[200px] ml-auto" />
@@ -140,7 +140,7 @@ function About() {
         </div>
 
         {/** timeline  */}
-        <div className="bg-transparent ">
+        <div className="bg-transparent  ">
           <h2 className="text-[30px] md:text-[50px] lg:text-[80px]  italic font-bold lg:ml-10 md:ml-6 ml-2">
             TIMELINE
           </h2>
@@ -154,7 +154,7 @@ function About() {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-7 gap-y-4 relative z-10  md:m-10 text-[16px] lg:text-[25px] md:ml-5 ">
+          <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-7 gap-y-4 relative z-10 pr-4 py-6 text-[14px] sm:text-[16px] lg:text-[25px]">
             <div className="col-span-1 md:col-start-1 md:row-start-1">
               <TimelineSnap year="2024" text="Agency founded in Dublin." />
             </div>
@@ -164,7 +164,7 @@ function About() {
             <div className="col-span-1 md:col-start-3 md:row-start-3">
               <TimelineSnap
                 year="2025"
-                text="Pay What You Can” initiative introduced."
+                text="“Pay What You Can” initiative introduced."
               />
             </div>
             <div className="col-span-1 md:col-start-4 md:row-start-4">

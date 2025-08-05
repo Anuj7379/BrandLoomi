@@ -82,6 +82,14 @@ const Header = ({ title }) => {
                     How It Works
                   </Link>
                 </li>
+                <li>
+                  <Link
+                    to="/company/Blogs"
+                    className="block px-4 py-2 hover:text-cyan-400"
+                  >
+                    Blog
+                  </Link>
+                </li>
               </ul>
             )}
           </li>

@@ -18,6 +18,7 @@ import Industries from "./pages/Industries";
 import { Toaster } from "sonner";
 import CookieBanner from "./components/CookieBanner";
 import NewApplicationLandingPage from "./pages/NewApplicationLandingPage";
+import BlogPage from "./pages/BlogPage";
 
 
 function App() {
@@ -64,6 +65,8 @@ function App() {
           element={<PayWhatYouCanPage />}
         />
         <Route path="/company/HowWeWork" element={<HowWeWork />} />
+        <Route path="/company/Blogs" element={<BlogPage/>} />
+
         <Route path="/services/industries" element={<Industries />} />
         <Route
           path="/newapplicationlandingpage"

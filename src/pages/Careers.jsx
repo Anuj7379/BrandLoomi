@@ -135,13 +135,13 @@ function Careers() {
           name="name"
           type="text"
           placeholder="Seek and you shall find"
-          className="w-[260px] md:w-[300px] lg:w-[424px] h-[35px] md:h-[50px]  bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
+          className="w-[220px] md:w-[300px] lg:w-[424px] h-[40px] md:h-[50px]  bg-transparent border border-white rounded-lg px-6 text-white placeholder-white"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button
           type="submit"
-          className="bg-white text-black font-semibold rounded-xl h-9 md:h-12 md:w-32 hover:bg-gray-200 flex items-center justify-center gap-2 px-2"
+          className="bg-white text-black font-semibold rounded-xl h-[40px] md:h-12 md:w-32 hover:bg-gray-200 flex items-center justify-center gap-2 px-2"
           onClick={() => setSearch(searchInput)}
         >
           <span className="text-base">Discover</span>
@@ -423,12 +423,13 @@ function Careers() {
                 <select
                   key={idx}
                   className="w-full px-4 py-3 bg-black text-white border border-white/50 rounded-xl focus:outline-none"
+                  defaultValue=""
                 >
-                  <option disabled selected className="bg-black text-white">
+                  <option value="" disabled>
                     {dropdown.label}
                   </option>
                   {dropdown.options.map((opt, i) => (
-                    <option key={i} className="bg-black text-white">
+                    <option key={i} value={opt}>
                       {opt}
                     </option>
                   ))}
