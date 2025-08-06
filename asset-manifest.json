@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/BrandLoomi/static/css/main.53d593b1.css",
-    "main.js": "/BrandLoomi/static/js/main.c8cff545.js",
+    "main.css": "/BrandLoomi/static/css/main.6d3d3478.css",
+    "main.js": "/BrandLoomi/static/js/main.9c578bd2.js",
     "static/js/453.025eb16b.chunk.js": "/BrandLoomi/static/js/453.025eb16b.chunk.js",
     "static/media/experts.png": "/BrandLoomi/static/media/experts.2fac5241f004d49aa7ed.png",
     "static/media/material-symbols-rounded.woff2": "/BrandLoomi/static/media/material-symbols-rounded.d4ed7c85cfb9d300f426.woff2",
@@ -33,7 +33,6 @@
     "static/media/Bethany-Elingston.otf": "/BrandLoomi/static/media/Bethany-Elingston.df05ad013c71a3724f0f.otf",
     "static/media/Develop.png": "/BrandLoomi/static/media/Develop.b5227b48a97e42d51561.png",
     "static/media/LandingPageHeading.svg": "/BrandLoomi/static/media/LandingPageHeading.04b03d346bd0570b3b1c0a39a82fd2cc.svg",
-    "static/media/messa.png": "/BrandLoomi/static/media/messa.0c4b7bc7967c051f2f7f.png",
     "static/media/Deliver.png": "/BrandLoomi/static/media/Deliver.773d85e0e6e981596a81.png",
     "static/media/Evolve.png": "/BrandLoomi/static/media/Evolve.47169e3080bac9b80d8b.png",
     "static/media/HealthTech.svg": "/BrandLoomi/static/media/HealthTech.b2f99622bc49dc774e65729ebc7bb5a7.svg",
@@ -45,12 +44,12 @@
     "static/media/vector3.svg": "/BrandLoomi/static/media/vector3.e680ebf58ba60fc7707330b4ebd565c0.svg",
     "index.html": "/BrandLoomi/index.html",
     "static/media/FinTech.svg": "/BrandLoomi/static/media/FinTech.5f1bb6b2be031684f7c4e9add6172e66.svg",
-    "main.53d593b1.css.map": "/BrandLoomi/static/css/main.53d593b1.css.map",
-    "main.c8cff545.js.map": "/BrandLoomi/static/js/main.c8cff545.js.map",
+    "main.6d3d3478.css.map": "/BrandLoomi/static/css/main.6d3d3478.css.map",
+    "main.9c578bd2.js.map": "/BrandLoomi/static/js/main.9c578bd2.js.map",
     "453.025eb16b.chunk.js.map": "/BrandLoomi/static/js/453.025eb16b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.53d593b1.css",
-    "static/js/main.c8cff545.js"
+    "static/css/main.6d3d3478.css",
+    "static/js/main.9c578bd2.js"
   ]
 }
