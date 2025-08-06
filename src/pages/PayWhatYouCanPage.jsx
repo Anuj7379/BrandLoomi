@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import api from "../utils/api.js";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import logo from "../assets/brandloomiLogo.png";
 import LaunchBanner from "../components/LaunchBanner";
 import { toast } from "sonner";
 import vector1 from "../assets/vector1.png";
@@ -18,7 +17,7 @@ const Hero = () => {
       {/* Top Layer Content */}
       <Header />
 
-      <div className="text-white font-sans mx-auto relative overflow-hidden px-4 sm:px-6 md:px-10 lg:px-16">
+      <div className="text-white font-sans mx-auto relative overflow-hidden px-7">
         <div className="relative mt-10 sm:mt-16 md:mt-20 lg:ml-20 md:ml-8 sm:ml-2">
           <div className="z-10 relative leading-none pt-16 sm:pt-20">
             <div className="italic text-[20px]  md:text-[30px] lg:text-[50px] lg:pl-5">
@@ -40,10 +39,16 @@ const Hero = () => {
 
           <div className="max-w-[1240px] font-creato mt-10 sm:mt-12 md:mt-16">
             <p className="text-[18px]  md:text-[34px] lg:text-[40px] leading-tight font-bold md:font-medium italic">
-              We believe every great idea deserves a digital home — regardless of budget. Apply for our monthly draw and get a professional website or app built at a price you decide.
+              We believe every great idea deserves a digital home — regardless
+              of budget. Apply for our monthly draw and get a professional
+              website or app built at a price you decide.
             </p>
             <div className="text-[12px]  md:text-[18px] mt-4 mb-10 pb-10 font-normal">
-              At Brandloomi, we understand that many startups and small businesses struggle to afford quality digital services. That’s why we created the “Pay What You Can” program — a unique initiative designed to democratize access to professional websites, mobile apps, and digital marketing.
+              At Brandloomi, we understand that many startups and small
+              businesses struggle to afford quality digital services. That’s why
+              we created the “Pay What You Can” program — a unique initiative
+              designed to democratize access to professional websites, mobile
+              apps, and digital marketing.
             </div>
           </div>
         </div>
@@ -59,10 +64,9 @@ const Hero = () => {
   );
 };
 
-
-
 // Main component export
 export default function PayWhatYouCanPage() {
+  
   const [formData, setFormData] = useState({
     businessName: "",
     contactName: "",
@@ -91,6 +95,9 @@ export default function PayWhatYouCanPage() {
     agreementPayWhatYouCan: false,
     agreementTerms: false,
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  
 
   const [videoFile, setVideoFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -150,16 +157,16 @@ export default function PayWhatYouCanPage() {
         <div className="w-full   ">
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Heading -1 */}
-            <div className="gap-4 mx-4 md:mx-8">
+            <div className="gap-4 mx-6 md:mx-8">
               <div className="flex flex-col font-creato  mb-4 ">
-                <p className=" text-[18px] md:text-[50px] font-black italic space-y-4">
+                <p className=" text-[18px] md:text-[50px] font-black italic space-y-4 py-6">
                   Contact & Business Information
                 </p>
                 <p className="text-[14px] md:text-[20px] font-normal">
                   We need some basic details about you and your business so we
                   can get in touch and understand your context better.
                 </p>
-                <p  className="text-[14px] md:text-[20px] font-normal">
+                <p className="text-[14px] md:text-[20px] font-normal pb-4">
                   Please double-check your email and phone number — that’s how
                   we’ll contact you if you’re selected!
                 </p>
@@ -211,11 +218,13 @@ export default function PayWhatYouCanPage() {
               {/* ......... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4 ">
-                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic   py-6">
                     About Your Business/Startup
                   </p>
-                  <p  className="text-[14px] md:text-[20px] font-normal m">We’d love to know what drives you.</p>
-                  <p  className="text-[14px] md:text-[20px] font-normal">
+                  <p className="text-[14px] md:text-[20px] font-normal m">
+                    We’d love to know what drives you.
+                  </p>
+                  <p className="text-[14px] md:text-[20px] font-normal pb-4">
                     This section helps us understand what your business is all
                     about, what makes it special, and how a website could
                     support your growth. Be authentic — we value honesty over
@@ -271,11 +280,13 @@ export default function PayWhatYouCanPage() {
               {/* ..... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4 ">
-                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4 py-6">
                     Your Vision for a Website
                   </p>
-                  <p  className="text-[14px] md:text-[20px] font-normal">You don’t need to be a tech expert!</p>
-                  <p  className="text-[14px] md:text-[20px] font-normal">
+                  <p className="text-[14px] md:text-[20px] font-normal">
+                    You don’t need to be a tech expert!
+                  </p>
+                  <p className="text-[14px] md:text-[20px] font-normal pb-4">
                     Just tell us what you'd love your future website to do.
                     Whether it’s about getting more customers, showcasing your
                     work, or simplifying bookings — we’re here to help you bring
@@ -327,10 +338,10 @@ export default function PayWhatYouCanPage() {
               {/* ................... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4 ">
-                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4 py-6">
                     The 2-Minute Video Submission (Essential!)
                   </p>
-                  <p  className="text-[14px] md:text-[20px] font-normal">
+                  <p className="text-[14px] md:text-[20px] font-normal pb-4">
                     This short video is your chance to shine! We want to see the
                     real, passionate human behind the business. Don’t stress
                     about making it “perfect” — we’re not judging your video
@@ -369,11 +380,13 @@ export default function PayWhatYouCanPage() {
               {/* ......... */}
               <div className="flex-col mt-4">
                 <div className="flex flex-col font-creato mb-4">
-                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4">
+                  <p className="text-[18px] md:text-[50px] font-black italic  space-y-4 py-6">
                     How You Heard About Us
                   </p>
-                  <p className="text-[14px] md:text-[20px] font-normal">This part is totally optional.</p>
-                  <p  className="text-[14px] md:text-[20px] font-normal">
+                  <p className="text-[14px] md:text-[20px] font-normal">
+                    This part is totally optional.
+                  </p>
+                  <p className="text-[14px] md:text-[20px] font-normal pb-4">
                     It helps us understand who we’re reaching and how we can
                     improve. Your answers here will not affect your application.
                   </p>
@@ -421,7 +434,7 @@ export default function PayWhatYouCanPage() {
               </div>
               {/* ,............ */}
 
-              <div className="mt-8 mb-4 space-x-4">
+              <div className="mt-8 mb-4  py-4">
                 <div className="text-[18px] mb-4 font-creato ">
                   <p className="font-normal">
                     A quick recap before you hit submit. <br /> We believe in
@@ -434,13 +447,13 @@ export default function PayWhatYouCanPage() {
                 </div>
 
                 <div className="font-creato ">
-                  <p className="text-[50px] font-black italic">
+                  <p className="text-[18px] md:text-[30px] lg:text-[50px] font-black italic">
                     "Pay What You Can" Agreement & Terms
                   </p>
-                  <p className="font-black italic text-[30px] ">
+                  <p className="font-black italic text-[14px] md:text-[30px] ">
                     Understanding the "Pay What You Can" Model:
                   </p>
-                  <p className="text-[18px] font-normal">
+                  <p className="text-[14px] md:text-[18px] font-normal py-4">
                     "As part of our commitment to supporting small businesses,
                     if you are selected as our monthly winner, we will design
                     and develop a professional website tailored to your needs.
@@ -449,14 +462,18 @@ export default function PayWhatYouCanPage() {
                     to pay will not influence your selection."
                   </p>
                   <div className="flex items-center gap-3 mt-2">
-                    <input
-                      type="checkbox"
-                      name="agreementPayWhatYouCan"
-                      checked={formData.agreementPayWhatYouCan}
-                      onChange={handleChange}
-                      className="font-creato font-normal appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
-                    />
-                    <p className="text-[18px] text-white/90 leading-snug">
+                    <label className="relative flex items-center w-5 h-5">
+                      <input
+                        type="checkbox"
+                        name="agreementPayWhatYouCan"
+                        checked={formData.agreementPayWhatYouCan}
+                        onChange={handleChange}
+                        className="peer appearance-none w-5 h-5 border border-white rounded-full checked:bg-blue-500 transition duration-200"
+                      />
+                      {/* Custom checkmark */}
+                      <div className="absolute inset-0 rounded-full border border-white peer-checked:bg-blue-500 peer-checked:border-blue-500"></div>
+                    </label>
+                    <p className="text-[16px] md:text-[18px] text-white/90 leading-snug">
                       I understand and agree to the{" "}
                       <strong>"Pay What You Can"</strong> model.
                     </p>
@@ -464,10 +481,10 @@ export default function PayWhatYouCanPage() {
                 </div>
 
                 <div className="mt-4">
-                  <p className="font-black italic text-[30px]">
-                    Terms and Conditions:
+                  <p className="font-black italic text-[18px] md:text-[30px]">
+                    Terms and Conditions :
                   </p>
-                  <ul className="text-white/80 list-disc pl-6  text-[18px] leading-relaxed">
+                  <ul className="text-white/80 list-disc pl-7  text-[18px] leading-relaxed px-5 space-y-2">
                     <li>
                       By submitting this application, you agree to our full
                       terms and conditions{" "}
@@ -494,13 +511,13 @@ export default function PayWhatYouCanPage() {
                 {/* .. */}
                 {/* Agreements */}
 
-                <div className="flex items-start gap-3 mt-2">
+                <div className="flex items-start gap-3 mt-2 px-4">
                   <input
                     type="checkbox"
                     name="agreementTerms"
                     checked={formData.agreementTerms}
                     onChange={handleChange}
-                    className="font-creato font-normal appearance-none mt-1 w-4 h-4 border border-white rounded-full checked:bg-blue-500 transition duration-200"
+                    className="font-creato font-normal appearance-none mt-1 w-5 h-5 border border-white rounded-full checked:bg-blue-500 transition duration-200"
                   />
                   <p className="text-[19px] text-white/70">
                     *I have read and agree to the{" "}
@@ -513,16 +530,36 @@ export default function PayWhatYouCanPage() {
                     .
                   </p>
                 </div>
+                <div className="flex items-start space-x-2 mb-4 px-4 pt-2">
+                <input
+                  type="checkbox"
+                  className="appearance-none w-5 h-5 border border-white rounded-full bg-white checked:bg-blue-500 checked:ring-2 checked:ring-black transition-all cursor-pointer"
+                />
+                <label
+                  htmlFor="newsletter"
+                  className="text-sm text-white text-[14px] md:text-[20px]"
+                >
+                  Subscribing to newsletter{" "}
+                </label>
+              </div>
               </div>
             </div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="bg-white text-black font-bold rounded-xl px-6 py-3 hover:bg-gray-200"
-            >
-              {loading ? "Submitting..." : "Submit"}
-            </button>
+            {/* Submit Button */}
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className={`bg-white text-black font-semibold rounded-xl px-8 py-3 flex items-center space-x-2 transition duration-200 ml-8 ${
+                  isSubmitting
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-gray-200"
+                }`}
+              >
+                <span>{isSubmitting ? "Submitting..." : "SUBMIT"}</span>
+                <span className="material-symbols-outlined">
+                  arrow_right_alt
+                </span>
+              </button>
 
             {/* Message */}
             {message && (

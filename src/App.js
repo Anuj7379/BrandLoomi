@@ -65,7 +65,7 @@ function App() {
           element={<PayWhatYouCanPage />}
         />
         <Route path="/company/HowWeWork" element={<HowWeWork />} />
-        <Route path="/company/Blogs" element={<BlogPage/>} />
+        <Route path="/company/blogs" element={<BlogPage/>} />
 
         <Route path="/services/industries" element={<Industries />} />
         <Route

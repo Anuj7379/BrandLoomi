@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import messageImage from "../assets/messa.png";
 import greenTick from "../assets/greenTick.png";
 import winner from "../assets/winner.png";
 import code from "../assets/code.png";
@@ -11,7 +10,7 @@ function ParticipationAndWorking() {
   return (
     <div className="mx-auto">
       {/* Section: Why Participate & How It Works */}
-      <div className="flex flex-col md:flex-row items-center justify-center font-creato max-w-screen-xl gap-10 px-4">
+      <div className="flex flex-col md:flex-row   font-creato max-w-screen-xl gap-10 px-6">
         {/* Left: Why Participate */}
         <div className="flex flex-col w-full md:w-1/2">
           <div className="flex items-center font-sans gap-4 font-black italic mb-4 mt-4">
@@ -87,20 +86,20 @@ function ParticipationAndWorking() {
       </div>
 
       {/* Belief Statement & Info */}
-      <div className="max-w-screen-xl mx-auto mt-10 px-4">
-        <p className="font-black italic text-[30px] md:text-[50px] leading-tight">
+      <div className="max-w-screen-xl mx-auto mt-10 px-6">
+        <p className="font-black italic text-[18px] md:text-[30px] lg:text-[50px] leading-tight">
           We believe every great idea deserves a digital home - regardless of
           budget.
         </p>
 
         <div className="mt-8">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-8 font-creato font-black italic mb-4">
+          <div className="flex   items-center gap-4 font-creato font-black italic mb-4">
             <p className="text-[20px] md:text-[25px] whitespace-nowrap">
               Fill out this form
             </p>
             <div className="h-px bg-white w-full sm:w-[200px]" />
           </div>
-          <div className="text-[16px] md:text-[18px] font-creato font-normal text-white space-y-2">
+          <div className="text-[14px] md:text-[18px] font-creato font-normal text-white/90 space-y-2">
             <p>
               Thank you for your interest in our "Pay What You Can" website
               initiative. We’re excited to learn more about you and your
@@ -120,17 +119,7 @@ function ParticipationAndWorking() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row mt-8 gap-4 items-start sm:items-center leading-tight mb-10">
-          <img
-            src={messageImage}
-            alt="message"
-            className="w-[50px] md:w-[61px] h-[46px] md:h-[56px]"
-          />
-          <p className="font-creato font-bold text-white/80 text-[18px] md:text-[25px]">
-            Your participation implies agreement—review the Terms & Conditions
-            thoroughly.
-          </p>
-        </div>
+      
       </div>
     </div>
   );

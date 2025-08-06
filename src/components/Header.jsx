@@ -84,7 +84,7 @@ const Header = ({ title }) => {
                 </li>
                 <li>
                   <Link
-                    to="/company/Blogs"
+                    to="/company/blogs"
                     className="block px-4 py-2 hover:text-cyan-400"
                   >
                     Blog
@@ -176,6 +176,14 @@ const Header = ({ title }) => {
                   className="block hover:text-cyan-400"
                 >
                   How It Works
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/company/blogs"
+                  className="block hover:text-cyan-400"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
